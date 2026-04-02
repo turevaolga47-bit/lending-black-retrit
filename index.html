@@ -617,9 +617,99 @@ footer a:hover{color:var(--gold)}
 /* ── Smooth btn magnetic ── */
 .btn-primary{will-change:transform}
 
+/* ════════════════════════════════════
+   MOBILE MENU
+════════════════════════════════════ */
+.nav-burger{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  background:none;border:none;padding:8px;cursor:pointer;z-index:502;
+  width:40px;height:40px;flex-shrink:0;
+}
+.nav-burger span{
+  display:block;width:22px;height:2px;background:var(--gold-l);border-radius:2px;
+  transition:transform .35s cubic-bezier(.23,1,.32,1),opacity .25s;transform-origin:center;
+}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.nav-mobile{
+  position:fixed;top:0;left:0;right:0;z-index:498;
+  background:rgba(8,7,14,.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  padding:80px 28px 36px;
+  transform:translateY(-110%);transition:transform .42s cubic-bezier(.23,1,.32,1);
+  border-bottom:1px solid rgba(201,168,76,.15);
+}
+.nav-mobile.open{transform:translateY(0)}
+.nav-mobile a{
+  display:block;font-size:1.05rem;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(232,224,213,.55);text-decoration:none;
+  padding:16px 0;border-bottom:1px solid rgba(255,255,255,.05);
+  transition:color .2s,padding-left .2s;
+}
+.nav-mobile a:hover,.nav-mobile a:active{color:var(--gold-l);padding-left:10px}
+.nav-mobile .nm-cta{
+  margin-top:28px;display:flex;justify-content:center;
+}
+
+/* ════════════════════════════════════
+   BACK TO TOP
+════════════════════════════════════ */
+.back-top{
+  position:fixed;bottom:28px;right:28px;z-index:400;
+  width:50px;height:50px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--rose));
+  border:none;color:#0a0a0f;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(201,168,76,.4);
+  opacity:0;transform:translateY(16px) scale(.85);pointer-events:none;
+  transition:opacity .35s,transform .35s cubic-bezier(.23,1,.32,1),box-shadow .25s;
+}
+.back-top.show{opacity:1;transform:translateY(0) scale(1);pointer-events:all}
+.back-top:hover{box-shadow:0 8px 36px rgba(201,168,76,.6);transform:translateY(-3px) scale(1.05)}
+.back-top:active{transform:scale(.95)}
+
+/* ════════════════════════════════════
+   FORM SUCCESS ANIMATION
+════════════════════════════════════ */
+.form-success{
+  display:none;text-align:center;padding:44px 20px;
+}
+.success-ring{
+  display:flex;align-items:center;justify-content:center;margin-bottom:24px;
+  position:relative;
+}
+.success-ring svg{overflow:visible}
+.s-circle{
+  stroke-dasharray:145;stroke-dashoffset:145;
+  animation:drawRing .65s ease forwards;
+}
+.s-check{
+  stroke-dasharray:35;stroke-dashoffset:35;
+  animation:drawMark .4s .55s ease forwards;
+}
+.success-burst{
+  position:absolute;inset:0;pointer-events:none;
+}
+.success-burst span{
+  position:absolute;top:50%;left:50%;width:4px;height:4px;border-radius:50%;
+  background:var(--gold);opacity:0;
+}
+.success-title{font-family:Georgia,serif;font-size:1.4rem;color:var(--gold-l);margin-bottom:8px}
+.success-sub{color:var(--dim);font-size:.9rem;line-height:1.6}
+
+@keyframes drawRing{to{stroke-dashoffset:0}}
+@keyframes drawMark{to{stroke-dashoffset:0}}
+@keyframes burst{0%{opacity:1;transform:translate(-50%,-50%) translate(var(--bx),var(--by)) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) translate(calc(var(--bx)*4),calc(var(--by)*4)) scale(0)}}
+
 /* ══════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════ */
+@media(max-width:768px){
+  .nav-burger{display:flex}
+  .nav-cta-wrap{display:none}
+  .back-top{bottom:20px;right:20px;width:44px;height:44px}
+}
 @media(max-width:480px){
   body{cursor:auto;font-size:16px}
   .cur,.cur-dot{display:none}
@@ -632,6 +722,7 @@ footer a:hover{color:var(--gold)}
   .pain-grid{grid-template-columns:1fr}
   .cta-form{padding:24px 20px}
   .modal{padding:32px 24px}
+  .form-group input,.form-group textarea{font-size:16px}
 }
 </style>
 </head>
@@ -655,7 +746,23 @@ footer a:hover{color:var(--gold)}
   <div class="nav-cta-wrap">
     <a href="#cta" class="btn-secondary" style="font-size:.78rem;padding:9px 22px">Обсудить проект</a>
   </div>
+  <button class="nav-burger" id="nav-burger" aria-label="Открыть меню" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- ══ MOBILE MENU ══ -->
+<div class="nav-mobile" id="nav-mobile" role="dialog" aria-label="Навигация">
+  <a href="#services">Услуги</a>
+  <a href="#cases">Кейсы</a>
+  <a href="#process">Процесс</a>
+  <a href="#about">Обо мне</a>
+  <a href="#pricing">Цены</a>
+  <a href="#faq">FAQ</a>
+  <div class="nm-cta">
+    <a href="#cta" class="btn-primary" style="font-size:.9rem;padding:14px 36px">Обсудить проект →</a>
+  </div>
+</div>
 
 <main>
 
@@ -1349,8 +1456,15 @@ footer a:hover{color:var(--gold)}
         <button type="submit" class="btn-primary form-submit">Получить оценку проекта →</button>
       </form>
       <div class="form-success" id="form-success">
-        <p style="font-size:1.5rem;margin-bottom:8px">✓</p>
-        <p>Получил! Напишу в течение часа.</p>
+        <div class="success-ring">
+          <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+            <circle class="s-circle" cx="36" cy="36" r="23" stroke="var(--gold)" stroke-width="2.5" fill="none"/>
+            <path class="s-check" d="M24 36l9 9 15-18" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          <div class="success-burst" id="success-burst"></div>
+        </div>
+        <p class="success-title">Заявка отправлена!</p>
+        <p class="success-sub">Отвечу в течение часа.<br>Номер для связи уже у меня.</p>
       </div>
     </div>
 
@@ -1374,6 +1488,13 @@ footer a:hover{color:var(--gold)}
 </section>
 
 </main>
+
+<!-- ══ BACK TO TOP ══ -->
+<button class="back-top" id="back-top" aria-label="Наверх">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+    <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
 
 <footer>
   <p>© 2025 Иван Мастер · Цифровой мастер &nbsp;·&nbsp; <a href="https://t.me/yourtelegram">Telegram</a> &nbsp;·&nbsp; <a href="mailto:you@email.com">Email</a></p>
@@ -1507,11 +1628,34 @@ function toggleFaq(btn) {
   const isOpen = item.classList.toggle('open');
 }
 
-/* ── Form ── */
+/* ── Form with success animation ── */
 function handleSubmit(e) {
   e.preventDefault();
-  document.getElementById('contact-form').style.display = 'none';
-  document.getElementById('form-success').style.display = 'block';
+  const btn = e.target.querySelector('.form-submit');
+  const origText = btn.textContent;
+  btn.textContent = 'Отправляем...';
+  btn.disabled = true;
+  btn.style.opacity = '.7';
+  setTimeout(() => {
+    document.getElementById('contact-form').style.display = 'none';
+    const succ = document.getElementById('form-success');
+    succ.style.display = 'block';
+    spawnBurst();
+  }, 900);
+}
+function spawnBurst() {
+  const burst = document.getElementById('success-burst');
+  if (!burst) return;
+  const angles = [0,45,90,135,180,225,270,315];
+  angles.forEach((a, i) => {
+    const el = document.createElement('span');
+    const rad = a * Math.PI / 180;
+    const bx = Math.round(Math.cos(rad) * 38) + 'px';
+    const by = Math.round(Math.sin(rad) * 38) + 'px';
+    const colors = ['var(--gold)','var(--rose)','var(--gold-l)'];
+    el.style.cssText = `--bx:${bx};--by:${by};background:${colors[i%3]};animation:burst .7s ${i*.06}s ease forwards`;
+    burst.appendChild(el);
+  });
 }
 
 /* ── Parallax hero ── */
@@ -1613,6 +1757,44 @@ if (isMouse) {
     requestAnimationFrame(splLoop);
   })();
 }
+
+/* ── Back to top ── */
+const backTopBtn = document.getElementById('back-top');
+window.addEventListener('scroll', () => {
+  backTopBtn.classList.toggle('show', window.scrollY > 400);
+}, {passive: true});
+backTopBtn.addEventListener('click', () => {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+});
+
+/* ── Mobile menu ── */
+const burger = document.getElementById('nav-burger');
+const mobileMenu = document.getElementById('nav-mobile');
+
+burger.addEventListener('click', () => {
+  const isOpen = burger.classList.toggle('open');
+  mobileMenu.classList.toggle('open', isOpen);
+  burger.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    burger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  });
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+    burger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+});
 </script>
 </body>
 </html>
