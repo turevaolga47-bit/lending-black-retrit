@@ -584,11 +584,38 @@ footer a:hover{color:var(--gold)}
 @keyframes ctaBlink{0%,88%,100%{opacity:1}94%{opacity:.3}}
 @keyframes sweep{from{transform:translateX(-100%) skewX(-15deg)}to{transform:translateX(250%) skewX(-15deg)}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes featuredPulse{0%,100%{box-shadow:0 0 0 1px rgba(201,168,76,.32),0 0 40px rgba(201,168,76,.12),0 24px 60px rgba(0,0,0,.5)}50%{box-shadow:0 0 0 2px rgba(201,168,76,.65),0 0 90px rgba(201,168,76,.3),0 24px 60px rgba(0,0,0,.5)}}
+@keyframes sectionIn{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 
 /* Card icon float */
 .service-icon{animation:float 3.5s ease-in-out infinite}
 .service-card:nth-child(2) .service-icon{animation-delay:.4s}
 .service-card:nth-child(3) .service-icon{animation-delay:.8s}
+
+/* ── Extended reveal stagger ── */
+.reveal:nth-child(5){transition-delay:.4s}
+.reveal:nth-child(6){transition-delay:.5s}
+.reveal:nth-child(7){transition-delay:.6s}
+.reveal:nth-child(8){transition-delay:.7s}
+
+/* ── Tilt preserve-3d ── */
+.service-card,.review-card,.case-card{transform-style:preserve-3d}
+
+/* ── Featured card animated glow ── */
+.pricing-card.featured{animation:featuredPulse 3s ease-in-out infinite}
+
+/* ── Spotlight ── */
+.spotlight{
+  position:fixed;width:750px;height:750px;border-radius:50%;pointer-events:none;z-index:2;
+  background:radial-gradient(circle,rgba(201,168,76,.042) 0%,rgba(212,130,154,.018) 35%,transparent 70%);
+  transform:translate(-50%,-50%);opacity:0;transition:opacity .6s;
+}
+
+/* ── Hero parallax ── */
+.hero-inner{will-change:transform}
+
+/* ── Smooth btn magnetic ── */
+.btn-primary{will-change:transform}
 
 /* ══════════════════════════════════
    RESPONSIVE
@@ -643,15 +670,15 @@ footer a:hover{color:var(--gold)}
 
     <div class="hero-stats reveal">
       <div class="hero-stat">
-        <span class="hero-stat-num">6</span>
+        <span class="hero-stat-num" data-count="6" data-suffix="">6</span>
         <span class="hero-stat-label">лет опыта</span>
       </div>
       <div class="hero-stat">
-        <span class="hero-stat-num">90+</span>
+        <span class="hero-stat-num" data-count="90" data-suffix="+">90+</span>
         <span class="hero-stat-label">проектов</span>
       </div>
       <div class="hero-stat">
-        <span class="hero-stat-num">24ч</span>
+        <span class="hero-stat-num" data-count="24" data-suffix="ч">24ч</span>
         <span class="hero-stat-label">время ответа</span>
       </div>
     </div>
@@ -996,15 +1023,15 @@ footer a:hover{color:var(--gold)}
 
         <div class="about-facts">
           <div class="about-fact">
-            <span class="fact-num">6</span>
+            <span class="fact-num" data-count="6" data-suffix="">6</span>
             <span class="fact-label">лет опыта</span>
           </div>
           <div class="about-fact">
-            <span class="fact-num">90+</span>
+            <span class="fact-num" data-count="90" data-suffix="+">90+</span>
             <span class="fact-label">проектов</span>
           </div>
           <div class="about-fact">
-            <span class="fact-num">0</span>
+            <span class="fact-num" data-count="0" data-suffix="">0</span>
             <span class="fact-label">незакрытых задач</span>
           </div>
         </div>
@@ -1485,6 +1512,106 @@ function handleSubmit(e) {
   e.preventDefault();
   document.getElementById('contact-form').style.display = 'none';
   document.getElementById('form-success').style.display = 'block';
+}
+
+/* ── Parallax hero ── */
+const heroInnerEl = document.querySelector('.hero-inner');
+const bgWrapEl = document.querySelector('.bg-wrap');
+let pTick = false;
+window.addEventListener('scroll', () => {
+  if (pTick) return;
+  pTick = true;
+  requestAnimationFrame(() => {
+    const y = window.scrollY;
+    const vh = window.innerHeight;
+    if (heroInnerEl && y < vh * 1.5)
+      heroInnerEl.style.transform = `translateY(${y * 0.22}px)`;
+    if (bgWrapEl)
+      bgWrapEl.style.transform = `translateY(${y * 0.07}px)`;
+    pTick = false;
+  });
+}, {passive: true});
+
+/* ── 3D Card tilt ── */
+const isMouse = window.matchMedia('(hover:hover)').matches;
+if (isMouse) {
+  document.querySelectorAll('.service-card, .review-card, .case-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width - 0.5) * 14;
+      const y = ((e.clientY - r.top) / r.height - 0.5) * 14;
+      card.style.transform = `translateY(-6px) perspective(900px) rotateX(${-y}deg) rotateY(${x}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+}
+
+/* ── Magnetic buttons ── */
+if (isMouse) {
+  document.querySelectorAll('.btn-primary').forEach(btn => {
+    const baseTransition = 'transform .35s cubic-bezier(.23,1,.32,1), opacity .2s';
+    btn.style.transition = baseTransition;
+    btn.addEventListener('mousemove', e => {
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width / 2) * 0.28;
+      const y = (e.clientY - r.top - r.height / 2) * 0.28;
+      btn.style.transform = `scale(1.04) translate(${x}px, ${y}px)`;
+      btn.style.animationPlayState = 'paused';
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+      btn.style.animationPlayState = '';
+    });
+  });
+}
+
+/* ── Number counter animation ── */
+function animateCount(el, duration) {
+  const target = parseFloat(el.dataset.count);
+  const suffix = el.dataset.suffix || '';
+  if (isNaN(target)) return;
+  let startTime = null;
+  const tick = ts => {
+    if (!startTime) startTime = ts;
+    const p = Math.min((ts - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    const val = target < 2 ? (eased * target).toFixed(1) : Math.floor(eased * target);
+    el.textContent = val + suffix;
+    if (p < 1) requestAnimationFrame(tick);
+    else el.textContent = target + suffix;
+  };
+  requestAnimationFrame(tick);
+}
+const countIO = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    animateCount(en.target, 1600);
+    countIO.unobserve(en.target);
+  });
+}, {threshold: 0.7});
+document.querySelectorAll('[data-count]').forEach(el => countIO.observe(el));
+
+/* ── Spotlight cursor glow ── */
+if (isMouse) {
+  const spl = document.createElement('div');
+  spl.className = 'spotlight';
+  document.body.appendChild(spl);
+  let splX = window.innerWidth / 2, splY = window.innerHeight / 2;
+  let splCX = splX, splCY = splY;
+  let splVisible = false;
+  document.addEventListener('mousemove', e => {
+    splX = e.clientX; splY = e.clientY;
+    if (!splVisible) { spl.style.opacity = '1'; splVisible = true; }
+  });
+  (function splLoop() {
+    splCX += (splX - splCX) * 0.07;
+    splCY += (splY - splCY) * 0.07;
+    spl.style.left = splCX + 'px';
+    spl.style.top = splCY + 'px';
+    requestAnimationFrame(splLoop);
+  })();
 }
 </script>
 </body>
