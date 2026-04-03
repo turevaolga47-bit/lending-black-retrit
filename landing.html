@@ -327,7 +327,7 @@
     }
     .btn-more:hover { background: rgba(201,168,76,.12); border-color: rgba(201,168,76,.7); }
     .btn-more .arrow { display: inline-block; transition: transform .3s; font-style: normal; }
-    .whom-card.open .btn-more .arrow, .card.open .btn-more .arrow, .info-card.open .btn-more .arrow, .bonus-card.open .btn-more .arrow { transform: rotate(180deg); }
+    .whom-card.open .btn-more .arrow, .card.open .btn-more .arrow, .info-card.open .btn-more .arrow, .bonus-card.open .btn-more .arrow, .retreat-block.open .btn-more .arrow { transform: rotate(180deg); }
 
     /* ── GALLERY (MASONRY) ── */
     #gallery { padding: 0 20px 70px; }
@@ -642,6 +642,29 @@
     .modal-box p { font-size: .88rem; color: var(--text-dim); line-height: 1.75; margin-bottom: 8px; }
     .modal-box a { color: var(--gold); }
     @media(max-width:480px) { .modal-box { padding: 28px 20px; } }
+
+    /* ── ABOUT RETREAT ── */
+    #about-retreat { background: var(--dark2); }
+    .retreat-lead { max-width: 720px; margin: 0 auto 52px; text-align: center; }
+    .retreat-lead p { color: var(--text-dim); line-height: 1.85; font-size: 1rem; margin-bottom: 14px; }
+    .retreat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 44px; }
+    .retreat-block {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(201,168,76,.2);
+      border-radius: 16px; padding: 30px 24px;
+      transition: border-color .3s, transform .3s;
+    }
+    .retreat-block:hover { border-color: rgba(201,168,76,.5); transform: translateY(-3px); }
+    .retreat-block-icon { color: var(--gold); font-size: 1.1rem; margin-bottom: 14px; }
+    .retreat-block h3 { color: var(--gold-light); font-size: 1.05rem; margin-bottom: 10px; }
+    .retreat-block > p { color: var(--text-dim); font-size: .9rem; line-height: 1.65; margin-bottom: 0; }
+    .retreat-note {
+      max-width: 680px; margin: 0 auto; text-align: center;
+      font-style: italic; color: var(--text-dim); font-size: .95rem;
+      line-height: 1.8; padding: 28px 32px;
+      border: 1px solid rgba(201,168,76,.2); border-radius: 14px;
+      background: rgba(201,168,76,.04);
+    }
+    @media(max-width:800px) { .retreat-grid { grid-template-columns: 1fr; } }
 
     /* ── ICON SVG COLORS ── */
     .card-icon svg *, .info-card-icon svg *, .bonus-icon svg *,
@@ -1429,6 +1452,84 @@
     </div>
   </section>
 
+  <!-- ══ ABOUT RETREAT ══ -->
+  <section id="about-retreat">
+    <div class="container">
+      <p class="section-label">О ретрите</p>
+      <h2>Что такое Чёрный ретрит</h2>
+
+      <div class="retreat-lead">
+        <p>Это не отдых и не медитация. Чёрный ретрит — это 10 дней глубокой трансформационной работы с телом и психикой. В отличие от обычных велнес-программ, здесь нет красивых ритуалов ради ритуалов. Есть настоящая работа: с тем, что болит, мешает и держит вас в одном и том же месте годами.</p>
+        <p>Участницы большую часть дня проводят в условиях сенсорного ограничения — с закрытыми глазами. Когда исчезает зрение, включается то, что обычно заглушает шум жизни: тело, чувства, интуиция. Именно здесь начинается настоящий контакт с собой.</p>
+      </div>
+
+      <div class="retreat-grid">
+
+        <div class="retreat-block reveal">
+          <div class="retreat-block-icon">◈</div>
+          <h3>Для кого этот ретрит</h3>
+          <p>Для женщин, которые устали быть в роли и хотят вернуться к себе.</p>
+          <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
+          <div class="whom-more">
+            <div class="whom-more-text">
+              <ul>
+                <li>Вы живёте на износ: работа, семья, обязательства — и ни минуты на себя</li>
+                <li>Вы в точке выгорания: отпуск не помогает, тело сигналит болью и усталостью</li>
+                <li>Вы переживаете серьёзные изменения: развод, потеря, болезнь, смена жизненного курса</li>
+                <li>У вас повторяются одни и те же сценарии — в отношениях, деньгах, карьере — и вы понимаете, что дело внутри</li>
+                <li>Вы чувствуете: что-то должно измениться. Но не знаете, с чего начать</li>
+              </ul>
+              <p style="margin-top:12px;"><em>Важно: ретрит требует психологической готовности к интенсивной работе. Обсуждаем на предварительном созвоне.</em></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="retreat-block reveal">
+          <div class="retreat-block-icon">◈</div>
+          <h3>Какие запросы здесь прорабатываются</h3>
+          <p>Ретрит работает с тем, что не решается «ещё одним курсом» или разговорами с подругой.</p>
+          <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
+          <div class="whom-more">
+            <div class="whom-more-text">
+              <ul>
+                <li><strong style="color:var(--gold-light);">Хроническая усталость и выгорание</strong> — когда отдых не восстанавливает, а тело болит без причин</li>
+                <li><strong style="color:var(--gold-light);">Ощущение «я живу не свою жизнь»</strong> — потеря себя в ролях матери, жены, руководителя</li>
+                <li><strong style="color:var(--gold-light);">Тревога и страх</strong> — фоновое напряжение, которое не выключается</li>
+                <li><strong style="color:var(--gold-light);">Повторяющиеся паттерны</strong> — одни и те же проблемы в отношениях, деньгах, саботаж собственных успехов</li>
+                <li><strong style="color:var(--gold-light);">Эмоциональные травмы</strong> — то, что осело в теле и влияет на жизнь через психосоматику</li>
+                <li><strong style="color:var(--gold-light);">Экзистенциальный кризис</strong> — потеря смысла, апатия, пустота при внешнем благополучии</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="retreat-block reveal">
+          <div class="retreat-block-icon">◈</div>
+          <h3>Что меняется после</h3>
+          <p>Ретрит запускает процесс, который продолжается после отъезда. Это не разовая встряска — это сдвиг.</p>
+          <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
+          <div class="whom-more">
+            <div class="whom-more-text">
+              <ul>
+                <li><strong style="color:var(--gold-light);">Уходит хроническое напряжение</strong> — тревога, подавленность, апатия перестают быть фоном жизни</li>
+                <li><strong style="color:var(--gold-light);">Возвращается контакт с собой</strong> — вы снова слышите, чего хотите, что чувствуете, где ваша граница</li>
+                <li><strong style="color:var(--gold-light);">Рвутся старые сценарии</strong> — там, где раньше срабатывал автопилот, появляется выбор</li>
+                <li><strong style="color:var(--gold-light);">Возвращается энергия</strong> — не из силы воли, а из восстановленного ресурса тела и психики</li>
+                <li><strong style="color:var(--gold-light);">Меняется качество отношений</strong> — вы начинаете строить их из себя, а не из страха или привычки</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="retreat-note">
+        Чёрный ретрит — это не волшебная таблетка. Это встреча с собой настоящей — без масок, ролей и привычных защит. Это требует мужества. И именно поэтому меняет всё.
+      </div>
+
+    </div>
+  </section>
+
   <!-- ══ FAQ ══ -->
   <section id="faq">
     <div class="container">
@@ -1810,7 +1911,7 @@
 
   // ── Toggle more (cards) ──
   function toggleMore(btn) {
-    const card = btn.closest('.whom-card, .card, .info-card, .bonus-card');
+    const card = btn.closest('.whom-card, .card, .info-card, .bonus-card, .retreat-block');
     const isOpen = card.classList.toggle('open');
     btn.innerHTML = isOpen ? 'Скрыть <i class="arrow">↓</i>' : 'Подробнее <i class="arrow">↓</i>';
   }
