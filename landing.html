@@ -409,6 +409,36 @@
     }
     @media(max-width:600px) { .section-divider-img img { height: 300px; } .divider-quote { font-size: 1.05rem; } }
 
+    /* ── DUAL DIVIDER ── */
+    .dual-divider {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      max-height: 420px; overflow: hidden;
+    }
+    .dual-divider-item {
+      position: relative; overflow: hidden; height: 420px;
+    }
+    .dual-divider-item img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform .6s ease;
+    }
+    .dual-divider-item:first-child img { object-position: center 60%; }
+    .dual-divider-item:last-child  img { object-position: center 30%; }
+    .dual-divider-item:hover img { transform: scale(1.04); }
+    .dual-divider-item::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(10,8,20,.2) 0%, rgba(10,8,20,.55) 100%);
+    }
+    .dual-divider-caption {
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 1;
+      padding: 40px 28px 28px;
+      background: linear-gradient(to top, rgba(10,8,20,.7) 0%, transparent 100%);
+      font-family: Georgia, serif; font-style: italic;
+      font-size: 1.05rem; color: rgba(255,255,255,.85);
+      text-align: center; letter-spacing: .02em; line-height: 1.5;
+      text-shadow: 0 2px 16px rgba(0,0,0,.5);
+    }
+    @media(max-width:600px) { .dual-divider { grid-template-columns: 1fr; } .dual-divider-item { height: 280px; } }
+
     /* ── DETAILS / FORMAT ── */
     #details { text-align: center; }
     .details-box { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 10px; }
@@ -1251,11 +1281,15 @@
     </div>
   </section>
 
-  <!-- ══ DIVIDER — ПРАКТИКА ══ -->
-  <div class="section-divider-img">
-    <img src="retreat-practice.png" alt="Практики на ретрите">
-    <div class="divider-overlay">
-      <p class="divider-quote">«Когда закрываешь глаза — начинаешь по-настоящему видеть»</p>
+  <!-- ══ DUAL DIVIDER — ПАРУСНИК + ПРАКТИКА ══ -->
+  <div class="dual-divider">
+    <div class="dual-divider-item">
+      <img src="photo_2026-04-02_18-17-30.jpg" alt="Яхт-клуб Святого Власа — парусники у берега">
+      <div class="dual-divider-caption">Яхт-клуб в шаговой доступности</div>
+    </div>
+    <div class="dual-divider-item">
+      <img src="retreat-practice.png" alt="Практики с закрытыми глазами на берегу моря">
+      <div class="dual-divider-caption">«Когда закрываешь глаза — начинаешь по-настоящему видеть»</div>
     </div>
   </div>
 
