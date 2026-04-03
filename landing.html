@@ -604,6 +604,8 @@
       transition: color .25s, border-color .25s, background .25s;
     }
     .contact-link:hover { color: var(--gold-light); border-color: rgba(201,168,76,.4); background: rgba(201,168,76,.06); }
+    .contact-link--channel { border-color: rgba(155,143,212,.35); color: #b8aee8; }
+    .contact-link--channel:hover { color: #d0c8f8; border-color: rgba(155,143,212,.7); background: rgba(155,143,212,.08); }
 
     /* ── FOOTER ── */
     footer {
@@ -1759,42 +1761,57 @@
         <div class="contacts">
           <span class="contacts-label">или свяжитесь напрямую</span>
 
-          <a class="contact-link" href="tel:+420737350155">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" stroke="#c9a84c" stroke-width="1.5" fill="none" opacity=".8"/>
-            </svg>
-            +420 737 350 155
-          </a>
-
+          <!-- Telegram личка -->
           <a class="contact-link" href="https://t.me/OlgaTurreva" target="_blank">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.7 8.02c-.12.56-.45.7-.91.43l-2.52-1.86-1.22 1.17c-.13.14-.25.25-.51.25l.18-2.58 4.67-4.22c.2-.18-.04-.28-.31-.1L7.4 15.04 4.93 14.3c-.55-.17-.56-.54.12-.8l9.23-3.56c.46-.17.87.1.36.86z" fill="#2aabee" opacity=".8"/>
-            </svg>
-            Telegram
+            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.7 8.02c-.12.56-.45.7-.91.43l-2.52-1.86-1.22 1.17c-.13.14-.25.25-.51.25l.18-2.58 4.67-4.22c.2-.18-.04-.28-.31-.1L7.4 15.04 4.93 14.3c-.55-.17-.56-.54.12-.8l9.23-3.56c.46-.17.87.1.36.86z" fill="#2aabee"/></svg>
+            Telegram (личка)
           </a>
 
+          <!-- Telegram канал -->
+          <a class="contact-link contact-link--channel" href="https://t.me/sekretyZE" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.7 8.02c-.12.56-.45.7-.91.43l-2.52-1.86-1.22 1.17c-.13.14-.25.25-.51.25l.18-2.58 4.67-4.22c.2-.18-.04-.28-.31-.1L7.4 15.04 4.93 14.3c-.55-.17-.56-.54.12-.8l9.23-3.56c.46-.17.87.1.36.86z" fill="#9b8fd4"/></svg>
+            Telegram (канал)
+          </a>
+
+          <!-- Instagram -->
+          <a class="contact-link" href="https://www.instagram.com/psycholog_olgatureva/" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#E1306C" stroke-width="1.6" opacity=".9"/><circle cx="12" cy="12" r="4.5" stroke="#E1306C" stroke-width="1.5" opacity=".9"/><circle cx="17.5" cy="6.5" r="1.2" fill="#E1306C" opacity=".9"/></svg>
+            Instagram
+          </a>
+
+          <!-- VK -->
+          <a class="contact-link" href="https://vk.com/olgahappytureva" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M2 6h3.5c.3 0 .5.2.6.5.4 1.5 1.2 3.5 2.4 4.7.1.1.3 0 .3-.2V6.5c0-.3.2-.5.5-.5H12c.3 0 .5.2.5.5v4.2c0 .2.2.3.3.1 1-1.2 1.7-2.7 2.1-4.3.1-.3.3-.5.6-.5H19c.4 0 .6.4.5.7-.7 2.2-2.1 4.1-3.9 5.4-.2.1-.2.4 0 .5 1.8 1.4 3.2 3.4 3.8 5.7.1.4-.2.7-.5.7h-3.2c-.3 0-.5-.2-.6-.5-.5-1.7-1.5-3.2-2.8-4.2-.2-.1-.5 0-.5.2V18c0 .3-.2.5-.5.5H9.5c-.3 0-.5-.2-.5-.5v-3.5c0-.2-.2-.3-.4-.2-1.5 1-2.7 2.4-3.4 4.1-.1.3-.4.6-.7.6H2c-.3 0-.5-.3-.4-.6 1.1-4.2 4.2-7.6 8.2-9-.1 0-.1-.1-.1-.2C6.2 8.9 3.7 7.8 2.4 6.6c-.2-.2-.1-.6.2-.6z" fill="#2787F5" opacity=".9"/></svg>
+            ВКонтакте
+          </a>
+
+          <!-- YouTube -->
+          <a class="contact-link" href="https://www.youtube.com/@olgatureva_psycholog" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M21.6 7.2s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.2 4 12 4 12 4s-4.2 0-6.8.3c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 8.7 2 10.3v1.5c0 1.5.2 3.1.2 3.1s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.7 18 12 18 12 18s4.2 0 6.8-.3c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.1v-1.5c-.2-1.6-.4-3.1-.4-3.1zM10 14.5v-5l5.3 2.5-5.3 2.5z" fill="#FF0000" opacity=".9"/></svg>
+            YouTube
+          </a>
+
+          <!-- Facebook -->
+          <a class="contact-link" href="https://www.facebook.com/olgahelp/" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="#1877F2" stroke-width="1.6" stroke-linejoin="round" opacity=".9"/></svg>
+            Facebook
+          </a>
+
+          <!-- WhatsApp -->
           <a class="contact-link" href="https://wa.me/420737350155" target="_blank">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.35C8.52 21.52 10.22 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.3 1.2-1.78 1.26-.46.06-.97.08-1.56-.1a14.4 14.4 0 0 1-1.42-.52c-2.48-1.07-4.1-3.54-4.22-3.7-.12-.17-.97-1.3-.97-2.47s.6-1.75.82-2c.22-.22.48-.28.64-.28l.46.01c.15.01.35-.06.54.41l.7 1.7c.05.13.08.28.01.44l-.26.48-.37.4c-.12.13-.26.27-.11.52.15.25.67 1.1 1.44 1.77.98.87 1.82 1.14 2.07 1.27.25.12.4.1.55-.06l.63-.74c.16-.2.32-.15.54-.09l1.68.79c.2.1.32.14.37.22.04.08.04.46-.18 1.08z" fill="#25d366" opacity=".8"/>
-            </svg>
+            <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.6 1.38 5.1L2 22l4.99-1.35A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.93 13.68c-.2.56-1.18 1.1-1.62 1.16-.44.06-.85.21-2.87-.6-2.43-.97-3.98-3.46-4.1-3.62-.12-.16-.97-1.29-.97-2.46 0-1.17.61-1.74.83-1.98.22-.24.48-.3.64-.3h.46c.15 0 .35-.05.55.42.2.47.67 1.62.73 1.74.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.31-.36.42-.12.12-.24.25-.1.49.14.24.61 1.01 1.31 1.63.9.8 1.66 1.05 1.9 1.17.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.58-.14 1.14z" fill="#25D366" opacity=".9"/></svg>
             WhatsApp
           </a>
 
+          <!-- Email -->
           <a class="contact-link" href="mailto:newkafa8@gmail.com">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <rect x="2" y="4" width="20" height="16" rx="2" stroke="#c9a84c" stroke-width="1.5" fill="none" opacity=".8"/>
-              <path d="M2 7 L12 13.5 L22 7" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" opacity=".8"/>
-            </svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="#c9a84c" stroke-width="1.5" opacity=".8"/><path d="M2 7L12 13.5 22 7" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" opacity=".8"/></svg>
             Email
           </a>
 
+          <!-- Сайт -->
           <a class="contact-link" href="http://turevaolga.space" target="_blank">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="9.5" stroke="#c9a84c" stroke-width="1.5" opacity=".8"/>
-              <path d="M12 2.5 C9 6 7.5 9.5 7.5 12 S9 18 12 21.5" stroke="#c9a84c" stroke-width="1.4" fill="none" opacity=".8"/>
-              <path d="M12 2.5 C15 6 16.5 9.5 16.5 12 S15 18 12 21.5" stroke="#c9a84c" stroke-width="1.4" fill="none" opacity=".8"/>
-              <path d="M2.5 12 L21.5 12" stroke="#c9a84c" stroke-width="1.4" opacity=".8"/>
-            </svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="#c9a84c" stroke-width="1.5" opacity=".8"/><path d="M12 2.5C9 6 7.5 9.5 7.5 12S9 18 12 21.5" stroke="#c9a84c" stroke-width="1.4" fill="none" opacity=".8"/><path d="M12 2.5C15 6 16.5 9.5 16.5 12S15 18 12 21.5" stroke="#c9a84c" stroke-width="1.4" fill="none" opacity=".8"/><path d="M2.5 12L21.5 12" stroke="#c9a84c" stroke-width="1.4" opacity=".8"/></svg>
             Сайт
           </a>
         </div>
