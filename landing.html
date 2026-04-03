@@ -734,6 +734,27 @@
     }
     @media(max-width:800px) { .retreat-grid { grid-template-columns: 1fr; } }
 
+    /* ── ACCOMMODATION ── */
+    #accommodation { background: var(--dark); }
+    .apt-intro { max-width: 680px; margin: 0 auto 44px; text-align: center; }
+    .apt-intro p { color: var(--text-dim); line-height: 1.8; font-size: .95rem; }
+    .apt-features { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; margin-top: 18px; }
+    .apt-feat { font-size: .8rem; color: var(--gold); letter-spacing: .06em; }
+    .apt-feat::before { content: '◈ '; }
+    .apt-tabs { display: flex; gap: 12px; justify-content: center; margin-bottom: 28px; }
+    .apt-tab { background: none; border: 1px solid rgba(201,168,76,.3); color: var(--text-dim); padding: 8px 24px; border-radius: 50px; font-size: .85rem; cursor: pointer; transition: all .25s; letter-spacing: .04em; }
+    .apt-tab.active, .apt-tab:hover { border-color: var(--gold); color: var(--gold-light); background: rgba(201,168,76,.08); }
+    .apt-panel { display: none; }
+    .apt-panel.active { display: block; }
+    .apt-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .apt-photo { border-radius: 14px; overflow: hidden; border: 1px solid rgba(201,168,76,.18); }
+    .apt-photo img { display: block; width: 100%; height: 260px; object-fit: cover; transition: transform .4s; }
+    .apt-photo:hover img { transform: scale(1.03); }
+    .apt-video-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+    .apt-video { border-radius: 14px; overflow: hidden; border: 1px solid rgba(201,168,76,.25); }
+    .apt-video iframe { display: block; width: 100%; aspect-ratio: 16/9; border: none; }
+    @media(max-width:600px) { .apt-grid { grid-template-columns: 1fr; } .apt-video-row { grid-template-columns: 1fr; } }
+
     /* ── ICON SVG COLORS ── */
     .card-icon svg *, .info-card-icon svg *, .bonus-icon svg *,
     .icon svg *, .bento-icon svg * { stroke: #c9a84c !important; }
@@ -818,7 +839,7 @@
     <li><a href="#details">Формат</a></li>
     <li><a href="#faq">Вопросы</a></li>
   </ul>
-  <a href="https://t.me/blackretrit_bot" target="_blank" class="nav-cta">Записаться</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLDvaHzHyzsoG8nfp9drlOOivXA6YbGjWsmXr1KpqgQlKu3A/viewform?usp=sharing&ouid=108677729308754483977" target="_blank" class="nav-cta">Записаться</a>
 </nav>
 
 <main>
@@ -854,7 +875,7 @@
         </div>
       </div>
 
-      <a href="https://t.me/blackretrit_bot" target="_blank" class="btn-cta">Хочу на ретрит</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLDvaHzHyzsoG8nfp9drlOOivXA6YbGjWsmXr1KpqgQlKu3A/viewform?usp=sharing&ouid=108677729308754483977" target="_blank" class="btn-cta">Хочу на ретрит</a>
       <p style="margin-top:14px; font-size:.8rem; color:rgba(154,146,152,.5); letter-spacing:.06em;">Отвечу лично. Без обязательств.</p>
     </div>
   </section>
@@ -893,7 +914,7 @@
         Это не отдых. Это работа. Настоящая.
       </p>
       <div style="text-align:center; margin-top:36px;">
-        <a href="https://t.me/blackretrit_bot" target="_blank" class="btn-cta" style="animation:none;">Узнать подробности</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLDvaHzHyzsoG8nfp9drlOOivXA6YbGjWsmXr1KpqgQlKu3A/viewform?usp=sharing&ouid=108677729308754483977" target="_blank" class="btn-cta" style="animation:none;">Узнать подробности</a>
       </div>
     </div>
   </section>
@@ -2106,11 +2127,11 @@
           и&nbsp;решите, подходит ли он именно вам. Отвечу лично.
         </p>
 
-        <a href="https://t.me/blackretrit_bot" target="_blank" class="btn-cta">Записаться на ретрит</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLDvaHzHyzsoG8nfp9drlOOivXA6YbGjWsmXr1KpqgQlKu3A/viewform?usp=sharing&ouid=108677729308754483977" target="_blank" class="btn-cta">Записаться на ретрит</a>
         <p class="cta-sub">Отвечу в течение часа. Без обязательств.</p>
 
         <div style="margin-top:22px;">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLDvaHzHyzsoG8nfp9drlOOivXA6YbGjWsmXr1KpqgQlKu3A/viewform?usp=publish-editor"
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLDvaHzHyzsoG8nfp9drlOOivXA6YbGjWsmXr1KpqgQlKu3A/viewform?usp=sharing&ouid=108677729308754483977"
              target="_blank" class="btn-form">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex-shrink:0">
               <rect x="4" y="2" width="16" height="20" rx="2" stroke="#c9a84c" stroke-width="1.5" fill="none"/>
