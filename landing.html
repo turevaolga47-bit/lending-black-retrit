@@ -645,6 +645,31 @@
     .modal-box a { color: var(--gold); }
     @media(max-width:480px) { .modal-box { padding: 28px 20px; } }
 
+    /* ── TESTIMONIAL ── */
+    #testimonial { background: var(--dark); }
+    .testimonial-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: start; }
+    .testimonial-video { position: relative; border-radius: 18px; overflow: hidden; border: 1px solid rgba(201,168,76,.25); box-shadow: 0 0 40px rgba(201,168,76,.08); }
+    .testimonial-video iframe { display: block; width: 100%; aspect-ratio: 16/9; border: none; }
+    .testimonial-note { margin-top: 14px; font-size: .78rem; color: rgba(154,146,152,.5); letter-spacing:.05em; text-align: center; font-style: italic; }
+    .testimonial-content { }
+    .testimonial-label { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+    .testimonial-name { font-size: 1.35rem; color: var(--gold-light); font-family: Georgia, serif; margin-bottom: 8px; }
+    .testimonial-subtitle { font-size: .88rem; color: var(--text-dim); margin-bottom: 28px; font-style: italic; }
+    .testimonial-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 28px; }
+    .tc-block { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 18px 16px; }
+    .tc-block--after { border-color: rgba(201,168,76,.3); background: rgba(201,168,76,.05); }
+    .tc-tag { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; opacity: .6; }
+    .tc-block--after .tc-tag { color: var(--gold); opacity: 1; }
+    .tc-block ul { list-style: none; padding: 0; margin: 0; }
+    .tc-block ul li { font-size: .82rem; color: var(--text-dim); padding: 3px 0 3px 14px; position: relative; line-height: 1.5; }
+    .tc-block ul li::before { content: '—'; position: absolute; left: 0; color: rgba(154,146,152,.4); }
+    .tc-block--after ul li::before { content: '✓'; color: var(--gold); }
+    .tc-block--after ul li { color: #c8c0bc; }
+    .testimonial-quote { font-size: .9rem; color: var(--text-dim); line-height: 1.8; border-left: 2px solid rgba(201,168,76,.4); padding-left: 16px; font-style: italic; margin-bottom: 20px; }
+    .testimonial-method { font-size: .82rem; color: rgba(154,146,152,.7); line-height: 1.7; }
+    .testimonial-method strong { color: var(--gold-light); font-style: normal; }
+    @media(max-width: 860px) { .testimonial-wrap { grid-template-columns: 1fr; gap: 32px; } .testimonial-compare { grid-template-columns: 1fr; } }
+
     /* ── ABOUT RETREAT ── */
     #about-retreat { background: var(--dark2); position: relative; overflow: hidden; padding: 60px 20px; }
     #about-retreat .container { position: relative; z-index: 2; }
@@ -992,6 +1017,66 @@
               Ретрит создаёт тишину, в которой этот голос становится слышен.
             </div>
           </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIAL ══ -->
+  <section id="testimonial">
+    <div class="container">
+      <p class="section-label">Результаты работы</p>
+      <h2>Как меняется жизнь после работы с Ольгой</h2>
+
+      <div class="testimonial-wrap">
+
+        <div class="testimonial-video reveal">
+          <iframe
+            src="https://www.youtube.com/embed/FRIuLMyC8EM"
+            title="Отзыв Лены: из диагноза некроз — в состояние люблю жизнь"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+          <p class="testimonial-note">Живая встреча · личная работа офлайн · 5 дней</p>
+        </div>
+
+        <div class="testimonial-content reveal">
+          <p class="testimonial-label">История клиентки</p>
+          <p class="testimonial-name">Лена, 5 дней личной работы</p>
+          <p class="testimonial-subtitle">«Из диагноза "некроз" — в состояние "люблю жизнь"»</p>
+
+          <div class="testimonial-compare">
+            <div class="tc-block">
+              <p class="tc-tag">На входе</p>
+              <ul>
+                <li>Боль, диагноз «некроз ТБС»</li>
+                <li>Разница длины ног ~2 см</li>
+                <li>Скачки давления, усталость</li>
+                <li>Тяжесть в теле, бессонница</li>
+                <li>Кризис в отношениях</li>
+              </ul>
+            </div>
+            <div class="tc-block tc-block--after">
+              <p class="tc-tag">На выходе</p>
+              <ul>
+                <li>Облегчение после 1-го сеанса</li>
+                <li>Выровнялась осанка и походка</li>
+                <li>Ушли отёки и объёмы без диет</li>
+                <li>Лёгкость, спокойный сон</li>
+                <li>Новые решения в семье</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="testimonial-quote">«Физиотерапия без психологии откатывает назад. В связке — закрепляет результат навсегда.»</p>
+
+          <p class="testimonial-method">
+            <strong>Подход:</strong> сначала тело — потом причина — потом новая стратегия.<br>
+            Именно этот метод лежит в основе Чёрного ретрита.<br><br>
+            <em style="color:rgba(154,146,152,.5);">Отзывы участниц ретрита появятся после первого заезда — май 2026.</em>
+          </p>
         </div>
 
       </div>
