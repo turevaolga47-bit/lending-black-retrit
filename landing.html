@@ -686,8 +686,11 @@
     .review-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, rgba(201,168,76,.3), rgba(212,130,154,.2)); border: 1px solid rgba(201,168,76,.25); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
     .review-name { font-size: .9rem; color: var(--gold-light); font-weight: normal; }
     .review-tag { font-size: .7rem; color: rgba(154,146,152,.6); letter-spacing: .06em; margin-top: 2px; }
-    .review-text { font-size: .85rem; color: var(--text-dim); line-height: 1.75; }
+    .review-text { font-size: .85rem; color: var(--text-dim); line-height: 1.75; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
     .review-text strong { color: #c8c0bc; font-style: normal; }
+    .review-card.open .review-text { display: block; overflow: visible; }
+    .review-card .btn-more { margin-top: 12px; font-size: .78rem; padding: 5px 14px; }
+    .review-card.open .btn-more .arrow { transform: rotate(180deg); }
     .reviews-note { text-align: center; margin-top: 32px; font-size: .8rem; color: rgba(154,146,152,.45); font-style: italic; }
     @media(max-width: 900px) { .reviews-grid { grid-template-columns: 1fr 1fr; } }
     @media(max-width: 560px) { .reviews-grid { grid-template-columns: 1fr; } }
@@ -2258,10 +2261,19 @@
 
   // ── Toggle more (cards) ──
   function toggleMore(btn) {
-    const card = btn.closest('.whom-card, .card, .info-card, .bonus-card, .retreat-block');
+    const card = btn.closest('.whom-card, .card, .info-card, .bonus-card, .retreat-block, .review-card');
     const isOpen = card.classList.toggle('open');
     btn.innerHTML = isOpen ? 'Скрыть <i class="arrow">↓</i>' : 'Подробнее <i class="arrow">↓</i>';
   }
+
+  // Добавляем кнопки «Подробнее» к карточкам отзывов
+  document.querySelectorAll('.review-card').forEach(card => {
+    const btn = document.createElement('button');
+    btn.className = 'btn-more';
+    btn.innerHTML = 'Подробнее <i class="arrow">↓</i>';
+    btn.addEventListener('click', function() { toggleMore(this); });
+    card.appendChild(btn);
+  });
 
   // ── Toggle bento ──
   function toggleBento(btn) {
