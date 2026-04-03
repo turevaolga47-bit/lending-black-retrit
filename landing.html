@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Черный Ретрит · Болгария · 10 дней трансформации · Ph.Dr. Olga Tureva</title>
-  <meta name="description" content="10-дневный ретрит по кризисной психологии на берегу Черного моря. Болгария, Святой Влас. Для женщин, которые устали держаться. Ph.Dr. Olga Tureva — 34 года практики.">
+  <title>Черный Ретрит · Болгария · Лето 2026 · Ph.Dr. Olga Tureva</title>
+  <meta name="description" content="10-дневный ретрит по кризисной психологии на берегу Черного моря. Болгария, Святой Влас. Лето 2026. Ph.Dr. Olga Tureva — 34 года практики. Не медитация. Настоящая работа.">
+  <meta property="og:title" content="Черный Ретрит Болгария · Лето 2026">
+  <meta property="og:description" content="10 дней. Кризисная психология. Черное море. Малая группа до 8 человек.">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -31,12 +33,9 @@
       cursor: none;
     }
 
-    /* ── GRAIN OVERLAY ── */
     body::after {
       content: '';
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
+      position: fixed; inset: 0; z-index: 9999;
       pointer-events: none;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
       opacity: 0.038;
@@ -44,27 +43,19 @@
 
     /* ── CURSOR ── */
     .cursor {
-      position: fixed;
-      width: 20px; height: 20px;
-      border: 1.5px solid rgba(201,168,76,.7);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 10000;
-      transform: translate(-50%, -50%);
+      position: fixed; width: 20px; height: 20px;
+      border: 1.5px solid rgba(201,168,76,.7); border-radius: 50%;
+      pointer-events: none; z-index: 10000;
+      transform: translate(-50%,-50%);
       transition: width .2s, height .2s, border-color .2s, opacity .2s;
-      mix-blend-mode: normal;
     }
     .cursor-dot {
-      position: fixed;
-      width: 5px; height: 5px;
-      background: var(--gold);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 10001;
-      transform: translate(-50%, -50%);
+      position: fixed; width: 5px; height: 5px;
+      background: var(--gold); border-radius: 50%;
+      pointer-events: none; z-index: 10001;
+      transform: translate(-50%,-50%);
       transition: transform .08s;
     }
-    a:hover ~ .cursor, button:hover ~ .cursor { width: 36px; height: 36px; border-color: var(--gold); }
 
     /* ── BACKGROUND ── */
     .bg-wrap {
@@ -87,16 +78,29 @@
         radial-gradient(1px 1px at 30% 90%, rgba(255,255,255,.40) 0%, transparent 100%),
         radial-gradient(1px 1px at 95% 25%, rgba(255,255,255,.30) 0%, transparent 100%);
     }
+    .stars::before {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        radial-gradient(1.5px 1.5px at 18% 22%, rgba(255,255,255,.7) 0%, transparent 100%),
+        radial-gradient(1px 1px at 52% 18%, rgba(255,215,100,.6) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 78% 44%, rgba(255,255,255,.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 35% 72%, rgba(212,130,154,.6) 0%, transparent 100%);
+      animation: twinkle 3.2s ease-in-out infinite;
+    }
+    .stars::after {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        radial-gradient(1.5px 1.5px at 63% 55%, rgba(201,168,76,.65) 0%, transparent 100%),
+        radial-gradient(1px 1px at 8% 48%,  rgba(255,255,255,.45) 0%, transparent 100%),
+        radial-gradient(2px 2px at 44% 88%,  rgba(212,130,154,.5) 0%, transparent 100%);
+      animation: twinkle2 4.7s 1.5s ease-in-out infinite;
+    }
 
     /* ── NAVIGATION ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       padding: 14px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: flex; align-items: center; justify-content: space-between;
       transition: background .4s, backdrop-filter .4s;
     }
     nav.scrolled {
@@ -105,38 +109,21 @@
       border-bottom: 1px solid rgba(201,168,76,.12);
     }
     .nav-logo {
-      font-size: .78rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      text-decoration: none;
+      font-size: .78rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold); text-decoration: none;
     }
-    .nav-links {
-      display: flex; gap: 24px; list-style: none;
-    }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
     .nav-links a {
-      font-size: .75rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: rgba(232,224,213,.5);
-      text-decoration: none;
-      transition: color .25s;
+      font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(232,224,213,.5); text-decoration: none; transition: color .25s;
     }
     .nav-links a:hover { color: var(--gold); }
     .nav-cta {
-      background: none;
-      border: 1px solid rgba(201,168,76,.4);
-      border-radius: 40px;
-      padding: 7px 20px;
-      font-size: .75rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--gold);
-      text-decoration: none;
-      transition: background .25s, border-color .25s;
+      background: none; border: 1px solid rgba(201,168,76,.4); border-radius: 40px;
+      padding: 7px 20px; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--gold); text-decoration: none; transition: background .25s, border-color .25s;
     }
     .nav-cta:hover { background: rgba(201,168,76,.1); border-color: var(--gold); }
-
     @media(max-width:768px) { .nav-links { display: none; } }
 
     /* ── LAYOUT ── */
@@ -144,248 +131,153 @@
     section { padding: 80px 20px; }
     .container { max-width: 960px; margin: 0 auto; }
 
-    /* ── DIVIDER ORNAMENT ── */
+    .section-label {
+      text-align: center; font-size: .7rem; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+      animation: labelPulse 3s ease-in-out infinite;
+    }
+    h2 {
+      text-align: center; font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+      font-weight: 400; color: var(--cream); margin-bottom: 48px; line-height: 1.3;
+    }
     .divider {
       display: flex; align-items: center; gap: 16px;
       margin: 36px auto 0; max-width: 340px;
     }
     .divider span { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
 
-    /* ── SECTION LABELS ── */
-    .section-label {
-      text-align: center;
-      font-size: .7rem;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 14px;
-      animation: labelPulse 3s ease-in-out infinite;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: clamp(1.5rem, 3.5vw, 2.4rem);
-      font-weight: 400;
-      color: var(--cream);
-      margin-bottom: 48px;
-      line-height: 1.3;
-    }
-
     /* ── HERO ── */
     #hero {
-      min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
-      text-align: center;
-      padding: 120px 20px 90px;
-      position: relative;
-      overflow: hidden;
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 120px 20px 90px;
+      position: relative; overflow: hidden;
     }
     .hero-bg { position: absolute; inset: 0; z-index: 0; }
     .hero-bg img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center 30%;
+      width: 100%; height: 100%; object-fit: cover; object-position: center 30%;
       filter: brightness(.28) saturate(.7);
     }
     .hero-bg::after {
-      content: '';
-      position: absolute; inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: linear-gradient(to bottom, rgba(10,10,15,.3) 0%, rgba(10,10,15,.5) 55%, var(--dark) 100%);
     }
     #hero .container { position: relative; z-index: 1; }
 
     .badge {
-      display: inline-block;
-      border: 1px solid rgba(201,168,76,.45);
-      border-radius: 40px;
-      padding: 7px 24px;
-      font-size: .75rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 36px;
-      background: rgba(201,168,76,.07);
+      display: inline-block; border: 1px solid rgba(201,168,76,.45); border-radius: 40px;
+      padding: 7px 24px; font-size: .75rem; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 36px; background: rgba(201,168,76,.07);
       animation: badgeShine 3.5s ease-in-out infinite, fadeInDown .8s ease both;
     }
 
     h1 {
-      font-size: clamp(2rem, 5.5vw, 3.8rem);
-      line-height: 1.12;
-      font-weight: 400;
-      letter-spacing: .01em;
+      font-size: clamp(2rem, 5.5vw, 3.8rem); line-height: 1.12;
+      font-weight: 400; letter-spacing: .01em;
       background: linear-gradient(90deg, #f0d080 0%, #c9a84c 20%, #d4829a 40%, #ffffff 50%, #d4829a 60%, #c9a84c 80%, #f0d080 100%);
       background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
       animation: textShine 5s linear infinite;
       margin-bottom: 28px;
     }
+    /* clip-path reveal on h1 words */
+    .h1-line {
+      display: block; overflow: hidden;
+    }
+    .h1-line span {
+      display: block;
+      animation: lineReveal .9s cubic-bezier(.22,.61,.36,1) both;
+    }
+    .h1-line:nth-child(2) span { animation-delay: .15s; }
+    .h1-line:nth-child(3) span { animation-delay: .3s; }
 
     .subtitle {
-      font-size: clamp(1rem, 2.4vw, 1.2rem);
-      color: #b8a898;
-      max-width: 580px;
-      margin: 0 auto 16px;
-      line-height: 1.75;
-      font-style: italic;
-      animation: fadeInUp .9s .3s ease both;
-      min-height: 2.4em;
+      font-size: clamp(1rem, 2.4vw, 1.2rem); color: #b8a898;
+      max-width: 580px; margin: 0 auto 16px; line-height: 1.75;
+      font-style: italic; animation: fadeInUp .9s .3s ease both; min-height: 2.4em;
     }
 
     .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin: 28px 0 44px;
-      animation: fadeInUp .9s .45s ease both;
+      display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;
+      margin: 28px 0 44px; animation: fadeInUp .9s .45s ease both;
     }
     .hero-stat { text-align: center; }
-    .hero-stat-num {
-      display: block;
-      font-size: 1.8rem;
-      font-weight: 400;
-      color: var(--gold-light);
-      line-height: 1.1;
-    }
-    .hero-stat-label {
-      font-size: .7rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-    }
+    .hero-stat-num { display: block; font-size: 1.8rem; font-weight: 400; color: var(--gold-light); line-height: 1.1; }
+    .hero-stat-label { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-dim); }
 
     #hero .btn-cta { animation: fadeInUp .9s .6s ease both, pulse 2.6s 1.5s ease-in-out infinite; }
 
-    /* ── PAIN SECTION ── */
+    /* ── PAIN ── */
     #pain { background: rgba(10,8,20,.7); padding: 80px 20px; }
     .pain-lead {
-      text-align: center;
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      color: var(--cream);
-      font-style: italic;
-      margin-bottom: 48px;
-      line-height: 1.6;
+      text-align: center; font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--cream); font-style: italic; margin-bottom: 48px; line-height: 1.6;
     }
-    .pain-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
+    .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 16px; }
     .pain-card {
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(201,168,76,.15);
-      border-radius: 16px;
-      padding: 24px 22px;
+      background: rgba(255,255,255,.03); border: 1px solid rgba(201,168,76,.15);
+      border-radius: 16px; padding: 24px 22px;
       transition: border-color .3s, transform .3s, background .3s;
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
     .pain-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 2px;
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
       background: linear-gradient(90deg, transparent, rgba(201,168,76,.4), transparent);
-      transform: scaleX(0);
-      transition: transform .4s;
+      transform: scaleX(0); transition: transform .4s;
     }
     .pain-card:hover::before { transform: scaleX(1); }
-    .pain-card:hover {
-      border-color: rgba(201,168,76,.4);
-      transform: translateY(-4px);
-      background: rgba(201,168,76,.04);
-    }
+    .pain-card:hover { border-color: rgba(201,168,76,.4); transform: translateY(-4px); background: rgba(201,168,76,.04); }
     .pain-icon { font-size: 1.6rem; margin-bottom: 12px; line-height: 1; }
-    .pain-card h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--gold-light);
-      margin-bottom: 8px;
+    .pain-card h3 { font-size: 1rem; font-weight: 600; color: var(--gold-light); margin-bottom: 8px; }
+    .pain-card p { font-size: .86rem; color: var(--text-dim); line-height: 1.6; }
+    .pain-closing { text-align: center; margin-top: 44px; font-style: italic; color: rgba(232,224,213,.55); font-size: .95rem; }
+
+    /* ── MARQUEE ── */
+    .marquee-wrap {
+      overflow: hidden; background: rgba(201,168,76,.04);
+      border-top: 1px solid rgba(201,168,76,.12);
+      border-bottom: 1px solid rgba(201,168,76,.12);
+      padding: 14px 0;
     }
-    .pain-card p {
-      font-size: .86rem;
-      color: var(--text-dim);
-      line-height: 1.6;
+    .marquee-track {
+      display: flex; gap: 0; white-space: nowrap;
+      animation: marqueeScroll 28s linear infinite;
     }
-    .pain-closing {
-      text-align: center;
-      margin-top: 44px;
-      font-style: italic;
-      color: rgba(232,224,213,.55);
-      font-size: .95rem;
+    .marquee-track:hover { animation-play-state: paused; }
+    .marquee-item {
+      display: inline-flex; align-items: center; gap: 20px;
+      padding: 0 32px; font-size: .72rem; letter-spacing: .18em;
+      text-transform: uppercase; color: rgba(201,168,76,.65);
     }
+    .marquee-dot { width: 4px; height: 4px; background: var(--rose); border-radius: 50%; flex-shrink: 0; }
 
     /* ── ABOUT ── */
     #about { background: rgba(0,0,0,.2); }
-    .about-wrap {
-      display: flex; gap: 52px; align-items: flex-start; margin-top: 40px;
-    }
+    .about-wrap { display: flex; gap: 52px; align-items: flex-start; margin-top: 40px; }
     .about-photo-col { flex: 0 0 240px; }
     .about-photo {
-      width: 240px; height: 290px;
-      object-fit: cover; object-position: top center;
-      border-radius: 18px;
-      border: 2px solid rgba(201,168,76,.35);
-      box-shadow: 0 8px 50px rgba(0,0,0,.6), 0 0 30px rgba(201,168,76,.08);
-      display: block;
+      width: 240px; height: 290px; object-fit: cover; object-position: top center;
+      border-radius: 18px; border: 2px solid rgba(201,168,76,.35);
+      box-shadow: 0 8px 50px rgba(0,0,0,.6), 0 0 30px rgba(201,168,76,.08); display: block;
     }
-    .about-photo-caption {
-      text-align: center;
-      margin-top: 12px;
-      font-size: .75rem;
-      letter-spacing: .1em;
-      color: var(--gold);
-      text-transform: uppercase;
-    }
+    .about-photo-caption { text-align: center; margin-top: 12px; font-size: .75rem; letter-spacing: .1em; color: var(--gold); text-transform: uppercase; }
     .about-text-col { flex: 1; }
-    .about-name {
-      font-size: 1.6rem;
-      font-weight: 400;
-      color: var(--gold-light);
-      margin-bottom: 6px;
-    }
-    .about-title {
-      font-size: .82rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--rose);
-      margin-bottom: 24px;
-    }
-    .about-text-col p {
-      color: var(--text-dim); line-height: 1.8; margin-bottom: 14px;
-      font-size: .95rem;
-    }
+    .about-name { font-size: 1.6rem; font-weight: 400; color: var(--gold-light); margin-bottom: 6px; }
+    .about-title { font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; color: var(--rose); margin-bottom: 24px; }
+    .about-text-col p { color: var(--text-dim); line-height: 1.8; margin-bottom: 14px; font-size: .95rem; }
     .about-text-col p strong { color: var(--cream); }
-    .about-facts {
-      display: flex; gap: 24px; flex-wrap: wrap; margin-top: 20px;
-    }
+    .about-facts { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 20px; }
     .about-fact {
-      background: rgba(201,168,76,.07);
-      border: 1px solid rgba(201,168,76,.2);
-      border-radius: 12px;
-      padding: 14px 20px;
-      text-align: center;
+      background: rgba(201,168,76,.07); border: 1px solid rgba(201,168,76,.2);
+      border-radius: 12px; padding: 14px 20px; text-align: center;
     }
-    .about-fact-num {
-      display: block; font-size: 1.5rem;
-      color: var(--gold-light); line-height: 1.1;
-    }
-    .about-fact-label {
-      font-size: .72rem; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--text-dim);
-      display: block; margin-top: 4px;
-    }
+    .about-fact-num { display: block; font-size: 1.5rem; color: var(--gold-light); line-height: 1.1; }
+    .about-fact-label { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-dim); display: block; margin-top: 4px; }
     .story-block {
       margin-top: 28px;
       background: linear-gradient(135deg, rgba(201,168,76,.06), rgba(212,130,154,.04));
-      border: 1px solid rgba(201,168,76,.2);
-      border-radius: 16px;
-      padding: 24px 28px;
+      border: 1px solid rgba(201,168,76,.2); border-radius: 16px; padding: 24px 28px;
     }
-    .story-block p {
-      font-style: italic; color: rgba(232,224,213,.7);
-      font-size: .92rem; margin-bottom: 0;
-    }
+    .story-block p { font-style: italic; color: rgba(232,224,213,.7); font-size: .92rem; margin-bottom: 0; }
     .diplomas-wrap { margin-top: 48px; text-align: center; }
     .diplomas-wrap h3 { color: var(--gold-light); font-size: 1.1rem; margin-bottom: 18px; letter-spacing: .05em; }
     .diplomas-grid { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
@@ -399,218 +291,177 @@
 
     /* ── FOR WHOM ── */
     #for-whom { background: transparent; }
-    .whom-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
+    .whom-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 20px; }
     .whom-card {
       background: linear-gradient(135deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.01) 100%);
-      border: 1px solid rgba(201,168,76,.18);
-      border-radius: 16px;
-      padding: 28px 24px;
-      transition: border-color .3s, transform .3s;
-      position: relative; overflow: hidden;
+      border: 1px solid rgba(201,168,76,.18); border-radius: 16px; padding: 28px 24px;
+      transition: border-color .3s, transform .3s; position: relative; overflow: hidden;
     }
     .whom-card:hover { border-color: rgba(201,168,76,.5); transform: translateY(-4px); }
     .whom-card .icon {
       width: 44px; height: 44px;
       background: linear-gradient(135deg, rgba(201,168,76,.15), rgba(212,130,154,.15));
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 16px;
+      border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
     }
     .whom-card h3 { font-size: 1.05rem; font-weight: 600; color: var(--gold-light); margin-bottom: 8px; }
     .whom-card p { font-size: .88rem; color: var(--text-dim); line-height: 1.65; }
+    .whom-card::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.06) 50%, transparent 100%);
+      transform: translateX(-100%) skewX(-15deg); pointer-events: none; border-radius: inherit;
+    }
+    .whom-card:hover::after { animation: cardSweep .55s ease forwards; }
 
-    /* ── EXPANDABLE MORE ── */
-    .whom-more {
-      max-height: 0; overflow: hidden;
-      transition: max-height .45s ease, opacity .35s ease;
-      opacity: 0;
-    }
-    .whom-card.open .whom-more, .card.open .whom-more, .info-card.open .whom-more {
-      max-height: 700px; opacity: 1;
-    }
-    .whom-more-text {
-      margin-top: 14px; padding-top: 14px;
-      border-top: 1px solid rgba(201,168,76,.18);
-      font-size: .84rem; color: #b0a8ac; line-height: 1.7;
-    }
+    /* ── EXPANDABLE ── */
+    .whom-more { max-height: 0; overflow: hidden; transition: max-height .45s ease, opacity .35s ease; opacity: 0; }
+    .whom-card.open .whom-more, .card.open .whom-more, .info-card.open .whom-more { max-height: 700px; opacity: 1; }
+    .whom-more-text { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(201,168,76,.18); font-size: .84rem; color: #b0a8ac; line-height: 1.7; }
     .whom-more-text ul { list-style: none; padding: 0; margin: 10px 0 0; }
-    .whom-more-text ul li {
-      padding: 4px 0 4px 18px; position: relative; color: #b0a8ac;
-    }
-    .whom-more-text ul li::before {
-      content: '◈'; position: absolute; left: 0;
-      color: var(--gold); font-size: .65rem; top: 7px;
-    }
+    .whom-more-text ul li { padding: 4px 0 4px 18px; position: relative; color: #b0a8ac; }
+    .whom-more-text ul li::before { content: '◈'; position: absolute; left: 0; color: var(--gold); font-size: .65rem; top: 7px; }
     .btn-more {
       display: inline-flex; align-items: center; gap: 6px;
-      margin-top: 16px; background: none;
-      border: 1px solid rgba(201,168,76,.35); border-radius: 20px;
-      padding: 6px 16px; font-size: .78rem; color: var(--gold);
-      letter-spacing: .06em; cursor: none; transition: border-color .25s, background .25s;
-      font-family: inherit;
+      margin-top: 16px; background: none; border: 1px solid rgba(201,168,76,.35);
+      border-radius: 20px; padding: 6px 16px; font-size: .78rem; color: var(--gold);
+      letter-spacing: .06em; cursor: none; transition: border-color .25s, background .25s; font-family: inherit;
     }
     .btn-more:hover { background: rgba(201,168,76,.12); border-color: rgba(201,168,76,.7); }
     .btn-more .arrow { display: inline-block; transition: transform .3s; font-style: normal; }
     .whom-card.open .btn-more .arrow, .card.open .btn-more .arrow, .info-card.open .btn-more .arrow { transform: rotate(180deg); }
 
-    /* ── GALLERY ── */
+    /* ── GALLERY (MASONRY) ── */
     #gallery { padding: 0 20px 70px; }
-    .gallery-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 16px; max-width: 960px; margin: 0 auto;
+    .gallery-heading { text-align: center; margin-bottom: 32px; }
+    .gallery-masonry {
+      columns: 3 280px; column-gap: 14px;
+      max-width: 960px; margin: 0 auto;
     }
     .gallery-item {
-      position: relative; border-radius: 20px; overflow: hidden;
-      aspect-ratio: 4/3; border: 1px solid rgba(201,168,76,.18);
+      break-inside: avoid; margin-bottom: 14px;
+      border-radius: 18px; overflow: hidden; position: relative;
+      border: 1px solid rgba(201,168,76,.18);
       transition: border-color .4s, box-shadow .4s;
     }
     .gallery-item:hover { border-color: rgba(201,168,76,.5); box-shadow: 0 0 30px rgba(201,168,76,.15); }
     .gallery-item img {
-      width: 100%; height: 100%; object-fit: cover;
-      display: block; transition: transform .6s ease, filter .4s;
-      filter: brightness(.85) saturate(.85);
+      width: 100%; height: auto; display: block;
+      transition: transform .6s ease, filter .4s;
+      filter: brightness(.88) saturate(.88);
     }
-    .gallery-item:hover img { transform: scale(1.04); filter: brightness(.95) saturate(1); }
+    .gallery-item:hover img { transform: scale(1.03); filter: brightness(.98) saturate(1); }
     .gallery-caption {
       position: absolute; bottom: 0; left: 0; right: 0;
-      padding: 28px 22px 20px;
+      padding: 36px 18px 16px;
       background: linear-gradient(to top, rgba(10,8,18,.85) 0%, transparent 100%);
-      font-size: .82rem; color: #c8bdb0; letter-spacing: .06em; font-style: italic;
+      font-size: .78rem; color: #c8bdb0; letter-spacing: .06em; font-style: italic;
     }
+    @media(max-width:640px) { .gallery-masonry { columns: 2 180px; } }
+    @media(max-width:400px) { .gallery-masonry { columns: 1; } }
 
     /* ── BENEFITS ── */
     #benefits { padding-top: 0; }
-    .cards-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px;
-    }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px,1fr)); gap: 24px; }
     .card {
       position: relative;
       background: linear-gradient(145deg, rgba(28,24,40,.9) 0%, rgba(16,14,26,.9) 100%);
-      border: 1px solid rgba(201,168,76,.2); border-radius: 20px;
-      padding: 36px 28px; overflow: hidden;
+      border: 1px solid rgba(201,168,76,.2); border-radius: 20px; padding: 36px 28px; overflow: hidden;
       transition: transform .35s, box-shadow .35s, border-color .35s;
     }
     .card::before {
       content: ''; position: absolute; top: -60px; right: -60px;
       width: 180px; height: 180px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,168,76,.12) 0%, transparent 70%);
-      pointer-events: none;
+      background: radial-gradient(circle, rgba(201,168,76,.12) 0%, transparent 70%); pointer-events: none;
     }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(0,0,0,.5), 0 0 30px rgba(201,168,76,.1);
-      border-color: rgba(201,168,76,.5);
+    .card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,.5), 0 0 30px rgba(201,168,76,.1); border-color: rgba(201,168,76,.5); }
+    .card::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.06) 50%, transparent 100%);
+      transform: translateX(-100%) skewX(-15deg); pointer-events: none; border-radius: inherit;
     }
+    .card:hover::after { animation: cardSweep .55s ease forwards; }
     .card-icon {
       width: 64px; height: 64px;
       background: linear-gradient(135deg, rgba(201,168,76,.22), rgba(212,130,154,.12));
       border-radius: 18px; border: 1px solid rgba(201,168,76,.3);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 22px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 22px;
     }
     .card h3 { font-size: 1.15rem; font-weight: 600; color: var(--gold-light); margin-bottom: 12px; }
     .card p { font-size: .9rem; color: var(--text-dim); line-height: 1.7; }
     .card .tag {
-      display: inline-block; margin-top: 18px;
-      font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
-      color: var(--rose); border: 1px solid rgba(212,130,154,.3); border-radius: 30px; padding: 4px 14px;
+      display: inline-block; margin-top: 18px; font-size: .72rem; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--rose);
+      border: 1px solid rgba(212,130,154,.3); border-radius: 30px; padding: 4px 14px;
     }
 
-    /* ── DETAILS/FORMAT ── */
-    #details { text-align: center; }
-    .details-box {
-      display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 10px;
+    /* ── SECTION DIVIDER IMAGE ── */
+    .section-divider-img { position: relative; width: 100%; max-height: 520px; overflow: hidden; }
+    .section-divider-img img { width: 100%; height: 520px; object-fit: cover; object-position: center 40%; display: block; }
+    .divider-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(10,8,20,.35) 0%, rgba(10,8,20,.65) 100%);
+      display: flex; align-items: flex-end; justify-content: center; padding-bottom: 52px;
     }
+    .divider-quote {
+      font-family: Georgia, serif; font-style: italic; font-size: 1.4rem;
+      color: rgba(255,255,255,.88); text-align: center; max-width: 640px;
+      padding: 0 24px; letter-spacing: .02em; line-height: 1.65;
+      text-shadow: 0 2px 20px rgba(0,0,0,.6);
+    }
+    @media(max-width:600px) { .section-divider-img img { height: 300px; } .divider-quote { font-size: 1.05rem; } }
+
+    /* ── DETAILS / FORMAT ── */
+    #details { text-align: center; }
+    .details-box { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 10px; }
     .detail-pill {
       background: rgba(255,255,255,.04); border: 1px solid rgba(201,168,76,.22);
       border-radius: 50px; padding: 10px 26px; font-size: .88rem; color: #c8bdb0;
       display: flex; align-items: center; gap: 10px;
       transition: border-color .3s, box-shadow .3s, color .3s;
     }
-    .detail-pill:hover {
-      border-color: rgba(201,168,76,.6); box-shadow: 0 0 14px rgba(201,168,76,.18); color: var(--gold-light);
-    }
+    .detail-pill:hover { border-color: rgba(201,168,76,.6); box-shadow: 0 0 14px rgba(201,168,76,.18); color: var(--gold-light); }
     .detail-pill svg { flex-shrink: 0; transition: filter .3s; }
     .detail-pill:hover svg { filter: drop-shadow(0 0 4px rgba(201,168,76,.7)); }
 
-    /* ── DETAILS INFO GRID ── */
-    .details-info-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; margin-top: 48px;
+    /* ── BENTO GRID ── */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      gap: 18px; margin-top: 48px;
     }
-    .details-info-card {
+    .bento-card {
       background: linear-gradient(135deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.01) 100%);
       border: 1px solid rgba(201,168,76,.2); border-radius: 20px;
-      padding: 32px 26px 28px; position: relative; overflow: hidden;
+      padding: 30px 26px; position: relative; overflow: hidden;
       transition: border-color .3s, transform .3s, box-shadow .3s;
     }
-    .details-info-card:hover {
-      border-color: rgba(201,168,76,.5); transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(0,0,0,.4), 0 0 30px rgba(201,168,76,.08);
-    }
-    .details-info-card::after {
+    .bento-card:hover { border-color: rgba(201,168,76,.5); transform: translateY(-4px); box-shadow: 0 16px 50px rgba(0,0,0,.4), 0 0 24px rgba(201,168,76,.08); }
+    .bento-card::after {
       content: ''; position: absolute; inset: 0;
-      background: linear-gradient(120deg, transparent 0%, rgba(201,168,76,.06) 50%, transparent 100%);
+      background: linear-gradient(120deg, transparent 0%, rgba(201,168,76,.05) 50%, transparent 100%);
       transform: translateX(-100%); pointer-events: none; border-radius: inherit;
     }
-    .details-info-card:hover::after { animation: cardSweep .55s ease forwards; }
-    .dic-icon {
-      width: 64px; height: 64px; border-radius: 18px;
-      display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+    .bento-card:hover::after { animation: cardSweep .55s ease forwards; }
+    .bento-card--wide { grid-column: span 2; }
+    .bento-card--accent { border-color: rgba(212,130,154,.3); background: linear-gradient(135deg, rgba(212,130,154,.06) 0%, rgba(255,255,255,.01) 100%); }
+    .bento-card--accent:hover { border-color: rgba(212,130,154,.6); }
+    .bento-icon {
+      width: 56px; height: 56px; border-radius: 16px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
     }
-    .dic-icon--gold { background: linear-gradient(135deg, rgba(201,168,76,.25), rgba(201,168,76,.08)); }
-    .dic-icon--rose { background: linear-gradient(135deg, rgba(212,130,154,.25), rgba(212,130,154,.08)); }
-    .dic-title { font-size: 1.05rem; font-weight: 600; color: var(--gold-light); margin-bottom: 10px; line-height: 1.3; }
-    .dic-desc { font-size: .88rem; color: var(--text-dim); line-height: 1.7; margin: 0; }
-    .details-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(201,168,76,.25), transparent); margin: 18px 0; }
-    .dic-more { max-height: 0; overflow: hidden; opacity: 0; transition: max-height .45s ease, opacity .35s ease; }
-    .details-info-card.open .dic-more { max-height: 700px; opacity: 1; }
-    .dic-more-text { font-size: .85rem; color: #b0a8ac; line-height: 1.75; }
-    .dic-more-text ul { list-style: none; padding: 0; margin: 10px 0 0; }
-    .dic-more-text ul li { padding: 4px 0 4px 18px; position: relative; color: #b0a8ac; }
-    .dic-more-text ul li::before { content: '◈'; position: absolute; left: 0; color: var(--gold); font-size: .65rem; top: 7px; }
-    .dic-more-text p { margin-top: 10px; }
-
-    /* ── SECTION DIVIDER IMAGE ── */
-    .section-divider-img { position: relative; width: 100%; max-height: 480px; overflow: hidden; }
-    .section-divider-img img { width: 100%; height: 480px; object-fit: cover; object-position: center 30%; display: block; }
-    .divider-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(10,8,20,.3) 0%, rgba(10,8,20,.6) 100%);
-      display: flex; align-items: flex-end; justify-content: center; padding-bottom: 48px;
-    }
-    .divider-quote {
-      font-family: Georgia, serif; font-style: italic; font-size: 1.4rem;
-      color: rgba(255,255,255,.85); text-align: center; max-width: 600px;
-      padding: 0 20px; letter-spacing: .02em; line-height: 1.6;
-      text-shadow: 0 2px 20px rgba(0,0,0,.6);
-    }
-    @media(max-width:600px) { .section-divider-img img { height: 280px; } .divider-quote { font-size: 1.1rem; } }
-
-    /* ── INFO CARDS ── */
-    #info-cards { background: rgba(201,168,76,.04); }
-    .info-cards-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 20px;
-    }
-    .info-card {
-      background: rgba(255,255,255,.07); border: 1px solid rgba(201,168,76,.35);
-      border-radius: 20px; padding: 36px 28px; text-align: center;
-      transition: border-color .3s, transform .3s, background .3s;
-    }
-    .info-card:hover { border-color: rgba(201,168,76,.65); background: rgba(255,255,255,.1); transform: translateY(-4px); }
-    .info-card-icon {
-      width: 72px; height: 72px;
-      background: linear-gradient(135deg, rgba(201,168,76,.22), rgba(212,130,154,.12));
-      border-radius: 18px; border: 1px solid rgba(201,168,76,.3);
-      display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;
-    }
-    .info-card h3 { color: var(--gold-light); font-size: 1.2rem; margin-bottom: 12px; }
-    .info-card > p { color: var(--text-dim); line-height: 1.65; margin-bottom: 20px; font-size: .95rem; }
-    .info-card .whom-more { text-align: left; }
-    @media(max-width:800px) { .info-cards-grid { grid-template-columns: 1fr; } }
+    .bento-icon--gold { background: linear-gradient(135deg, rgba(201,168,76,.25), rgba(201,168,76,.08)); }
+    .bento-icon--rose { background: linear-gradient(135deg, rgba(212,130,154,.25), rgba(212,130,154,.08)); }
+    .bento-title { font-size: 1.05rem; font-weight: 600; color: var(--gold-light); margin-bottom: 10px; line-height: 1.3; }
+    .bento-desc { font-size: .88rem; color: var(--text-dim); line-height: 1.7; }
+    .bento-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(201,168,76,.25), transparent); margin: 16px 0; }
+    .bento-more { max-height: 0; overflow: hidden; opacity: 0; transition: max-height .45s ease, opacity .35s ease; }
+    .bento-card.open .bento-more { max-height: 600px; opacity: 1; }
+    .bento-more-text { font-size: .84rem; color: #b0a8ac; line-height: 1.75; }
+    .bento-more-text ul { list-style: none; padding: 0; margin: 8px 0 0; }
+    .bento-more-text ul li { padding: 3px 0 3px 18px; position: relative; color: #b0a8ac; }
+    .bento-more-text ul li::before { content: '◈'; position: absolute; left: 0; color: var(--gold); font-size: .65rem; top: 6px; }
+    @media(max-width:640px) { .bento-grid { grid-template-columns: 1fr; } .bento-card--wide { grid-column: span 1; } }
+    @media(max-width:900px) { .bento-grid { grid-template-columns: 1fr 1fr; } }
 
     /* ── BONUSES ── */
     #bonuses { background: rgba(201,168,76,.04); }
@@ -630,11 +481,7 @@
     }
     .bonus-card h3 { color: var(--gold-light); font-size: 1.1rem; margin-bottom: 10px; }
     .bonus-card p { color: var(--text-dim); line-height: 1.7; font-size: .95rem; }
-    .bonus-tag {
-      display: inline-block; margin-top: 14px;
-      font-size: .75rem; letter-spacing: .08em; text-transform: uppercase;
-      color: var(--gold); border: 1px solid rgba(201,168,76,.35); border-radius: 20px; padding: 4px 12px;
-    }
+    .bonus-tag { display: inline-block; margin-top: 14px; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,.35); border-radius: 20px; padding: 4px 12px; }
     .referral-block {
       margin-top: 40px;
       background: linear-gradient(135deg, rgba(201,168,76,.1), rgba(212,130,154,.08));
@@ -646,11 +493,7 @@
     .referral-text h3 { color: var(--gold-light); font-size: 1.15rem; margin-bottom: 8px; }
     .referral-text p { color: var(--text-dim); line-height: 1.7; }
     .referral-text strong { color: var(--gold-light); }
-    .referral-badge {
-      flex: 0 0 auto; font-size: 2rem; font-weight: 700; color: var(--gold-light);
-      border: 2px solid rgba(201,168,76,.5); border-radius: 50%;
-      width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;
-    }
+    .referral-badge { flex: 0 0 auto; font-size: 2rem; font-weight: 700; color: var(--gold-light); border: 2px solid rgba(201,168,76,.5); border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; }
     @media(max-width:800px) { .bonus-grid { grid-template-columns: 1fr; } .referral-block { flex-direction: column; text-align: center; } }
 
     /* ── FAQ ── */
@@ -662,8 +505,7 @@
       width: 100%; background: none; border: none; padding: 22px 0;
       display: flex; align-items: center; justify-content: space-between; gap: 16px;
       cursor: none; text-align: left; font-family: inherit;
-      font-size: .98rem; font-weight: 600; color: var(--text);
-      transition: color .25s;
+      font-size: .98rem; font-weight: 600; color: var(--text); transition: color .25s;
     }
     .faq-q:hover { color: var(--gold-light); }
     .faq-q span { flex: 1; line-height: 1.4; }
@@ -674,14 +516,30 @@
     .faq-item.open .faq-a { max-height: 500px; opacity: 1; }
     .faq-a p { font-size: .9rem; color: #a8a0ac; line-height: 1.75; padding-bottom: 22px; }
 
+    /* ── INFO CARDS ── */
+    #info-cards { background: rgba(201,168,76,.04); }
+    .info-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 20px; }
+    .info-card {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(201,168,76,.35);
+      border-radius: 20px; padding: 36px 28px; text-align: center;
+      transition: border-color .3s, transform .3s, background .3s;
+    }
+    .info-card:hover { border-color: rgba(201,168,76,.65); background: rgba(255,255,255,.1); transform: translateY(-4px); }
+    .info-card-icon {
+      width: 72px; height: 72px;
+      background: linear-gradient(135deg, rgba(201,168,76,.22), rgba(212,130,154,.12));
+      border-radius: 18px; border: 1px solid rgba(201,168,76,.3);
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;
+    }
+    .info-card h3 { color: var(--gold-light); font-size: 1.2rem; margin-bottom: 12px; }
+    .info-card > p { color: var(--text-dim); line-height: 1.65; margin-bottom: 20px; font-size: .95rem; }
+    .info-card .whom-more { text-align: left; }
+    @media(max-width:800px) { .info-cards-grid { grid-template-columns: 1fr; } }
+
     /* ── CTA ── */
     #cta { text-align: center; padding: 90px 20px 100px; }
     .cta-wrap { max-width: 680px; margin: 0 auto; }
-    .cta-tag {
-      display: inline-block; font-size: .7rem; letter-spacing: .2em;
-      text-transform: uppercase; color: var(--rose); margin-bottom: 20px;
-      animation: ctaTagBlink 4s ease-in-out infinite;
-    }
+    .cta-tag { display: inline-block; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--rose); margin-bottom: 20px; animation: ctaTagBlink 4s ease-in-out infinite; }
     #cta h2 { margin-bottom: 16px; }
     #cta p { font-size: 1rem; color: var(--text-dim); margin-bottom: 44px; line-height: 1.7; }
     .cta-sub { font-size: .82rem !important; color: rgba(154,146,152,.6) !important; margin-top: 14px !important; margin-bottom: 0 !important; }
@@ -711,9 +569,8 @@
     .contacts { margin-top: 34px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 18px; }
     .contacts-label { font-size: .8rem; color: rgba(90,82,96,.7); letter-spacing: .1em; text-transform: uppercase; width: 100%; }
     .contact-link {
-      display: inline-flex; align-items: center; gap: 8px;
-      color: #8a7e90; font-size: .88rem; text-decoration: none;
-      border: 1px solid rgba(255,255,255,.08); border-radius: 40px; padding: 8px 18px;
+      display: inline-flex; align-items: center; gap: 8px; color: #8a7e90; font-size: .88rem;
+      text-decoration: none; border: 1px solid rgba(255,255,255,.08); border-radius: 40px; padding: 8px 18px;
       transition: color .25s, border-color .25s, background .25s;
     }
     .contact-link:hover { color: var(--gold-light); border-color: rgba(201,168,76,.4); background: rgba(201,168,76,.06); }
@@ -727,22 +584,12 @@
     footer a { color: #5a5060; text-decoration: none; }
     footer a:hover { color: var(--gold); }
 
-    /* ── ICON COLORS ── */
+    /* ── ICON SVG COLORS ── */
     .card-icon svg *, .info-card-icon svg *, .bonus-icon svg *,
-    .icon svg *, .dic-icon svg * { stroke: #c9a84c !important; }
+    .icon svg *, .bento-icon svg * { stroke: #c9a84c !important; }
     .card:hover .card-icon svg, .info-card:hover .info-card-icon svg,
-    .bonus-card:hover .bonus-icon svg, .whom-card:hover .icon svg {
-      filter: drop-shadow(0 0 8px rgba(201,168,76,.9)); transition: filter .3s;
-    }
-
-    /* ── CARD SWEEP HOVER ── */
-    .card::after, .whom-card::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.06) 50%, transparent 100%);
-      transform: translateX(-100%) skewX(-15deg);
-      pointer-events: none; border-radius: inherit;
-    }
-    .card:hover::after, .whom-card:hover::after { animation: cardSweep .55s ease forwards; }
+    .bonus-card:hover .bonus-icon svg, .whom-card:hover .icon svg,
+    .bento-card:hover .bento-icon svg { filter: drop-shadow(0 0 8px rgba(201,168,76,.9)); transition: filter .3s; }
 
     /* ── SCROLL REVEAL ── */
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
@@ -751,96 +598,54 @@
     .reveal:nth-child(3) { transition-delay: .24s; }
     .reveal:nth-child(4) { transition-delay: .36s; }
 
-    /* ── DETAILS INFO CARD FEATURED ── */
-    .details-info-card--featured { border-color: rgba(212,130,154,.3); background: linear-gradient(135deg, rgba(212,130,154,.06) 0%, rgba(255,255,255,.01) 100%); }
-    .details-info-card--featured:hover { border-color: rgba(212,130,154,.6); }
-
     /* ── ANIMATIONS ── */
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(36px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes textShine { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
-    @keyframes twinkle { 0%, 100% { opacity: .7; } 50% { opacity: .15; } }
-    @keyframes twinkle2 { 0%, 100% { opacity: .4; } 60% { opacity: .05; } }
-    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-6px); } }
-    @keyframes floatAlt { 0%, 100% { transform: translateY(-4px); } 50% { transform: translateY(4px); } }
-    @keyframes iconGlow {
-      0%, 100% { box-shadow: 0 0 0px rgba(201,168,76,0); background: linear-gradient(135deg,rgba(201,168,76,.18),rgba(212,130,154,.1)); }
-      50% { box-shadow: 0 0 28px rgba(201,168,76,.7), 0 0 10px rgba(201,168,76,.4); background: linear-gradient(135deg,rgba(201,168,76,.35),rgba(212,130,154,.2)); }
-    }
-    @keyframes iconGlowRose {
-      0%, 100% { box-shadow: 0 0 0px rgba(212,130,154,0); background: linear-gradient(135deg,rgba(201,168,76,.18),rgba(212,130,154,.1)); }
-      50% { box-shadow: 0 0 28px rgba(212,130,154,.7), 0 0 10px rgba(201,168,76,.35); background: linear-gradient(135deg,rgba(212,130,154,.25),rgba(201,168,76,.2)); }
-    }
-    @keyframes badgeShine { 0% { box-shadow: -60px 0 30px rgba(201,168,76,.0) inset; } 50% { box-shadow: 0px 0 30px rgba(201,168,76,.18) inset; } 100% { box-shadow: 60px 0 30px rgba(201,168,76,.0) inset; } }
-    @keyframes labelPulse { 0%, 100% { opacity: .8; letter-spacing: .22em; } 50% { opacity: 1; letter-spacing: .26em; } }
-    @keyframes cardSweep { from { transform: translateX(-100%) skewX(-15deg); } to { transform: translateX(250%) skewX(-15deg); } }
-    @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,.55); } 50% { box-shadow: 0 0 0 18px rgba(201,168,76,.0); } }
-    @keyframes ctaTagBlink { 0%, 90%, 100% { opacity: 1; } 95% { opacity: .3; } }
-    @keyframes cursorMove { to { opacity: 1; } }
+    @keyframes fadeInUp    { from { opacity: 0; transform: translateY(36px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInDown  { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes textShine   { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
+    @keyframes lineReveal  { from { transform: translateY(110%); } to { transform: translateY(0); } }
+    @keyframes twinkle     { 0%, 100% { opacity: .7; } 50% { opacity: .15; } }
+    @keyframes twinkle2    { 0%, 100% { opacity: .4; } 60% { opacity: .05; } }
+    @keyframes float       { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes floatAlt    { 0%, 100% { transform: translateY(-4px); } 50% { transform: translateY(4px); } }
+    @keyframes iconGlow    { 0%,100% { box-shadow: 0 0 0 rgba(201,168,76,0); background: linear-gradient(135deg,rgba(201,168,76,.18),rgba(212,130,154,.1)); } 50% { box-shadow: 0 0 28px rgba(201,168,76,.7),0 0 10px rgba(201,168,76,.4); background: linear-gradient(135deg,rgba(201,168,76,.35),rgba(212,130,154,.2)); } }
+    @keyframes iconGlowRose { 0%,100% { box-shadow: 0 0 0 rgba(212,130,154,0); background: linear-gradient(135deg,rgba(201,168,76,.18),rgba(212,130,154,.1)); } 50% { box-shadow: 0 0 28px rgba(212,130,154,.7),0 0 10px rgba(201,168,76,.35); background: linear-gradient(135deg,rgba(212,130,154,.25),rgba(201,168,76,.2)); } }
+    @keyframes badgeShine  { 0% { box-shadow: -60px 0 30px rgba(201,168,76,.0) inset; } 50% { box-shadow: 0 0 30px rgba(201,168,76,.18) inset; } 100% { box-shadow: 60px 0 30px rgba(201,168,76,.0) inset; } }
+    @keyframes labelPulse  { 0%,100% { opacity: .8; letter-spacing: .22em; } 50% { opacity: 1; letter-spacing: .26em; } }
+    @keyframes cardSweep   { from { transform: translateX(-100%) skewX(-15deg); } to { transform: translateX(250%) skewX(-15deg); } }
+    @keyframes pulse       { 0%,100% { box-shadow: 0 0 0 0 rgba(201,168,76,.55); } 50% { box-shadow: 0 0 0 18px rgba(201,168,76,.0); } }
+    @keyframes ctaTagBlink { 0%,90%,100% { opacity: 1; } 95% { opacity: .3; } }
+    @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    /* Animated stars */
-    .stars::before {
-      content: ''; position: absolute; inset: 0;
-      background-image:
-        radial-gradient(1.5px 1.5px at 18% 22%, rgba(255,255,255,.7) 0%, transparent 100%),
-        radial-gradient(1px 1px at 52% 18%, rgba(255,215,100,.6) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 78% 44%, rgba(255,255,255,.5) 0%, transparent 100%),
-        radial-gradient(1px 1px at 35% 72%, rgba(212,130,154,.6) 0%, transparent 100%);
-      animation: twinkle 3.2s ease-in-out infinite;
-    }
-    .stars::after {
-      content: ''; position: absolute; inset: 0;
-      background-image:
-        radial-gradient(1.5px 1.5px at 63% 55%, rgba(201,168,76,.65) 0%, transparent 100%),
-        radial-gradient(1px 1px at 8% 48%, rgba(255,255,255,.45) 0%, transparent 100%),
-        radial-gradient(2px 2px at 44% 88%, rgba(212,130,154,.5) 0%, transparent 100%);
-      animation: twinkle2 4.7s 1.5s ease-in-out infinite;
-    }
-
-    /* Icon animations */
+    /* icon float animations */
     .whom-card:nth-child(1) .icon { animation: float 3.4s ease-in-out infinite, iconGlow 3.4s ease-in-out infinite; }
     .whom-card:nth-child(2) .icon { animation: floatAlt 3.8s ease-in-out infinite, iconGlowRose 3.8s ease-in-out infinite; }
     .whom-card:nth-child(3) .icon { animation: float 4.2s ease-in-out infinite, iconGlow 4.2s ease-in-out infinite; }
     .card:nth-child(1) .card-icon { animation: float 3.6s .4s ease-in-out infinite, iconGlow 3.6s .4s ease-in-out infinite; }
     .card:nth-child(2) .card-icon { animation: floatAlt 4.0s .8s ease-in-out infinite, iconGlow 4.0s .8s ease-in-out infinite; }
     .card:nth-child(3) .card-icon { animation: float 4.4s 1.2s ease-in-out infinite, iconGlowRose 4.4s 1.2s ease-in-out infinite; }
-    .card:nth-child(4) .card-icon { animation: floatAlt 3.8s 1.6s ease-in-out infinite, iconGlow 3.8s 1.6s ease-in-out infinite; }
-    .card:nth-child(5) .card-icon { animation: float 4.2s 2.0s ease-in-out infinite, iconGlowRose 4.2s 2.0s ease-in-out infinite; }
-    .card:nth-child(6) .card-icon { animation: floatAlt 4.6s 2.4s ease-in-out infinite, iconGlow 4.6s 2.4s ease-in-out infinite; }
     .info-card:nth-child(1) .info-card-icon { animation: float 3.5s .2s ease-in-out infinite, iconGlow 3.5s .2s ease-in-out infinite; }
     .info-card:nth-child(2) .info-card-icon { animation: floatAlt 4.1s .6s ease-in-out infinite, iconGlowRose 4.1s .6s ease-in-out infinite; }
     .info-card:nth-child(3) .info-card-icon { animation: float 3.9s 1.0s ease-in-out infinite, iconGlow 3.9s 1.0s ease-in-out infinite; }
     .bonus-card:nth-child(1) .bonus-icon { animation: float 3.7s .3s ease-in-out infinite, iconGlow 3.7s .3s ease-in-out infinite; }
     .bonus-card:nth-child(2) .bonus-icon { animation: floatAlt 4.3s .7s ease-in-out infinite, iconGlowRose 4.3s .7s ease-in-out infinite; }
     .bonus-card:nth-child(3) .bonus-icon { animation: float 4.0s 1.1s ease-in-out infinite, iconGlow 4.0s 1.1s ease-in-out infinite; }
-    .details-info-card:nth-child(1) .dic-icon { animation: float 3.5s ease-in-out infinite, iconGlow 3.5s ease-in-out infinite; }
-    .details-info-card:nth-child(2) .dic-icon { animation: floatAlt 3.9s .3s ease-in-out infinite, iconGlowRose 3.9s .3s ease-in-out infinite; }
-    .details-info-card:nth-child(3) .dic-icon { animation: float 4.3s .6s ease-in-out infinite, iconGlow 4.3s .6s ease-in-out infinite; }
-    .details-info-card:nth-child(4) .dic-icon { animation: floatAlt 4.7s .9s ease-in-out infinite, iconGlowRose 4.7s .9s ease-in-out infinite; }
 
     /* ── RESPONSIVE ── */
-    @media(max-width:768px) {
-      .whom-grid { grid-template-columns: 1fr; }
-      .cards-grid { grid-template-columns: 1fr; }
-      .pain-grid { grid-template-columns: 1fr 1fr; }
-    }
+    @media(max-width:768px) { .whom-grid { grid-template-columns: 1fr; } .cards-grid { grid-template-columns: 1fr; } .pain-grid { grid-template-columns: 1fr 1fr; } }
     @media(max-width:480px) {
       body { cursor: auto; }
       .cursor, .cursor-dot { display: none; }
       section { padding: 44px 16px; }
       #gallery { padding: 0 12px 44px; }
       #hero { padding: 90px 16px 60px; min-height: 100svh; }
-      h1 { font-size: clamp(1.65rem, 8vw, 2.4rem); margin-bottom: 20px; }
-      h2 { font-size: clamp(1.3rem, 6vw, 2rem); margin-bottom: 32px; }
+      h1 { font-size: clamp(1.65rem,8vw,2.4rem); margin-bottom: 20px; }
+      h2 { font-size: clamp(1.3rem,6vw,2rem); margin-bottom: 32px; }
       .badge { font-size: .65rem; letter-spacing: .12em; padding: 5px 16px; margin-bottom: 20px; }
       .subtitle { font-size: .95rem; margin-bottom: 24px; }
       .hero-stats { gap: 20px; }
       .hero-stat-num { font-size: 1.4rem; }
       .btn-cta { display: block; width: 100%; max-width: 340px; margin: 0 auto; padding: 17px 24px; font-size: .92rem; }
-      .gallery-grid { grid-template-columns: 1fr; gap: 12px; }
-      .gallery-item { aspect-ratio: 16/10; border-radius: 14px; }
       .pain-grid { grid-template-columns: 1fr; }
-      .detail-pill { font-size: .78rem; padding: 8px 16px; }
       .contacts { gap: 10px; }
       .contact-link { font-size: .82rem; padding: 7px 14px; }
       #cta { padding: 60px 16px 70px; }
@@ -851,7 +656,6 @@
 
 <div class="cursor"></div>
 <div class="cursor-dot"></div>
-
 <div class="bg-wrap"></div>
 <div class="stars"></div>
 
@@ -872,12 +676,16 @@
   <!-- ══ HERO ══ -->
   <section id="hero">
     <div class="hero-bg">
-      <img src="Медитация на пляже при закате.png" alt="Ретрит на берегу Черного моря">
+      <img src="Медитация на пляже при закате.png" alt="Ретрит на берегу Черного моря — Болгария">
     </div>
     <div class="container">
-      <div class="badge">10 дней · Болгария · Черное море · май — октябрь</div>
+      <div class="badge">10 дней · Болгария · Черное море · Лето 2026</div>
 
-      <h1>Черный Ретрит:<br>войди в темноту —<br>найди себя</h1>
+      <h1>
+        <span class="h1-line"><span>Черный Ретрит:</span></span>
+        <span class="h1-line"><span>не медитация —</span></span>
+        <span class="h1-line"><span>настоящая работа</span></span>
+      </h1>
 
       <p class="subtitle" id="typewriter">Глубокое погружение на берегу Чёрного моря — пространство, где женщина перестаёт бежать и возвращает себя себе.</p>
 
@@ -897,54 +705,79 @@
       </div>
 
       <a href="https://t.me/blackretrit_bot" target="_blank" class="btn-cta">Хочу на ретрит</a>
-
+      <p style="margin-top:14px; font-size:.8rem; color:rgba(154,146,152,.5); letter-spacing:.06em;">Отвечу лично. Без обязательств.</p>
     </div>
   </section>
 
-  <!-- ══ PAIN SECTION ══ -->
+  <!-- ══ PAIN ══ -->
   <section id="pain">
     <div class="container">
       <p class="section-label">Вы здесь, потому что</p>
-      <p class="pain-lead">Одно из этого — про вас?</p>
+      <p class="pain-lead">Одна из этих ситуаций — про вас?</p>
 
       <div class="pain-grid">
-
         <div class="pain-card reveal">
           <div class="pain-icon">🌑</div>
           <h3>Вы устали держаться</h3>
           <p>Снаружи всё хорошо. Внутри — пустота, тихое ощущение что «что-то не так». Держитесь, потому что надо. Но силы заканчиваются.</p>
         </div>
-
         <div class="pain-card reveal">
           <div class="pain-icon">🔥</div>
           <h3>Выгорание не проходит</h3>
           <p>Отпуск не помогает. Просыпаетесь уже уставшей. Тело болит — врачи говорят «всё в норме». Вы чувствуете: это не просто усталость.</p>
         </div>
-
         <div class="pain-card reveal">
           <div class="pain-icon">🌊</div>
           <h3>Тревога без причины</h3>
-          <p>Фоновое напряжение, которое не выключается. Или тревога, которая появляется в самый неподходящий момент — и вы не понимаете откуда.</p>
+          <p>Фоновое напряжение, которое не выключается. Тревога появляется в самый неподходящий момент — и вы не понимаете откуда.</p>
         </div>
-
         <div class="pain-card reveal">
           <div class="pain-icon">🪞</div>
           <h3>Не понимаете себя</h3>
           <p>Забыли, чего хотите сами. Живёте в роли — матери, жены, руководителя. А кто вы — вне этих ролей? Ответа нет.</p>
         </div>
-
       </div>
 
       <p class="pain-closing">
-        Если хоть одно — про вас, вы попали туда, куда надо.<br>Это не отдых. Это работа. Настоящая.
+        Если хоть одно — про вас, вы попали туда, куда надо.<br>
+        Это не отдых. Это работа. Настоящая.
       </p>
-
       <div style="text-align:center; margin-top:36px;">
         <a href="https://t.me/blackretrit_bot" target="_blank" class="btn-cta" style="animation:none;">Узнать подробности</a>
       </div>
-
     </div>
   </section>
+
+  <!-- ══ MARQUEE ══ -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="marquee-item">10 дней <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Болгария · Святой Влас <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Черное море <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Малая группа до 8 человек <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Кризисная психология <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Физиотерапия <span class="marquee-dot"></span></span>
+      <span class="marquee-item">ThetaHealing <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Лето 2026 <span class="marquee-dot"></span></span>
+      <span class="marquee-item">34 года практики <span class="marquee-dot"></span></span>
+      <span class="marquee-item">200 м от моря <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Трансфер из Бургаса <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Питание с поваром <span class="marquee-dot"></span></span>
+      <!-- дублируем для бесшовного цикла -->
+      <span class="marquee-item">10 дней <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Болгария · Святой Влас <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Черное море <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Малая группа до 8 человек <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Кризисная психология <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Физиотерапия <span class="marquee-dot"></span></span>
+      <span class="marquee-item">ThetaHealing <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Лето 2026 <span class="marquee-dot"></span></span>
+      <span class="marquee-item">34 года практики <span class="marquee-dot"></span></span>
+      <span class="marquee-item">200 м от моря <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Трансфер из Бургаса <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Питание с поваром <span class="marquee-dot"></span></span>
+    </div>
+  </div>
 
   <!-- ══ ABOUT ══ -->
   <section id="about">
@@ -989,10 +822,10 @@
       <div class="diplomas-wrap">
         <h3>Образование и дипломы</h3>
         <div class="diplomas-grid">
-          <img src="diplomas2.jpg" alt="Дипломы и сертификаты Ph.Dr. Olga Tureva" class="diplomas-img">
+          <img src="diplomas.jpg"  alt="Дипломы Ph.Dr. Olga Tureva" class="diplomas-img">
+          <img src="diplomas2.jpg" alt="Сертификаты Ph.Dr. Olga Tureva" class="diplomas-img">
         </div>
       </div>
-
     </div>
   </section>
 
@@ -1082,15 +915,58 @@
 
   <!-- ══ PHOTO GALLERY ══ -->
   <section id="gallery">
-    <div class="gallery-grid">
+    <div class="container gallery-heading">
+      <p class="section-label">Место проведения</p>
+      <h2>Болгария, Святой Влас</h2>
+    </div>
+
+    <div class="gallery-masonry">
+
       <div class="gallery-item reveal">
-        <img src="1dea44c2-c1da-4c8e-8c3c-f051a61a32e1.png" alt="Женщины у костра на берегу моря">
-        <div class="gallery-caption">Вечер единения — огонь, море и женский круг</div>
+        <img src="photo_2026-04-02_18-03-32.jpg" alt="Панорама Черного моря с террасы — вид с холма">
+        <div class="gallery-caption">Вид с холма — цветы и море</div>
       </div>
+
       <div class="gallery-item reveal">
-        <img src="c142fb42-afdb-4254-8c59-b3b9293fd9f1.png" alt="Практики в кругу">
-        <div class="gallery-caption">Практики в кругу — тепло и поддержка каждой</div>
+        <img src="photo_2026-04-02_18-16-40.jpg" alt="Черное море и Святой Влас — панорама">
+        <div class="gallery-caption">Святой Влас — тихий курорт у моря</div>
       </div>
+
+      <div class="gallery-item reveal">
+        <img src="photo_2026-04-02_18-04-14.jpg" alt="Сосна на фоне Черного моря">
+        <div class="gallery-caption">200 метров от воды</div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <img src="photo_2026-04-02_18-17-30.jpg" alt="Марина Святого Власа — яхты и пальмы">
+        <div class="gallery-caption">Марина — вечерние прогулки у яхт</div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <img src="photo_2026-04-02_18-04-02.jpg" alt="Широкая панорама Черного моря">
+        <div class="gallery-caption">Открытое море — медитации на рассвете</div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <img src="photo_2026-04-02_18-17-52.jpg" alt="Пляж с зонтиками в Святом Власе">
+        <div class="gallery-caption">Пляж в шаговой доступности</div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <img src="photo_2026-04-02_18-17-00.jpg" alt="Вид на море и курорт с высоты">
+        <div class="gallery-caption">Мягкий климат с мая по октябрь</div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <img src="photo_2026-04-02_18-19-32.jpg" alt="Черное море — небо и горизонт">
+        <div class="gallery-caption">Бескрайний горизонт — место для внутренней работы</div>
+      </div>
+
+      <div class="gallery-item reveal">
+        <img src="photo_2026-04-02_18-19-57.jpg" alt="Марина с видом на холмы — Святой Влас">
+        <div class="gallery-caption">Болгария: Шенген с 2025 года, перелёт через Стамбул</div>
+      </div>
+
     </div>
   </section>
 
@@ -1185,7 +1061,15 @@
     </div>
   </section>
 
-  <!-- ══ DETAILS ══ -->
+  <!-- ══ DIVIDER — ШИРОКАЯ ПАНОРАМА МОРЯ ══ -->
+  <div class="section-divider-img">
+    <img src="photo_2026-04-02_18-16-40.jpg" alt="Черное море — Святой Влас, Болгария">
+    <div class="divider-overlay">
+      <p class="divider-quote">«Болгарское побережье — не фон. Это часть метода.»</p>
+    </div>
+  </div>
+
+  <!-- ══ DETAILS / FORMAT (BENTO) ══ -->
   <section id="details">
     <div class="container">
       <p class="section-label">Формат</p>
@@ -1205,10 +1089,6 @@
           Болгария · Святой Влас
         </div>
         <div class="detail-pill">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M2 12c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/><path d="M2 12h6M16 12h6M12 2v6M12 16v6" stroke="#c9a84c" stroke-width="1.3" stroke-linecap="round"/></svg>
-          200 м от моря
-        </div>
-        <div class="detail-pill">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#c9a84c" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/></svg>
           С мая по октябрь
         </div>
@@ -1218,10 +1098,11 @@
         </div>
       </div>
 
-      <div class="details-info-grid">
+      <!-- BENTO GRID -->
+      <div class="bento-grid">
 
-        <div class="details-info-card">
-          <div class="dic-icon dic-icon--gold">
+        <div class="bento-card reveal">
+          <div class="bento-icon bento-icon--gold">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
               <rect x="2" y="4" width="24" height="22" rx="3" stroke="#c9a84c" stroke-width="1.6" fill="none"/>
               <path d="M9 2 L9 7 M19 2 L19 7" stroke="#c9a84c" stroke-width="1.6" stroke-linecap="round"/>
@@ -1230,26 +1111,25 @@
               <rect x="16" y="15" width="3.5" height="3.5" rx="1" fill="rgba(201,168,76,.2)" stroke="#c9a84c" stroke-width="1"/>
             </svg>
           </div>
-          <p class="dic-title">10 дней / 9 ночей</p>
-          <p class="dic-desc">Не отпуск. Ровно столько, сколько нужно, чтобы войти в глубину и выйти с устойчивым новым состоянием.</p>
-          <div class="details-divider"></div>
-          <button class="btn-more" onclick="toggleDic(this)">Подробнее <i class="arrow">↓</i></button>
-          <div class="dic-more">
-            <div class="dic-more-text">
+          <p class="bento-title">10 дней / 9 ночей</p>
+          <p class="bento-desc">Не отпуск. Ровно столько, сколько нужно, чтобы войти в глубину и выйти с устойчивым новым состоянием.</p>
+          <div class="bento-divider"></div>
+          <button class="btn-more" onclick="toggleBento(this)">Подробнее <i class="arrow">↓</i></button>
+          <div class="bento-more">
+            <div class="bento-more-text">
               <ul>
                 <li>Дни 1–2: замедление, знакомство, настрой</li>
                 <li>Дни 2–5: Группа А — работа с закрытыми глазами, Группа Б — поддержка</li>
                 <li>День 6: интеграция, обмен опытом, смена ролей</li>
-                <li>Дни 7–9: Группа Б погружается в маски, Группа А — опора</li>
+                <li>Дни 7–9: Группа Б погружается, Группа А — опора</li>
                 <li>День 10: ритуал закрытия, личный план на три месяца «после»</li>
               </ul>
-              <p>Меньше — недостаточно. Больше — не нужно. Десять дней выверены годами практики.</p>
             </div>
           </div>
         </div>
 
-        <div class="details-info-card">
-          <div class="dic-icon dic-icon--rose">
+        <div class="bento-card reveal">
+          <div class="bento-icon bento-icon--rose">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
               <circle cx="10" cy="9" r="4.5" stroke="#c9a84c" stroke-width="1.6" fill="none"/>
               <circle cx="20" cy="11" r="3.5" stroke="#c9a84c" stroke-width="1.4" fill="none"/>
@@ -1257,60 +1137,35 @@
               <path d="M20 15 C23 15 26 17.5 26 21" stroke="#c9a84c" stroke-width="1.4" stroke-linecap="round" fill="none"/>
             </svg>
           </div>
-          <p class="dic-title">Малая группа до 8 чел.</p>
-          <p class="dic-desc">Тщательный отбор по анкете и личному созвону. Ведущая знает каждую участницу лично.</p>
-          <div class="details-divider"></div>
-          <button class="btn-more" onclick="toggleDic(this)">Подробнее <i class="arrow">↓</i></button>
-          <div class="dic-more">
-            <div class="dic-more-text">
+          <p class="bento-title">Малая группа до 8 чел.</p>
+          <p class="bento-desc">Тщательный отбор по анкете и личному созвону. Ведущая знает каждую участницу лично.</p>
+          <div class="bento-divider"></div>
+          <button class="btn-more" onclick="toggleBento(this)">Подробнее <i class="arrow">↓</i></button>
+          <div class="bento-more">
+            <div class="bento-more-text">
               <ul>
                 <li>Группа делится на две части — ключевой механизм ретрита</li>
                 <li>Рядом всегда есть кто-то: ведут за руку к морю, к столу</li>
-                <li>Потом группы меняются — и каждая проходит через оба состояния</li>
+                <li>Потом группы меняются — каждая проходит оба состояния</li>
                 <li>В такой уязвимости рождается близость, которая остаётся на годы</li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div class="details-info-card">
-          <div class="dic-icon dic-icon--gold">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <path d="M14 2 C8 2 3 7 3 13 C3 21 14 27 14 27 C14 27 25 21 25 13 C25 7 20 2 14 2Z" stroke="#c9a84c" stroke-width="1.6" fill="none"/>
-              <circle cx="14" cy="13" r="3.5" stroke="#c9a84c" stroke-width="1.4" fill="rgba(201,168,76,.18)"/>
-            </svg>
-          </div>
-          <p class="dic-title">Болгария · Черное море</p>
-          <p class="dic-desc">Святой Влас — тихий курорт. Отдельный дом в 200 метрах от моря. Трёхразовое питание с поваром.</p>
-          <div class="details-divider"></div>
-          <button class="btn-more" onclick="toggleDic(this)">Подробнее <i class="arrow">↓</i></button>
-          <div class="dic-more">
-            <div class="dic-more-text">
-              <ul>
-                <li>200 метров от моря — утренние медитации у воды, закат с прибоем</li>
-                <li>Новые апартаменты: вся мебель, постельное, техника — только новое</li>
-                <li>Трёхразовое питание: повар готовит прямо в доме</li>
-                <li>Аэропорт Бургас — 35 км, трансфер при раннем бронировании</li>
-                <li>С мая море уже 20–22°, плавать с первого дня</li>
-              </ul>
-              <p>Москва → Стамбул → Бургас. Болгария — Шенген с января 2025.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="details-info-card details-info-card--featured">
-          <div class="dic-icon dic-icon--rose">
+        <div class="bento-card bento-card--accent reveal">
+          <div class="bento-icon bento-icon--rose">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
               <path d="M14 2 L4 6 L4 14 C4 20 9 25.5 14 27 C19 25.5 24 20 24 14 L24 6 Z" stroke="#c9a84c" stroke-width="1.6" fill="none" stroke-linejoin="round"/>
               <path d="M9 14 L12.5 17.5 L19 11" stroke="#c9a84c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <p class="dic-title">Безопасность 24/7</p>
-          <p class="dic-desc">Кризисный психолог с 34-летним опытом рядом в любое время суток. Вы никогда не остаётесь одна.</p>
-          <div class="details-divider"></div>
-          <button class="btn-more" onclick="toggleDic(this)">Подробнее <i class="arrow">↓</i></button>
-          <div class="dic-more">
-            <div class="dic-more-text">
+          <p class="bento-title">Безопасность 24/7</p>
+          <p class="bento-desc">Кризисный психолог с 34-летним опытом рядом в любое время суток. Вы никогда не остаётесь одна.</p>
+          <div class="bento-divider"></div>
+          <button class="btn-more" onclick="toggleBento(this)">Подробнее <i class="arrow">↓</i></button>
+          <div class="bento-more">
+            <div class="bento-more-text">
               <ul>
                 <li>Собеседование до ретрита — исключаем противопоказания</li>
                 <li>Физическое сопровождение 24/7 — за руку в любой момент</li>
@@ -1321,13 +1176,38 @@
           </div>
         </div>
 
+        <div class="bento-card bento-card--wide reveal">
+          <div class="bento-icon bento-icon--gold">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <path d="M14 2 C8 2 3 7 3 13 C3 21 14 27 14 27 C14 27 25 21 25 13 C25 7 20 2 14 2Z" stroke="#c9a84c" stroke-width="1.6" fill="none"/>
+              <circle cx="14" cy="13" r="3.5" stroke="#c9a84c" stroke-width="1.4" fill="rgba(201,168,76,.18)"/>
+            </svg>
+          </div>
+          <p class="bento-title">Болгария · Черное море · Святой Влас</p>
+          <p class="bento-desc">Тихий курорт в 200 метрах от моря. Отдельный дом. Трёхразовое питание с поваром. Болгария — Шенген с января 2025.</p>
+          <div class="bento-divider"></div>
+          <button class="btn-more" onclick="toggleBento(this)">Подробнее <i class="arrow">↓</i></button>
+          <div class="bento-more">
+            <div class="bento-more-text">
+              <ul>
+                <li>200 метров от моря — утренние медитации у воды, закат с прибоем</li>
+                <li>Новые апартаменты: вся мебель, постельное, техника — только новое</li>
+                <li>Трёхразовое питание: повар готовит прямо в доме</li>
+                <li>Аэропорт Бургас — 35 км, трансфер при раннем бронировании</li>
+                <li>С мая море уже 20–22°, плавать с первого дня</li>
+                <li>Москва → Стамбул → Бургас. Прямые рейсы с мая.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ══ DIVIDER IMAGE ══ -->
+  <!-- ══ DIVIDER — ПРАКТИКА ══ -->
   <div class="section-divider-img">
-    <img src="retreat-divider.png" alt="Ретрит на берегу Чёрного моря">
+    <img src="retreat-practice.png" alt="Практики на ретрите">
     <div class="divider-overlay">
       <p class="divider-quote">«Когда закрываешь глаза — начинаешь по-настоящему видеть»</p>
     </div>
@@ -1402,7 +1282,6 @@
         </div>
         <div class="referral-badge">−10%</div>
       </div>
-
     </div>
   </section>
 
@@ -1416,8 +1295,7 @@
 
         <div class="faq-item">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span>Что такое Чёрный ретрит?</span>
-            <i class="faq-arrow">↓</i>
+            <span>Что такое Чёрный ретрит?</span><i class="faq-arrow">↓</i>
           </button>
           <div class="faq-a">
             <p>Чёрный ретрит — это 10 дней интенсивной работы с телом и психикой в условиях сенсорного ограничения. Участницы большую часть дня находятся с закрытыми глазами (мягкая тёмная повязка), что позволяет глубоко уйти внутрь себя. Практики — телесная терапия, кризисная психология, ThetaHealing, физиотерапия. Болгария, Святой Влас, малая группа до 8 человек.</p>
@@ -1426,8 +1304,7 @@
 
         <div class="faq-item">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span>Почему нужно проходить собеседование перед ретритом?</span>
-            <i class="faq-arrow">↓</i>
+            <span>Почему нужно проходить собеседование перед ретритом?</span><i class="faq-arrow">↓</i>
           </button>
           <div class="faq-a">
             <p>Потому что ретрит — интенсивная работа с психикой и телом. На собеседовании я узнаю вашу историю, выясняю, есть ли противопоказания, и определяю, готовы ли вы сейчас к этому формату. Если понимаю, что сейчас не время — говорю честно. Я не набираю группу ради группы: каждая участница приходит осознанно.</p>
@@ -1436,8 +1313,7 @@
 
         <div class="faq-item">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span>Безопасно ли ходить с маской на глазах?</span>
-            <i class="faq-arrow">↓</i>
+            <span>Безопасно ли ходить с маской на глазах?</span><i class="faq-arrow">↓</i>
           </button>
           <div class="faq-a">
             <p>Да. Маска — это мягкая тёмная повязка, как в самолёте. Вы можете снять её в любой момент без объяснений. Никакого принуждения. Рядом всегда кто-то есть: в туалет, к морю, к столу — вас ведут за руку. Вы никогда не остаётесь одна в темноте.</p>
@@ -1446,8 +1322,7 @@
 
         <div class="faq-item">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span>Что если мне станет страшно или плохо?</span>
-            <i class="faq-arrow">↓</i>
+            <span>Что если мне станет страшно или плохо?</span><i class="faq-arrow">↓</i>
           </button>
           <div class="faq-a">
             <p>Это нормальная часть процесса — страх означает, что работа идёт. Я как кризисный психолог слежу за состоянием каждой участницы. При необходимости — выходим из практики, работаем индивидуально, даём время. Никто не остаётся один в сложном состоянии.</p>
@@ -1456,8 +1331,7 @@
 
         <div class="faq-item">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span>Есть ли противопоказания?</span>
-            <i class="faq-arrow">↓</i>
+            <span>Есть ли противопоказания?</span><i class="faq-arrow">↓</i>
           </button>
           <div class="faq-a">
             <p>Да. Острые психотические состояния, тяжёлые психиатрические диагнозы в стадии обострения, беременность. Обо всём важном говорим на предварительном созвоне. Иногда я честно говорю: сейчас не время — и предлагаю другой формат. Ваша безопасность важнее.</p>
@@ -1466,8 +1340,7 @@
 
         <div class="faq-item">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span>Что входит в стоимость, а что нет?</span>
-            <i class="faq-arrow">↓</i>
+            <span>Что входит в стоимость, а что нет?</span><i class="faq-arrow">↓</i>
           </button>
           <div class="faq-a">
             <p><strong style="color:var(--gold);">Включено:</strong> проживание 10 дней, трёхразовое питание (повар в доме), вся программа ретрита, индивидуальная кризисная сессия, физиотерапевтическая диагностика и коррекция тела, трансфер из Бургаса (при раннем бронировании), все материалы для практик.</p>
@@ -1477,8 +1350,7 @@
 
         <div class="faq-item">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span>Можно ли приехать не на все 10 дней?</span>
-            <i class="faq-arrow">↓</i>
+            <span>Можно ли приехать не на все 10 дней?</span><i class="faq-arrow">↓</i>
           </button>
           <div class="faq-a">
             <p>Нет. Формат выстроен как единый цикл. Уйти в середине — значит прервать процесс в самом уязвимом месте. Пожалуйста, планируйте заранее и закрывайте все дела до приезда.</p>
@@ -1487,8 +1359,7 @@
 
         <div class="faq-item">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span>Нужна ли виза? Как добраться?</span>
-            <i class="faq-arrow">↓</i>
+            <span>Нужна ли виза? Как добраться?</span><i class="faq-arrow">↓</i>
           </button>
           <div class="faq-a">
             <p>Болгария вступила в Шенген с января 2025 года. Удобный маршрут: Москва или Петербург → Стамбул → Бургас (прямые рейсы с мая). Из Бургаса до Святого Власа 35 км. Трансфер из Бургаса — бонус для тех, кто заранее бронирует место.</p>
@@ -1497,8 +1368,7 @@
 
         <div class="faq-item">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span>Можно ли вернуть предоплату, если планы изменятся?</span>
-            <i class="faq-arrow">↓</i>
+            <span>Можно ли вернуть предоплату, если планы изменятся?</span><i class="faq-arrow">↓</i>
           </button>
           <div class="faq-a">
             <p>При отмене за 30 и более дней — предоплата возвращается полностью. За 14–30 дней — 50%. Менее чем за 14 дней — предоплата не возвращается, но место можно передать подруге (по согласованию). Форс-мажоры рассматриваем индивидуально.</p>
@@ -1507,8 +1377,7 @@
 
         <div class="faq-item">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span>На каком языке проходит ретрит?</span>
-            <i class="faq-arrow">↓</i>
+            <span>На каком языке проходит ретрит?</span><i class="faq-arrow">↓</i>
           </button>
           <div class="faq-a">
             <p>Только на русском языке. Группа полностью русскоговорящая. Глубокая психологическая работа требует родного языка — точных слов и тонких нюансов.</p>
@@ -1609,7 +1478,7 @@
   <section id="cta">
     <div class="container">
       <div class="cta-wrap">
-        <span class="cta-tag">Места ограничены · 8 человек</span>
+        <span class="cta-tag">Места ограничены · 8 человек · Лето 2026</span>
         <h2>Готовы сделать шаг?</h2>
         <p>
           Запишитесь на бесплатную консультацию — узнайте все детали ретрита
@@ -1673,7 +1542,6 @@
           </svg>
           <span></span>
         </div>
-
       </div>
     </div>
   </section>
@@ -1681,7 +1549,7 @@
 </main>
 
 <footer>
-  <p>© 2025 Ph.Dr. Olga Tureva &nbsp;·&nbsp; <a href="http://turevaolga.space">turevaolga.space</a> &nbsp;·&nbsp; Черный Ретрит Болгария</p>
+  <p>© 2026 Ph.Dr. Olga Tureva &nbsp;·&nbsp; <a href="http://turevaolga.space">turevaolga.space</a> &nbsp;·&nbsp; Черный Ретрит Болгария</p>
 </footer>
 
 <script>
@@ -1693,38 +1561,33 @@
   document.addEventListener('mousemove', e => {
     mouseX = e.clientX; mouseY = e.clientY;
     cursorDot.style.left = mouseX + 'px';
-    cursorDot.style.top = mouseY + 'px';
+    cursorDot.style.top  = mouseY + 'px';
   });
-
   (function animateCursor() {
     curX += (mouseX - curX) * 0.12;
     curY += (mouseY - curY) * 0.12;
     cursor.style.left = curX + 'px';
-    cursor.style.top = curY + 'px';
+    cursor.style.top  = curY + 'px';
     requestAnimationFrame(animateCursor);
   })();
-
   document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => { cursor.style.width = '40px'; cursor.style.height = '40px'; cursor.style.borderColor = 'var(--gold)'; });
-    el.addEventListener('mouseleave', () => { cursor.style.width = '20px'; cursor.style.height = '20px'; cursor.style.borderColor = 'rgba(201,168,76,.7)'; });
+    el.addEventListener('mouseenter', () => { cursor.style.width='40px'; cursor.style.height='40px'; cursor.style.borderColor='var(--gold)'; });
+    el.addEventListener('mouseleave', () => { cursor.style.width='20px'; cursor.style.height='20px'; cursor.style.borderColor='rgba(201,168,76,.7)'; });
   });
 
   // ── Navigation scroll ──
   const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
 
   // ── Typewriter ──
   const phrases = [
     'Глубокое погружение на берегу Чёрного моря.',
-    'Кризисная психология. 10 дней. Реальная работа.',
+    'Не медитация. Не йога. Кризисная психология.',
     'Для тех, кто устал держаться в одиночку.',
-    'Не медитация. Не отдых. Трансформация.'
+    'Не курорт. Настоящая работа. Лето 2026.'
   ];
   let pIdx = 0, cIdx = 0, deleting = false;
   const tw = document.getElementById('typewriter');
-
   function typeStep() {
     const phrase = phrases[pIdx];
     if (!deleting) {
@@ -1740,32 +1603,27 @@
 
   // ── Scroll reveal ──
   const revealEls = document.querySelectorAll(
-    '.whom-card, .card, .gallery-item, .detail-pill, .section-label, h2, .badge, .cta-tag, .contact-link, .btn-form, .pain-card, .bonus-card, .info-card'
+    '.whom-card, .card, .gallery-item, .detail-pill, .section-label, h2, .badge, .cta-tag, .contact-link, .btn-form, .pain-card, .bonus-card, .info-card, .bento-card'
   );
   revealEls.forEach(el => el.classList.add('reveal'));
-
   const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.1 });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
   revealEls.forEach(el => io.observe(el));
 
   // ── FAQ accordion ──
-  function toggleFaq(btn) {
-    btn.closest('.faq-item').classList.toggle('open');
-  }
+  function toggleFaq(btn) { btn.closest('.faq-item').classList.toggle('open'); }
 
-  // ── Toggle more ──
+  // ── Toggle more (cards) ──
   function toggleMore(btn) {
     const card = btn.closest('.whom-card, .card, .info-card');
     const isOpen = card.classList.toggle('open');
     btn.innerHTML = isOpen ? 'Скрыть <i class="arrow">↓</i>' : 'Подробнее <i class="arrow">↓</i>';
   }
 
-  // ── Toggle dic ──
-  function toggleDic(btn) {
-    const card = btn.closest('.details-info-card');
+  // ── Toggle bento ──
+  function toggleBento(btn) {
+    const card = btn.closest('.bento-card');
     const isOpen = card.classList.toggle('open');
     btn.innerHTML = isOpen ? 'Скрыть <i class="arrow">↓</i>' : 'Подробнее <i class="arrow">↓</i>';
   }
