@@ -327,7 +327,7 @@
     }
     .btn-more:hover { background: rgba(201,168,76,.12); border-color: rgba(201,168,76,.7); }
     .btn-more .arrow { display: inline-block; transition: transform .3s; font-style: normal; }
-    .whom-card.open .btn-more .arrow, .card.open .btn-more .arrow, .info-card.open .btn-more .arrow { transform: rotate(180deg); }
+    .whom-card.open .btn-more .arrow, .card.open .btn-more .arrow, .info-card.open .btn-more .arrow, .bonus-card.open .btn-more .arrow { transform: rotate(180deg); }
 
     /* ── GALLERY (MASONRY) ── */
     #gallery { padding: 0 20px 70px; }
@@ -1341,6 +1341,17 @@
           <h3>Трансфер из Бургаса</h3>
           <p>Встречаю лично в аэропорту и везу до дома ретрита — 35 км без такси и поиска дороги.</p>
           <span class="bonus-tag">При раннем бронировании</span>
+          <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
+          <div class="whom-more">
+            <div class="whom-more-text">
+              <ul>
+                <li>Личная встреча в аэропорту Бургас — не нужно искать такси и разбираться с маршрутом</li>
+                <li>35 км до дома ретрита — довезу прямо до двери</li>
+                <li>Трансфер из Варны тоже доступен — со скидкой 50%</li>
+                <li>Бонус действует при раннем бронировании места</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div class="bonus-card reveal">
@@ -1357,6 +1368,19 @@
           <h3>Физиотерапия</h3>
           <p>Индивидуальная диагностика и коррекция тела: тазовые кости, позвоночник, выравнивание. Уходите с техникой — 5 минут в день дома.</p>
           <span class="bonus-tag">Включено в программу</span>
+          <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
+          <div class="whom-more">
+            <div class="whom-more-text">
+              <ul>
+                <li>Диагностика тазовых костей, длины ног и осанки — видите, что происходит с телом</li>
+                <li>Коррекция с использованием банок — снимаем накопленное напряжение</li>
+                <li>Авторский метод выравнивания правой и левой частей тела</li>
+                <li>Работа со специальным прибором для растяжки позвоночника</li>
+                <li>Техника самостоятельного выравнивания — делаете дома 5 минут в день</li>
+                <li>Это то, чего нет ни на одном другом ретрите</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div class="bonus-card reveal">
@@ -1371,6 +1395,18 @@
           <h3>Техника выхода из стресса</h3>
           <p>Авторская техника Ph.Dr. Olga Tureva — работает у каждого мгновенно. Остаётся с вами навсегда.</p>
           <span class="bonus-tag">Навык на всю жизнь</span>
+          <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
+          <div class="whom-more">
+            <div class="whom-more-text">
+              <ul>
+                <li>Авторская разработка — создана на основе 34 лет практики кризисной психологии</li>
+                <li>Работает мгновенно, у каждого человека, без исключений</li>
+                <li>После ретрита вы умеете выходить из любой стрессовой ситуации быстро</li>
+                <li>Без саморазрушения, без срывов, без накопления напряжения</li>
+                <li>Навык остаётся с вами навсегда — это не медитация, а конкретный инструмент</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -1769,7 +1805,7 @@
 
   // ── Toggle more (cards) ──
   function toggleMore(btn) {
-    const card = btn.closest('.whom-card, .card, .info-card');
+    const card = btn.closest('.whom-card, .card, .info-card, .bonus-card');
     const isOpen = card.classList.toggle('open');
     btn.innerHTML = isOpen ? 'Скрыть <i class="arrow">↓</i>' : 'Подробнее <i class="arrow">↓</i>';
   }
