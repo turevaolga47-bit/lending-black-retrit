@@ -190,6 +190,11 @@
     .h1-line:nth-child(2) span { animation-delay: .15s; }
     .h1-line:nth-child(3) span { animation-delay: .3s; }
 
+    .subtitle-static {
+      font-size: clamp(.85rem, 2vw, 1rem); color: rgba(184,168,152,.75);
+      max-width: 560px; margin: 0 auto 10px; line-height: 1.65;
+      animation: fadeInUp .8s .25s ease both; letter-spacing: .02em;
+    }
     .subtitle {
       font-size: clamp(1rem, 2.4vw, 1.2rem); color: #b8a898;
       max-width: 580px; margin: 0 auto 16px; line-height: 1.75;
@@ -837,6 +842,7 @@
     <li><a href="#for-whom">Для кого</a></li>
     <li><a href="#about">Ведущая</a></li>
     <li><a href="#details">Формат</a></li>
+    <li><a href="#info-cards">Стоимость</a></li>
     <li><a href="#faq">Вопросы</a></li>
   </ul>
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLDvaHzHyzsoG8nfp9drlOOivXA6YbGjWsmXr1KpqgQlKu3A/viewform?usp=sharing&ouid=108677729308754483977" target="_blank" class="nav-cta">Записаться</a>
@@ -853,12 +859,13 @@
       <div class="badge">10 дней · Болгария · Черное море · Лето 2026</div>
 
       <h1>
-        <span class="h1-line"><span>Черный Ретрит:</span></span>
-        <span class="h1-line"><span>не медитация —</span></span>
-        <span class="h1-line"><span>настоящая работа</span></span>
+        <span class="h1-line"><span>Когда отдых</span></span>
+        <span class="h1-line"><span>уже не помогает —</span></span>
+        <span class="h1-line"><span>нужна другая работа</span></span>
       </h1>
 
-      <p class="subtitle" id="typewriter">Глубокое погружение на берегу Чёрного моря — пространство, где женщина перестаёт бежать и возвращает себя себе.</p>
+      <p class="subtitle-static">Для женщин в выгорании и кризисе. 10 дней, Болгария, Черное море. Ведущая — кризисный психолог с 34-летним опытом. Группа до 8 человек.</p>
+      <p class="subtitle" id="typewriter">Пространство, где вы впервые за годы просыпаетесь без тревоги.</p>
 
       <div class="hero-stats">
         <div class="hero-stat">
@@ -875,8 +882,8 @@
         </div>
       </div>
 
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLDvaHzHyzsoG8nfp9drlOOivXA6YbGjWsmXr1KpqgQlKu3A/viewform?usp=sharing&ouid=108677729308754483977" target="_blank" class="btn-cta">Хочу на ретрит</a>
-      <p style="margin-top:14px; font-size:.8rem; color:rgba(154,146,152,.5); letter-spacing:.06em;">Отвечу лично. Без обязательств.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLDvaHzHyzsoG8nfp9drlOOivXA6YbGjWsmXr1KpqgQlKu3A/viewform?usp=sharing&ouid=108677729308754483977" target="_blank" class="btn-cta">Узнать, подходит ли мне ретрит</a>
+      <p style="margin-top:14px; font-size:.78rem; color:rgba(154,146,152,.5); letter-spacing:.05em;">Анкета → созвон с Ольгой → решение о месте. Без обязательств.</p>
     </div>
   </section>
 
@@ -963,7 +970,8 @@
         </div>
         <div class="about-text-col">
           <p class="about-name">Ольга Турьева</p>
-          <p class="about-title">Доктор философии · Кризисный психолог · Соматолог · Физиотерапевт</p>
+          <p class="about-title">Кризисный психолог · Соматолог · Физиотерапевт</p>
+          <p style="font-size:.78rem; color:rgba(154,146,152,.55); margin-bottom:16px; letter-spacing:.04em;">Ph.Dr. — Доктор философии (Чехия). Официальная учёная степень, присвоенная после защиты научной работы. Налоговый резидент Чешской Республики, работала практикующим физиотерапевтом в Праге 15 лет с официальными профессиональными документами.</p>
 
           <p><strong>34 года практики.</strong> Работала в Праге 15 лет. Сейчас — онлайн из Германии и очно на ретритах. Ко мне приходят тогда, когда больше никто не помог: перед операциями, в разводах, после потерь.</p>
 
@@ -1083,6 +1091,85 @@
     </div>
   </section>
 
+  <!-- ══ ABOUT RETREAT ══ -->
+  <section id="about-retreat">
+    <canvas id="retreat-stars"></canvas>
+    <div class="container">
+      <p class="section-label">О ретрите</p>
+      <h2>Что такое Чёрный ретрит</h2>
+
+      <div class="retreat-lead">
+        <p>Это не отдых и не медитация. Чёрный ретрит — это 10 дней глубокой трансформационной работы с телом и психикой. В отличие от обычных велнес-программ, здесь нет красивых ритуалов ради ритуалов. Есть настоящая работа: с тем, что болит, мешает и держит вас в одном и том же месте годами.</p>
+        <p>Участницы большую часть дня проводят в условиях сенсорного ограничения — с закрытыми глазами. Когда исчезает зрение, включается то, что обычно заглушает шум жизни: тело, чувства, интуиция. Именно здесь начинается настоящий контакт с собой.</p>
+      </div>
+
+      <div class="retreat-grid">
+
+        <div class="retreat-block reveal">
+          <div class="retreat-block-icon">◈</div>
+          <h3>Для кого этот ретрит</h3>
+          <p>Для женщин, которые устали быть в роли и хотят вернуться к себе.</p>
+          <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
+          <div class="whom-more">
+            <div class="whom-more-text">
+              <ul>
+                <li>Вы живёте на износ: работа, семья, обязательства — и ни минуты на себя</li>
+                <li>Вы в точке выгорания: отпуск не помогает, тело сигналит болью и усталостью</li>
+                <li>Вы переживаете серьёзные изменения: развод, потеря, болезнь, смена жизненного курса</li>
+                <li>У вас повторяются одни и те же сценарии — в отношениях, деньгах, карьере — и вы понимаете, что дело внутри</li>
+                <li>Вы чувствуете: что-то должно измениться. Но не знаете, с чего начать</li>
+              </ul>
+              <p style="margin-top:12px;"><em>Важно: ретрит требует психологической готовности к интенсивной работе. Обсуждаем на предварительном созвоне.</em></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="retreat-block reveal">
+          <div class="retreat-block-icon">◈</div>
+          <h3>Какие запросы здесь прорабатываются</h3>
+          <p>Ретрит работает с тем, что не решается «ещё одним курсом» или разговорами с подругой.</p>
+          <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
+          <div class="whom-more">
+            <div class="whom-more-text">
+              <ul>
+                <li><strong style="color:var(--gold-light);">Хроническая усталость и выгорание</strong> — когда отдых не восстанавливает, а тело болит без причин</li>
+                <li><strong style="color:var(--gold-light);">Ощущение «я живу не свою жизнь»</strong> — потеря себя в ролях матери, жены, руководителя</li>
+                <li><strong style="color:var(--gold-light);">Тревога и страх</strong> — фоновое напряжение, которое не выключается</li>
+                <li><strong style="color:var(--gold-light);">Повторяющиеся паттерны</strong> — одни и те же проблемы в отношениях, деньгах, саботаж собственных успехов</li>
+                <li><strong style="color:var(--gold-light);">Эмоциональные травмы</strong> — то, что осело в теле и влияет на жизнь через психосоматику</li>
+                <li><strong style="color:var(--gold-light);">Экзистенциальный кризис</strong> — потеря смысла, апатия, пустота при внешнем благополучии</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="retreat-block reveal">
+          <div class="retreat-block-icon">◈</div>
+          <h3>Что меняется после</h3>
+          <p>Ретрит запускает процесс, который продолжается после отъезда. Это не разовая встряска — это сдвиг.</p>
+          <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
+          <div class="whom-more">
+            <div class="whom-more-text">
+              <ul>
+                <li><strong style="color:var(--gold-light);">Уходит хроническое напряжение</strong> — тревога, подавленность, апатия перестают быть фоном жизни</li>
+                <li><strong style="color:var(--gold-light);">Возвращается контакт с собой</strong> — вы снова слышите, чего хотите, что чувствуете, где ваша граница</li>
+                <li><strong style="color:var(--gold-light);">Рвутся старые сценарии</strong> — там, где раньше срабатывал автопилот, появляется выбор</li>
+                <li><strong style="color:var(--gold-light);">Возвращается энергия</strong> — не из силы воли, а из восстановленного ресурса тела и психики</li>
+                <li><strong style="color:var(--gold-light);">Меняется качество отношений</strong> — вы начинаете строить их из себя, а не из страха или привычки</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="retreat-note">
+        Чёрный ретрит — это не волшебная таблетка. Это встреча с собой настоящей — без масок, ролей и привычных защит. Это требует мужества. И именно поэтому меняет всё.
+      </div>
+
+    </div>
+  </section>
+
   <!-- ══ TESTIMONIAL ══ -->
   <section id="testimonial">
     <div class="container">
@@ -1198,28 +1285,6 @@
 
         <div class="review-card reveal">
           <div class="review-author">
-            <div class="review-avatar">О</div>
-            <div>
-              <p class="review-name">Ольга Варлахина</p>
-              <p class="review-tag">Марафон</p>
-            </div>
-          </div>
-          <p class="review-text"><strong>Поняла, где собака зарыта — что мешает.</strong> Поймала разницу между детскими и взрослыми желаниями, и это так явно видится сейчас, что странно почему раньше не дошло. Про технику простукивания знала, но игнорировала — теперь буду точно использовать. Как эксперт скажу: 100% польза и выгода для людей. Качественный, эффективный и результативный материал. Ценно.</p>
-        </div>
-
-        <div class="review-card reveal">
-          <div class="review-author">
-            <div class="review-avatar">Р</div>
-            <div>
-              <p class="review-name">Рауза Шакшакбаева</p>
-              <p class="review-tag">Работа с родовыми программами</p>
-            </div>
-          </div>
-          <p class="review-text">Благодарю за профессионализм. В памяти всплывали истории: с 3 лет я попадала в катастрофы — бык, тонула, автоаварии. <strong>Благодаря Ольге осознала: всё это программы смерти. Но я живая, активная и собираюсь жить долго и счастливо.</strong> Значит у меня есть миссия. Осознала, что большую часть жизни прожила в мужской энергии. Было и освобождение, и помощь, и много других осознаний.</p>
-        </div>
-
-        <div class="review-card reveal">
-          <div class="review-author">
             <div class="review-avatar">Н</div>
             <div>
               <p class="review-name">Наталья, методолог</p>
@@ -1227,28 +1292,6 @@
             </div>
           </div>
           <p class="review-text">Несколько лет ухудшалось самочувствие и здоровье — это влияло на всё: финансы, работу, отношения. <strong>За две сессии получила большое количество рекомендаций и практик.</strong> Главное открытие — я живу не свою жизнь, взяла на себя чужой сценарий. Внутренне чувствовала, но не понимала что происходит. Вы аккуратно провели меня в регресс, и всё встало на свои места. Поняла в каком направлении продолжать работу по возвращению себя себе.</p>
-        </div>
-
-        <div class="review-card reveal">
-          <div class="review-author">
-            <div class="review-avatar">О</div>
-            <div>
-              <p class="review-name">Ольга Ильина</p>
-              <p class="review-tag">Личная консультация</p>
-            </div>
-          </div>
-          <p class="review-text">Появились сомнения в том, чем занимаюсь — их пытались внушить извне. Ольга практически сразу сказала: <strong>я просто не пошла по пути другого человека, а осталась в своём энергетическом поле.</strong> Чётко объяснила как попадаем на внушения других людей. Планирую работать дальше — видно, что человек знает и понимает что делает. Если хотите привести мысли и тело в порядок — смело обращайтесь.</p>
-        </div>
-
-        <div class="review-card reveal">
-          <div class="review-author">
-            <div class="review-avatar">А</div>
-            <div>
-              <p class="review-name">Алина</p>
-              <p class="review-tag">Консультация</p>
-            </div>
-          </div>
-          <p class="review-text">Давно подписана, не верила что смогу попасть. <strong>Всё было сказано в точку — про меня, мою жизнь, отношения в семье, мою боль и чувства.</strong> Как будто Ольга знает меня много лет. Чувствовалась эмпатия и сопереживание. Озвучила как работать с собой и в каком направлении двигаться дальше. Если стоишь перед выбором, не знаешь в какие двери стучаться — не жди, напиши. Жизнь заиграет другими красками.</p>
         </div>
 
         <div class="review-card reveal">
@@ -1262,28 +1305,82 @@
           <p class="review-text">Привыкла к боли, которая пронизывает всё тело — и не замечала её. Несла чужую боль, так как долго работала с людьми с сильной эмпатией. <strong>Техника простукивания сняла острую боль не только с груди, но и с суставов.</strong> Настолько расслабилась — доверилась своему телу. Чувствую себя стройной, молодой и здоровой — всё тело начало втягиваться в этот образ. Буду делать эту технику каждый день.</p>
         </div>
 
-        <div class="review-card reveal">
-          <div class="review-author">
-            <div class="review-avatar">Т</div>
-            <div>
-              <p class="review-name">Татьяна</p>
-              <p class="review-tag">Личная работа</p>
-            </div>
-          </div>
-          <p class="review-text">Работа интересная, мощная, глубинная. Круто, когда с помощью специалиста можешь решить проблемы, которые тяготят всю жизнь — а здесь один сеанс приводит ко всем ответам. Учат как самому понимать подсказки тела, ведь только наше тело знает нас лучше всех. <strong>Отдельно спасибо за техники для больной спины — чудесные и работающие.</strong> А ещё мне безумно нравится открытость, лёгкость и забота Ольги к каждому клиенту. Это очень дорого.</p>
-        </div>
+      </div>
 
-        <div class="review-card reveal">
-          <div class="review-author">
-            <div class="review-avatar">Г</div>
-            <div>
-              <p class="review-name">Татьяна Глушкова</p>
-              <p class="review-tag">REELS-мейкер · диагностика</p>
-            </div>
-          </div>
-          <p class="review-text">Ольга, огромное спасибо за диагностику! За такое короткое время раскрыла мои «боли» и направила в нужные русла — <strong>получился пошаговый алгоритм: знаю, что мне надо делать.</strong> Главное — ушёл страх, потому что поняла свою сильную сторону. Наполнилась ресурсом и положительными вибрациями. Благодарю.</p>
-        </div>
+      <div id="reviews-more" style="display:none;">
+        <div class="reviews-grid" style="margin-top:14px;">
 
+          <div class="review-card reveal">
+            <div class="review-author">
+              <div class="review-avatar">О</div>
+              <div>
+                <p class="review-name">Ольга Варлахина</p>
+                <p class="review-tag">Марафон</p>
+              </div>
+            </div>
+            <p class="review-text"><strong>Поняла, где собака зарыта — что мешает.</strong> Поймала разницу между детскими и взрослыми желаниями, и это так явно видится сейчас, что странно почему раньше не дошло. Про технику простукивания знала, но игнорировала — теперь буду точно использовать. Как эксперт скажу: 100% польза и выгода для людей. Качественный, эффективный и результативный материал. Ценно.</p>
+          </div>
+
+          <div class="review-card reveal">
+            <div class="review-author">
+              <div class="review-avatar">Р</div>
+              <div>
+                <p class="review-name">Рауза Шакшакбаева</p>
+                <p class="review-tag">Работа с родовыми программами</p>
+              </div>
+            </div>
+            <p class="review-text">Благодарю за профессионализм. В памяти всплывали истории: с 3 лет я попадала в катастрофы — бык, тонула, автоаварии. <strong>Благодаря Ольге осознала: всё это программы смерти. Но я живая, активная и собираюсь жить долго и счастливо.</strong> Значит у меня есть миссия. Осознала, что большую часть жизни прожила в мужской энергии.</p>
+          </div>
+
+          <div class="review-card reveal">
+            <div class="review-author">
+              <div class="review-avatar">О</div>
+              <div>
+                <p class="review-name">Ольга Ильина</p>
+                <p class="review-tag">Личная консультация</p>
+              </div>
+            </div>
+            <p class="review-text">Появились сомнения в том, чем занимаюсь — их пытались внушить извне. Ольга практически сразу сказала: <strong>я просто не пошла по пути другого человека, а осталась в своём энергетическом поле.</strong> Чётко объяснила как попадаем на внушения других людей. Видно, что человек знает и понимает что делает.</p>
+          </div>
+
+          <div class="review-card reveal">
+            <div class="review-author">
+              <div class="review-avatar">А</div>
+              <div>
+                <p class="review-name">Алина</p>
+                <p class="review-tag">Консультация</p>
+              </div>
+            </div>
+            <p class="review-text">Давно подписана, не верила что смогу попасть. <strong>Всё было сказано в точку — про меня, мою жизнь, отношения в семье, мою боль и чувства.</strong> Как будто Ольга знает меня много лет. Чувствовалась эмпатия и сопереживание. Жизнь заиграет другими красками.</p>
+          </div>
+
+          <div class="review-card reveal">
+            <div class="review-author">
+              <div class="review-avatar">Т</div>
+              <div>
+                <p class="review-name">Татьяна</p>
+                <p class="review-tag">Личная работа</p>
+              </div>
+            </div>
+            <p class="review-text">Работа интересная, мощная, глубинная. Круто, когда с помощью специалиста можешь решить проблемы, которые тяготят всю жизнь. <strong>Отдельно спасибо за техники для больной спины — чудесные и работающие.</strong> А ещё мне безумно нравится открытость, лёгкость и забота Ольги к каждому клиенту.</p>
+          </div>
+
+          <div class="review-card reveal">
+            <div class="review-author">
+              <div class="review-avatar">Г</div>
+              <div>
+                <p class="review-name">Татьяна Глушкова</p>
+                <p class="review-tag">REELS-мейкер · диагностика</p>
+              </div>
+            </div>
+            <p class="review-text">Ольга, огромное спасибо за диагностику! За такое короткое время раскрыла мои «боли» и направила в нужные русла — <strong>получился пошаговый алгоритм: знаю, что мне надо делать.</strong> Главное — ушёл страх, потому что поняла свою сильную сторону.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:28px;">
+        <button class="btn-more" id="reviews-toggle" onclick="toggleReviews()" style="font-size:.85rem; padding:9px 28px;">Показать ещё 6 отзывов <i class="arrow" style="display:inline-block;transition:transform .3s;">↓</i></button>
       </div>
 
       <p class="reviews-note">Отзывы о личной работе и клубе. Отзывы участниц ретрита появятся после первого заезда — май 2026.</p>
@@ -1820,85 +1917,6 @@
     </div>
   </section>
 
-  <!-- ══ ABOUT RETREAT ══ -->
-  <section id="about-retreat">
-    <canvas id="retreat-stars"></canvas>
-    <div class="container">
-      <p class="section-label">О ретрите</p>
-      <h2>Что такое Чёрный ретрит</h2>
-
-      <div class="retreat-lead">
-        <p>Это не отдых и не медитация. Чёрный ретрит — это 10 дней глубокой трансформационной работы с телом и психикой. В отличие от обычных велнес-программ, здесь нет красивых ритуалов ради ритуалов. Есть настоящая работа: с тем, что болит, мешает и держит вас в одном и том же месте годами.</p>
-        <p>Участницы большую часть дня проводят в условиях сенсорного ограничения — с закрытыми глазами. Когда исчезает зрение, включается то, что обычно заглушает шум жизни: тело, чувства, интуиция. Именно здесь начинается настоящий контакт с собой.</p>
-      </div>
-
-      <div class="retreat-grid">
-
-        <div class="retreat-block reveal">
-          <div class="retreat-block-icon">◈</div>
-          <h3>Для кого этот ретрит</h3>
-          <p>Для женщин, которые устали быть в роли и хотят вернуться к себе.</p>
-          <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
-          <div class="whom-more">
-            <div class="whom-more-text">
-              <ul>
-                <li>Вы живёте на износ: работа, семья, обязательства — и ни минуты на себя</li>
-                <li>Вы в точке выгорания: отпуск не помогает, тело сигналит болью и усталостью</li>
-                <li>Вы переживаете серьёзные изменения: развод, потеря, болезнь, смена жизненного курса</li>
-                <li>У вас повторяются одни и те же сценарии — в отношениях, деньгах, карьере — и вы понимаете, что дело внутри</li>
-                <li>Вы чувствуете: что-то должно измениться. Но не знаете, с чего начать</li>
-              </ul>
-              <p style="margin-top:12px;"><em>Важно: ретрит требует психологической готовности к интенсивной работе. Обсуждаем на предварительном созвоне.</em></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="retreat-block reveal">
-          <div class="retreat-block-icon">◈</div>
-          <h3>Какие запросы здесь прорабатываются</h3>
-          <p>Ретрит работает с тем, что не решается «ещё одним курсом» или разговорами с подругой.</p>
-          <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
-          <div class="whom-more">
-            <div class="whom-more-text">
-              <ul>
-                <li><strong style="color:var(--gold-light);">Хроническая усталость и выгорание</strong> — когда отдых не восстанавливает, а тело болит без причин</li>
-                <li><strong style="color:var(--gold-light);">Ощущение «я живу не свою жизнь»</strong> — потеря себя в ролях матери, жены, руководителя</li>
-                <li><strong style="color:var(--gold-light);">Тревога и страх</strong> — фоновое напряжение, которое не выключается</li>
-                <li><strong style="color:var(--gold-light);">Повторяющиеся паттерны</strong> — одни и те же проблемы в отношениях, деньгах, саботаж собственных успехов</li>
-                <li><strong style="color:var(--gold-light);">Эмоциональные травмы</strong> — то, что осело в теле и влияет на жизнь через психосоматику</li>
-                <li><strong style="color:var(--gold-light);">Экзистенциальный кризис</strong> — потеря смысла, апатия, пустота при внешнем благополучии</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="retreat-block reveal">
-          <div class="retreat-block-icon">◈</div>
-          <h3>Что меняется после</h3>
-          <p>Ретрит запускает процесс, который продолжается после отъезда. Это не разовая встряска — это сдвиг.</p>
-          <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
-          <div class="whom-more">
-            <div class="whom-more-text">
-              <ul>
-                <li><strong style="color:var(--gold-light);">Уходит хроническое напряжение</strong> — тревога, подавленность, апатия перестают быть фоном жизни</li>
-                <li><strong style="color:var(--gold-light);">Возвращается контакт с собой</strong> — вы снова слышите, чего хотите, что чувствуете, где ваша граница</li>
-                <li><strong style="color:var(--gold-light);">Рвутся старые сценарии</strong> — там, где раньше срабатывал автопилот, появляется выбор</li>
-                <li><strong style="color:var(--gold-light);">Возвращается энергия</strong> — не из силы воли, а из восстановленного ресурса тела и психики</li>
-                <li><strong style="color:var(--gold-light);">Меняется качество отношений</strong> — вы начинаете строить их из себя, а не из страха или привычки</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="retreat-note">
-        Чёрный ретрит — это не волшебная таблетка. Это встреча с собой настоящей — без масок, ролей и привычных защит. Это требует мужества. И именно поэтому меняет всё.
-      </div>
-
-    </div>
-  </section>
-
   <!-- ══ ACCOMMODATION ══ -->
   <section id="accommodation">
     <div class="container">
@@ -2080,22 +2098,35 @@
               <path d="M13 13 C13 11 15 10 18 10 C21 10 23 11.5 23 13.5 C23 15.5 21 16.5 18 17.5 C15 18.5 13 19.5 13 22 C13 24 15 26 18 26 C21 26 23 24.5 23 22.5" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
             </svg>
           </div>
-          <h3>Стоимость</h3>
-          <p>8 участниц, работают парами. Питание и всё необходимое включено. Полная оплата при заселении.</p>
-          <button class="btn-more info-btn" onclick="toggleMore(this)">Даты и цены <i class="arrow">↓</i></button>
-          <div class="whom-more">
-            <div class="whom-more-text">
-              <ul>
-                <li><strong style="color:var(--gold-light);">Май 20–30</strong> — 200 000 руб.</li>
-                <li><strong style="color:var(--gold-light);">Июнь 20–30</strong> — 300 000 руб.</li>
-                <li><strong style="color:var(--gold-light);">Июль 20–30</strong> — 350 000 руб.</li>
-                <li><strong style="color:var(--gold-light);">Август 20–30</strong> — 350 000 руб.</li>
-                <li><strong style="color:var(--gold-light);">Сентябрь 3–13</strong> — 300 000 руб.</li>
-                <li><strong style="color:var(--gold-light);">Октябрь 1–10</strong> — 200 000 руб.</li>
-              </ul>
-              <p style="margin-top:12px; color:#b0a8ac;">Включено: проживание, питание (повар), вся программа, кризисная сессия, физиотерапия, материалы.<br>Бонус при раннем бронировании — трансфер из Бургаса бесплатно.</p>
+          <h3>Стоимость и даты</h3>
+          <p style="font-size:.8rem; color:rgba(154,146,152,.6); margin-bottom:16px;">Включено: проживание, питание, вся программа, физиотерапия, кризисная сессия, материалы</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 12px; border-radius:8px; background:rgba(201,168,76,.06); border:1px solid rgba(201,168,76,.15);">
+              <span style="font-size:.85rem; color:var(--text-dim);">Май 20–30</span>
+              <span style="font-size:.95rem; color:var(--gold-light); font-weight:500;">200 000 ₽</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 12px; border-radius:8px; background:rgba(201,168,76,.06); border:1px solid rgba(201,168,76,.15);">
+              <span style="font-size:.85rem; color:var(--text-dim);">Июнь 20–30</span>
+              <span style="font-size:.95rem; color:var(--gold-light); font-weight:500;">300 000 ₽</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 12px; border-radius:8px; background:rgba(201,168,76,.08); border:1px solid rgba(201,168,76,.25);">
+              <span style="font-size:.85rem; color:var(--text-dim);">Июль 20–30</span>
+              <span style="font-size:.95rem; color:var(--gold-light); font-weight:500;">350 000 ₽</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 12px; border-radius:8px; background:rgba(201,168,76,.08); border:1px solid rgba(201,168,76,.25);">
+              <span style="font-size:.85rem; color:var(--text-dim);">Август 20–30</span>
+              <span style="font-size:.95rem; color:var(--gold-light); font-weight:500;">350 000 ₽</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 12px; border-radius:8px; background:rgba(201,168,76,.06); border:1px solid rgba(201,168,76,.15);">
+              <span style="font-size:.85rem; color:var(--text-dim);">Сентябрь 3–13</span>
+              <span style="font-size:.95rem; color:var(--gold-light); font-weight:500;">300 000 ₽</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 12px; border-radius:8px; background:rgba(201,168,76,.06); border:1px solid rgba(201,168,76,.15);">
+              <span style="font-size:.85rem; color:var(--text-dim);">Октябрь 1–10</span>
+              <span style="font-size:.95rem; color:var(--gold-light); font-weight:500;">200 000 ₽</span>
             </div>
           </div>
+          <p style="margin-top:12px; font-size:.75rem; color:rgba(154,146,152,.5);">При раннем бронировании — трансфер из Бургаса бесплатно</p>
         </div>
 
         <div class="info-card reveal">
@@ -2359,6 +2390,17 @@
   initReveal();
 
   // ── FAQ accordion ──
+  function toggleReviews() {
+    const more = document.getElementById('reviews-more');
+    const btn = document.getElementById('reviews-toggle');
+    const arrow = btn.querySelector('.arrow');
+    const isOpen = more.style.display === 'block';
+    more.style.display = isOpen ? 'none' : 'block';
+    arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
+    btn.childNodes[0].textContent = isOpen ? 'Показать ещё 6 отзывов ' : 'Скрыть ';
+    if (!isOpen) { document.querySelectorAll('#reviews-more .review-card').forEach(el => { if (!el.classList.contains('reveal')) el.classList.add('reveal'); io.observe(el); }); }
+  }
+
   function toggleFaq(btn) { btn.closest('.faq-item').classList.toggle('open'); }
 
   // ── Toggle more (cards) ──
