@@ -670,6 +670,26 @@
     .testimonial-method strong { color: var(--gold-light); font-style: normal; }
     @media(max-width: 860px) { .testimonial-wrap { grid-template-columns: 1fr; gap: 32px; } .testimonial-compare { grid-template-columns: 1fr; } }
 
+    /* ── REVIEWS ── */
+    #reviews { background: var(--dark2); padding-top: 0; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
+    .review-card {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px; padding: 26px 22px; position: relative;
+      transition: border-color .3s, transform .3s;
+    }
+    .review-card:hover { border-color: rgba(201,168,76,.3); transform: translateY(-3px); }
+    .review-card::before { content: '❝'; position: absolute; top: 18px; right: 20px; font-size: 2rem; color: rgba(201,168,76,.15); font-family: Georgia, serif; line-height: 1; }
+    .review-author { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .review-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, rgba(201,168,76,.3), rgba(212,130,154,.2)); border: 1px solid rgba(201,168,76,.25); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .review-name { font-size: .9rem; color: var(--gold-light); font-weight: normal; }
+    .review-tag { font-size: .7rem; color: rgba(154,146,152,.6); letter-spacing: .06em; margin-top: 2px; }
+    .review-text { font-size: .85rem; color: var(--text-dim); line-height: 1.75; }
+    .review-text strong { color: #c8c0bc; font-style: normal; }
+    .reviews-note { text-align: center; margin-top: 32px; font-size: .8rem; color: rgba(154,146,152,.45); font-style: italic; }
+    @media(max-width: 900px) { .reviews-grid { grid-template-columns: 1fr 1fr; } }
+    @media(max-width: 560px) { .reviews-grid { grid-template-columns: 1fr; } }
+
     /* ── ABOUT RETREAT ── */
     #about-retreat { background: var(--dark2); position: relative; overflow: hidden; padding: 60px 20px; }
     #about-retreat .container { position: relative; z-index: 2; }
@@ -1080,6 +1100,86 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ══ REVIEWS ══ -->
+  <section id="reviews">
+    <div class="container">
+      <p class="section-label">Что говорят клиентки</p>
+      <h2>Отзывы о работе с Ольгой</h2>
+
+      <div class="reviews-grid">
+
+        <div class="review-card reveal">
+          <div class="review-author">
+            <div class="review-avatar">Р</div>
+            <div>
+              <p class="review-name">Рауза Шакшакбаева</p>
+              <p class="review-tag">Личная работа · клуб</p>
+            </div>
+          </div>
+          <p class="review-text">С января 2025 — марафон «Секреты женской энергии», ТЭС, открытие тела. <strong>Ушло -4,5 кг, объём талии минус 10 см за 2 месяца.</strong> Могу стоять на одной ноге и держать равновесие — для меня это показатель внутренней гармонии. Начала слышать свою интуицию. Гораздо легче сохранять спокойствие в течение дня. Учусь принимать с благодарностью то, что приходит от окружения. Благодарю Ольга, учусь кайфовать.</p>
+        </div>
+
+        <div class="review-card reveal">
+          <div class="review-author">
+            <div class="review-avatar">✦</div>
+            <div>
+              <p class="review-name">Клиентка</p>
+              <p class="review-tag">Личная работа офлайн</p>
+            </div>
+          </div>
+          <p class="review-text">Ольга, наша встреча вернула меня в реальный мир. То, где я оказалась — была лишь иллюзией «правильных» решений. По сути — <strong>долговая яма, долгие абьюзивные отношения, состояние вечной жертвы.</strong> Ты показала реальный путь выхода из иллюзий в жизнь. Да, это не быстро — но это путь к себе. Ты честная, любящая, открытая и профессионал своего дела.</p>
+        </div>
+
+        <div class="review-card reveal">
+          <div class="review-author">
+            <div class="review-avatar">И</div>
+            <div>
+              <p class="review-name">Игорь</p>
+              <p class="review-tag">Личная работа · пара</p>
+            </div>
+          </div>
+          <p class="review-text">Попал случайно — случайностей не бывает. <strong>Проработал ключевые детские травмы и убеждения, которые блокировали мои возможности.</strong> Обращался к разным методикам — там временный результат. Здесь: 20% усилий = 80% качественного результата. Прошло больше двух недель — результат не только устойчив, но идёт прогресс. Ольга обладает знаниями, приближёнными к истине. Мастер своего дела и от Бога, и по призванию.</p>
+        </div>
+
+        <div class="review-card reveal">
+          <div class="review-author">
+            <div class="review-avatar">А</div>
+            <div>
+              <p class="review-name">Альбина Дмитриева</p>
+              <p class="review-tag">1 год 8 месяцев в клубе</p>
+            </div>
+          </div>
+          <p class="review-text">Была в глубоком внутреннем кризисе, усталости, боли в теле, проблемах в отношениях. <strong>Сегодня здоровье улучшилось, исчезла боль, появилась энергия.</strong> Научилась слышать себя и свои желания. Отношения с мужем стали теплее. Финансы улучшились. Главное — вижу куда идти дальше, есть внутренний компас. Это не просто обучение — это путь домой, к себе настоящей.</p>
+        </div>
+
+        <div class="review-card reveal">
+          <div class="review-author">
+            <div class="review-avatar">О</div>
+            <div>
+              <p class="review-name">Ольга Варлахина</p>
+              <p class="review-tag">Марафон</p>
+            </div>
+          </div>
+          <p class="review-text"><strong>Поняла, где собака зарыта — что мешает.</strong> Поймала разницу между детскими и взрослыми желаниями, и это так явно видится сейчас, что странно почему раньше не дошло. Про технику простукивания знала, но игнорировала — теперь буду точно использовать. Как эксперт скажу: 100% польза и выгода для людей. Качественный, эффективный и результативный материал. Ценно.</p>
+        </div>
+
+        <div class="review-card reveal">
+          <div class="review-author">
+            <div class="review-avatar">Р</div>
+            <div>
+              <p class="review-name">Рауза Шакшакбаева</p>
+              <p class="review-tag">Работа с родовыми программами</p>
+            </div>
+          </div>
+          <p class="review-text">Благодарю за профессионализм. В памяти всплывали истории: с 3 лет я попадала в катастрофы — бык, тонула, автоаварии. <strong>Благодаря Ольге осознала: всё это программы смерти. Но я живая, активная и собираюсь жить долго и счастливо.</strong> Значит у меня есть миссия. Осознала, что большую часть жизни прожила в мужской энергии. Было и освобождение, и помощь, и много других осознаний.</p>
+        </div>
+
+      </div>
+
+      <p class="reviews-note">Отзывы о личной работе и клубе. Отзывы участниц ретрита появятся после первого заезда — май 2026.</p>
     </div>
   </section>
 
