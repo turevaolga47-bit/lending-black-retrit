@@ -690,6 +690,19 @@
     @media(max-width: 900px) { .reviews-grid { grid-template-columns: 1fr 1fr; } }
     @media(max-width: 560px) { .reviews-grid { grid-template-columns: 1fr; } }
 
+    /* ── VIDEO REVIEWS ── */
+    #video-reviews { background: var(--dark); padding-top: 0; }
+    .vr-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 44px; }
+    .vr-card { border-radius: 18px; overflow: hidden; border: 1px solid rgba(201,168,76,.2); background: rgba(255,255,255,.03); transition: border-color .3s, transform .3s; }
+    .vr-card:hover { border-color: rgba(201,168,76,.5); transform: translateY(-4px); }
+    .vr-video { position: relative; width: 100%; aspect-ratio: 9/16; }
+    .vr-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .vr-caption { padding: 14px 16px; }
+    .vr-name { font-size: .88rem; color: var(--gold-light); margin-bottom: 3px; }
+    .vr-tag { font-size: .72rem; color: rgba(154,146,152,.6); letter-spacing: .05em; }
+    @media(max-width: 900px) { .vr-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media(max-width: 480px) { .vr-grid { grid-template-columns: 1fr 1fr; gap: 12px; } }
+
     /* ── ABOUT RETREAT ── */
     #about-retreat { background: var(--dark2); position: relative; overflow: hidden; padding: 60px 20px; }
     #about-retreat .container { position: relative; z-index: 2; }
@@ -1215,6 +1228,66 @@
       </div>
 
       <p class="reviews-note">Отзывы о личной работе и клубе. Отзывы участниц ретрита появятся после первого заезда — май 2026.</p>
+    </div>
+  </section>
+
+  <!-- ══ VIDEO REVIEWS ══ -->
+  <section id="video-reviews">
+    <div class="container">
+      <p class="section-label">Видео отзывы</p>
+      <h2>Живые голоса клиенток</h2>
+
+      <div class="vr-grid">
+
+        <div class="vr-card reveal">
+          <div class="vr-video">
+            <iframe src="https://www.youtube.com/embed/9PiZYc4ltwQ"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="vr-caption">
+            <p class="vr-name">Клиентка 1</p>
+            <p class="vr-tag">Отзыв о клубе</p>
+          </div>
+        </div>
+
+        <div class="vr-card reveal">
+          <div class="vr-video">
+            <iframe src="https://www.youtube.com/embed/8dRmG8pS434"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="vr-caption">
+            <p class="vr-name">Клиентка 2</p>
+            <p class="vr-tag">Отзыв о клубе</p>
+          </div>
+        </div>
+
+        <div class="vr-card reveal">
+          <div class="vr-video">
+            <iframe src="https://www.youtube.com/embed/wEBJoAslVaA"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="vr-caption">
+            <p class="vr-name">Клиентка 3</p>
+            <p class="vr-tag">Отзыв о клубе</p>
+          </div>
+        </div>
+
+        <div class="vr-card reveal">
+          <div class="vr-video">
+            <iframe src="https://www.youtube.com/embed/u6VTLdSYoa4"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="vr-caption">
+            <p class="vr-name">Клиентка 4</p>
+            <p class="vr-tag">Отзыв о клубе</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
