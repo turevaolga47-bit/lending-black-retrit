@@ -1899,6 +1899,43 @@
     </div>
   </section>
 
+  <!-- ══ ACCOMMODATION ══ -->
+  <section id="accommodation">
+    <div class="container">
+      <p class="section-label">Где вы будете жить</p>
+      <h2>Апартаменты у моря</h2>
+
+      <div class="apt-intro">
+        <p>Два апартамента в Святом Власе — купили специально для ретрита в феврале 2025. Новые, светлые, своя кухня, балкон, кондиционер. Все участницы живут в двух минутах ходьбы друг от друга.</p>
+        <div class="apt-features">
+          <span class="apt-feat">200 м от моря</span>
+          <span class="apt-feat">Новые апартаменты 2025</span>
+          <span class="apt-feat">Своя кухня</span>
+          <span class="apt-feat">Балкон</span>
+          <span class="apt-feat">Кондиционер</span>
+          <span class="apt-feat">Трёхразовое питание</span>
+        </div>
+      </div>
+
+      <div class="apt-grid">
+        <div class="apt-photo reveal">
+          <img src="photo_2026-04-02_18-20-43.jpg" alt="Кухня-гостиная с балконом">
+        </div>
+        <div class="apt-photo reveal">
+          <img src="photo_2026-04-02_18-20-55.jpg" alt="Гостиная с диваном и кухней">
+        </div>
+        <div class="apt-photo reveal">
+          <img src="photo_2026-04-02_18-20-52.jpg" alt="Спальня с мансардными окнами">
+        </div>
+        <div class="apt-photo reveal">
+          <img src="photo_2026-04-02_18-20-46.jpg" alt="Гостиная с диваном и картиной">
+        </div>
+      </div>
+
+      <p style="text-align:center; margin-top:28px; font-size:.85rem; color:rgba(154,146,152,.55); font-style:italic;">Видеотур по обеим квартирам — на собеседовании</p>
+    </div>
+  </section>
+
   <!-- ══ FAQ ══ -->
   <section id="faq">
     <div class="container">
@@ -2016,10 +2053,13 @@
 
         <div class="faq-item">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span>Можно ли вернуть предоплату, если планы изменятся?</span><i class="faq-arrow">↓</i>
+            <span>Как происходит оплата?</span><i class="faq-arrow">↓</i>
           </button>
           <div class="faq-a">
-            <p>Предоплата не возвращается. Возможен только перенос на другие даты ретрита — по предварительному согласованию.</p>
+            <p>Оплата в два этапа:</p>
+            <p style="margin-top:10px;"><strong style="color:var(--gold);">1. Предоплата</strong> — после собеседования и подтверждения места. Переводится на российскую карту. Размер обсуждается индивидуально. Бронирует ваше место в группе.</p>
+            <p style="margin-top:8px;"><strong style="color:var(--gold);">2. Остаток</strong> — наличными в день приезда в Болгарии.</p>
+            <p style="margin-top:10px;">Предоплата не возвращается — возможен только перенос на другие даты по согласованию. Полные условия — в публичной оферте.</p>
           </div>
         </div>
 
@@ -2310,7 +2350,7 @@
     document.querySelectorAll(
       '.whom-card, .card, .gallery-item, .detail-pill, .section-label, h2, .badge, ' +
       '.cta-tag, .contact-link, .btn-form, .pain-card, .bonus-card, .info-card, .bento-card, ' +
-      '.review-card, .vr-card, .retreat-block, .testimonial-video, .testimonial-content'
+      '.review-card, .vr-card, .retreat-block, .testimonial-video, .testimonial-content, .apt-photo'
     ).forEach(el => {
       if (!el.classList.contains('reveal')) el.classList.add('reveal');
       io.observe(el);
