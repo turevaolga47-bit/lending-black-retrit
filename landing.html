@@ -218,6 +218,7 @@
       color: var(--cream); font-style: italic; margin-bottom: 48px; line-height: 1.6;
     }
     .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 16px; }
+    .pain-card-wide { grid-column: 1 / -1; max-width: 600px; margin: 0 auto; background: rgba(201,168,76,.06); border-color: rgba(201,168,76,.35); }
     .pain-card {
       background: rgba(255,255,255,.03); border: 1px solid rgba(201,168,76,.15);
       border-radius: 16px; padding: 24px 22px;
@@ -697,6 +698,11 @@
     .review-card .btn-more { margin-top: 12px; font-size: .78rem; padding: 5px 14px; }
     .review-card.open .btn-more .arrow { transform: rotate(180deg); }
     .reviews-note { text-align: center; margin-top: 32px; font-size: .8rem; color: rgba(154,146,152,.45); font-style: italic; }
+    .first-retreat-block { margin-top: 44px; padding: 32px 36px; border: 1px solid rgba(201,168,76,.3); border-radius: 18px; background: rgba(201,168,76,.04); max-width: 780px; margin-left: auto; margin-right: auto; }
+    .first-retreat-block h3 { font-size: 1.15rem; color: var(--gold-light); margin-bottom: 16px; font-family: Georgia, serif; }
+    .first-retreat-block ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+    .first-retreat-block ul li { font-size: .88rem; color: var(--text-dim); line-height: 1.65; padding-left: 22px; position: relative; }
+    .first-retreat-block ul li::before { content: '◈'; position: absolute; left: 0; color: var(--gold); font-size: .65rem; top: 5px; }
     @media(max-width: 900px) { .reviews-grid { grid-template-columns: 1fr 1fr; } }
     @media(max-width: 560px) { .reviews-grid { grid-template-columns: 1fr; } }
 
@@ -913,6 +919,11 @@
           <div class="pain-icon">🪞</div>
           <h3>Нет времени на себя</h3>
           <p>Забыли, чего хотите сами. Живёте в роли — матери, жены, руководителя. А кто вы — вне этих ролей? Ответа нет.</p>
+        </div>
+        <div class="pain-card pain-card-wide reveal">
+          <div class="pain-icon">🕰️</div>
+          <h3>«Наверное, уже поздно что-то менять...»</h3>
+          <p>Ко мне приходят в 40, 45, 50 — и это не поздно. Иногда именно этот возраст даёт глубину, которой не было раньше. Тело и психика меняются в любой момент, если дать им правильный инструмент. Зрелость — это не барьер. Это ресурс.</p>
         </div>
       </div>
 
@@ -1170,6 +1181,17 @@
     </div>
   </section>
 
+  <!-- ══ MID CTA ══ -->
+  <section style="background:var(--dark2); padding: 52px 20px;">
+    <div class="container" style="text-align:center; max-width:620px;">
+      <p style="font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:14px;">Осталось мест: 8 · Лето 2026</p>
+      <h2 style="font-size:clamp(1.3rem,3vw,1.8rem); margin-bottom:16px;">Узнайте, подходит ли вам этот ретрит</h2>
+      <p style="color:var(--text-dim); font-size:.92rem; line-height:1.75; margin-bottom:28px;">Заполните короткую анкету — я изучу её лично и отвечу честно: подходит вам этот формат или нет. Без обязательств.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLDvaHzHyzsoG8nfp9drlOOivXA6YbGjWsmXr1KpqgQlKu3A/viewform?usp=sharing&ouid=108677729308754483977" target="_blank" class="btn-cta" style="animation:none;">Заполнить анкету — 3 минуты</a>
+      <p style="margin-top:12px; font-size:.78rem; color:rgba(154,146,152,.5);">Отвечу лично в течение дня</p>
+    </div>
+  </section>
+
   <!-- ══ TESTIMONIAL ══ -->
   <section id="testimonial">
     <div class="container">
@@ -1383,7 +1405,16 @@
         <button class="btn-more" id="reviews-toggle" onclick="toggleReviews()" style="font-size:.85rem; padding:9px 28px;">Показать ещё 6 отзывов <i class="arrow" style="display:inline-block;transition:transform .3s;">↓</i></button>
       </div>
 
-      <p class="reviews-note">Отзывы о личной работе и клубе. Отзывы участниц ретрита появятся после первого заезда — май 2026.</p>
+      <div class="first-retreat-block reveal">
+        <h3>Это первый групповой ретрит — и вот почему это хорошо</h3>
+        <ul>
+          <li><strong style="color:var(--gold-light);">Я лично вкладываюсь в каждую участницу.</strong> Когда это первый раз — я особенно заинтересована в том, чтобы всё прошло идеально. Каждая из восьми женщин будет у меня в фокусе.</li>
+          <li><strong style="color:var(--gold-light);">34 года практики — не нулевой опыт.</strong> Ретрит новый, но метод — нет. Я работаю с кризисами, телом и психикой с 1991 года. Это просто новый формат для давно отточенного инструмента.</li>
+          <li><strong style="color:var(--gold-light);">Цена первого заезда — ниже, чем будет потом.</strong> Последующие заезды будут дороже. Те, кто приедут первыми, получат ту же глубину работы по стартовой цене.</li>
+          <li><strong style="color:var(--gold-light);">Вы станете частью основы.</strong> Ваш опыт и честная обратная связь — это вклад в то, каким будет ретрит дальше.</li>
+        </ul>
+      </div>
+      <p class="reviews-note" style="margin-top:20px;">Отзывы о личной работе и клубе. Отзывы участниц ретрита появятся после первого заезда — май 2026.</p>
     </div>
   </section>
 
@@ -2195,7 +2226,7 @@
     <div class="container">
       <div class="cta-wrap">
         <span class="cta-tag">Места ограничены · 8 человек · Лето 2026</span>
-        <h2>Готовы сделать шаг?</h2>
+        <h2>Осталось 8 мест на лето 2026</h2>
         <p>
           Запишитесь на бесплатную консультацию — узнайте все детали ретрита
           и&nbsp;решите, подходит ли он именно вам. Отвечу лично.
