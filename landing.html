@@ -766,6 +766,16 @@
     .apt-video iframe { display: block; width: 100%; aspect-ratio: 16/9; border: none; }
     @media(max-width:600px) { .apt-grid { grid-template-columns: 1fr; } .apt-video-row { grid-template-columns: 1fr; } }
 
+    /* ── WHY BULGARIA ── */
+    .why-bulgaria-block { margin: 44px auto 0; max-width: 780px; padding: 32px 36px; border: 1px solid rgba(201,168,76,.25); border-radius: 18px; background: rgba(201,168,76,.03); }
+    .why-bulgaria-block h3 { color: var(--gold-light); font-size: 1.05rem; font-weight: 600; margin-bottom: 22px; text-align: center; font-family: Georgia, serif; letter-spacing: .02em; }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .why-item { display: flex; gap: 14px; align-items: flex-start; }
+    .why-icon { font-size: 1.3rem; flex-shrink: 0; line-height: 1.4; }
+    .why-item strong { font-size: .9rem; color: var(--gold-light); display: block; margin-bottom: 5px; }
+    .why-item p { font-size: .82rem; color: var(--text-dim); line-height: 1.65; margin: 0; }
+    @media(max-width:640px) { .why-grid { grid-template-columns: 1fr; } .why-bulgaria-block { padding: 24px 20px; } }
+
     /* ── ICON SVG COLORS ── */
     .card-icon svg *, .info-card-icon svg *, .bonus-icon svg *,
     .icon svg *, .bento-icon svg * { stroke: #c9a84c !important; }
@@ -870,7 +880,7 @@
         <span class="h1-line"><span>нужна другая работа</span></span>
       </h1>
 
-      <p class="subtitle-static">Для женщин в выгорании и кризисе. 10 дней, Болгария, Черное море. Ведущая — кризисный психолог с 34-летним опытом. Группа до 8 человек.</p>
+      <p class="subtitle-static">Для женщин в выгорании и кризисе. 10 дней, Болгария, Черное море. Ведущая — кризисный психолог с 34-летним опытом. Группа до 8 человек. Участие от 200 000 ₽.</p>
       <p class="subtitle" id="typewriter">Пространство, где вы впервые за годы просыпаетесь без тревоги.</p>
 
       <div class="hero-stats">
@@ -890,6 +900,12 @@
 
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLDvaHzHyzsoG8nfp9drlOOivXA6YbGjWsmXr1KpqgQlKu3A/viewform?usp=sharing&ouid=108677729308754483977" target="_blank" class="btn-cta">Узнать, подходит ли мне ретрит</a>
       <p style="margin-top:14px; font-size:.78rem; color:rgba(154,146,152,.5); letter-spacing:.05em;">Анкета → созвон с Ольгой → решение о месте. Без обязательств.</p>
+      <p style="margin-top:12px;">
+        <a href="https://t.me/OlgaTurreva" target="_blank" style="display:inline-flex; align-items:center; gap:7px; color:rgba(154,146,152,.6); font-size:.8rem; text-decoration:none; border-bottom:1px solid rgba(154,146,152,.18); padding-bottom:2px; transition:color .2s;" onmouseover="this.style.color='rgba(42,171,238,.8)'" onmouseout="this.style.color='rgba(154,146,152,.6)'">
+          <svg width="15" height="15" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.7 8.02c-.12.56-.45.7-.91.43l-2.52-1.86-1.22 1.17c-.13.14-.25.25-.51.25l.18-2.58 4.67-4.22c.2-.18-.04-.28-.31-.1L7.4 15.04 4.93 14.3c-.55-.17-.56-.54.12-.8l9.23-3.56c.46-.17.87.1.36.86z" fill="#2aabee"/></svg>
+          или написать напрямую в Telegram
+        </a>
+      </p>
     </div>
   </section>
 
@@ -982,7 +998,7 @@
         <div class="about-text-col">
           <p class="about-name">Ольга Турьева</p>
           <p class="about-title">Кризисный психолог · Соматолог · Физиотерапевт</p>
-          <p style="font-size:.78rem; color:rgba(154,146,152,.55); margin-bottom:16px; letter-spacing:.04em;">Ph.Dr. — Доктор философии (Чехия). Официальная учёная степень, присвоенная после защиты научной работы. Налоговый резидент Чешской Республики, работала практикующим физиотерапевтом в Праге 15 лет с официальными профессиональными документами.</p>
+          <p style="font-size:.78rem; color:rgba(154,146,152,.55); margin-bottom:16px; letter-spacing:.04em;">Ph.Dr. — Доктор философии, Дунайский университет (Словакия). Официальная учёная степень, присвоенная после защиты научной работы. 15 лет вела физиотерапевтическую практику в Праге с официальными профессиональными документами.</p>
 
           <p><strong>34 года практики.</strong> Работала в Праге 15 лет. Сейчас — онлайн из Германии и очно на ретритах. Ко мне приходят тогда, когда больше никто не помог: перед операциями, в разводах, после потерь.</p>
 
@@ -1189,6 +1205,12 @@
       <p style="color:var(--text-dim); font-size:.92rem; line-height:1.75; margin-bottom:28px;">Заполните короткую анкету — я изучу её лично и отвечу честно: подходит вам этот формат или нет. Без обязательств.</p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLDvaHzHyzsoG8nfp9drlOOivXA6YbGjWsmXr1KpqgQlKu3A/viewform?usp=sharing&ouid=108677729308754483977" target="_blank" class="btn-cta" style="animation:none;">Заполнить анкету — 3 минуты</a>
       <p style="margin-top:12px; font-size:.78rem; color:rgba(154,146,152,.5);">Отвечу лично в течение дня</p>
+      <p style="margin-top:10px;">
+        <a href="https://t.me/OlgaTurreva" target="_blank" style="display:inline-flex; align-items:center; gap:7px; color:rgba(154,146,152,.6); font-size:.8rem; text-decoration:none; border-bottom:1px solid rgba(154,146,152,.18); padding-bottom:2px; transition:color .2s;" onmouseover="this.style.color='rgba(42,171,238,.8)'" onmouseout="this.style.color='rgba(154,146,152,.6)'">
+          <svg width="15" height="15" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.7 8.02c-.12.56-.45.7-.91.43l-2.52-1.86-1.22 1.17c-.13.14-.25.25-.51.25l.18-2.58 4.67-4.22c.2-.18-.04-.28-.31-.1L7.4 15.04 4.93 14.3c-.55-.17-.56-.54.12-.8l9.23-3.56c.46-.17.87.1.36.86z" fill="#2aabee"/></svg>
+          или написать в Telegram без анкеты
+        </a>
+      </p>
     </div>
   </section>
 
@@ -1988,6 +2010,40 @@
       </div>
 
       <p style="text-align:center; margin-top:28px; font-size:.85rem; color:rgba(154,146,152,.55); font-style:italic;">Видеотур по обеим квартирам — на собеседовании</p>
+
+      <div class="why-bulgaria-block reveal">
+        <h3>Почему Болгария, а не Бали?</h3>
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="why-icon">🏠</div>
+            <div>
+              <strong>Собственные квартиры — без аренды</strong>
+              <p>Я купила эти апартаменты в феврале 2025 специально для ретрита. Нет арендодателя, нет наценки за «туристический объект». Это значит — нет гонки за оборотом, работаю в своём темпе.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">📍</div>
+            <div>
+              <strong>Я живу в Болгарии</strong>
+              <p>Не «прилетаю ради ретрита». Знаю каждую улицу, каждый маршрут к морю. Вы приезжаете к хозяйке, которая здесь живёт, — а не к организатору на аренде.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">✈️</div>
+            <div>
+              <strong>Перелёт 4 часа, без визы</strong>
+              <p>Болгария — Шенген с 2025 года. Рейс через Стамбул из Москвы или Петербурга. Бали — 14–16 часов, пересадки, тропическая акклиматизация, другой часовой пояс. Все силы — на работу, а не на дорогу.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">🌊</div>
+            <div>
+              <strong>Черное море — без культурного шока</strong>
+              <p>Это не экзотика ради Instagram. Знакомая природа, понятный климат, Черное море тёплое с мая. Группа полностью русскоязычная. Всё внимание — внутрь, не на адаптацию к чужой стране.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
