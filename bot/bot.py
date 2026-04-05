@@ -347,6 +347,7 @@ def main_kb():
          InlineKeyboardButton("👭 С подругой", callback_data='i_friend')],
         [InlineKeyboardButton("💰 О стоимости", callback_data='i_expensive'),
          InlineKeyboardButton("🌱 После ретрита", callback_data='i_after')],
+        [InlineKeyboardButton("❓ Задать вопрос", callback_data='ask_question')],
         [InlineKeyboardButton(seat_btn, callback_data='qualify')],
     ])
 
@@ -419,6 +420,40 @@ async def on_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return
 
+    # ── Режим вопроса ──
+    if state == 'wait_question':
+        context.user_data['state'] = None
+        tl = text.lower()
+        for kw, key in FAQ_MAP.items():
+            if kw in tl:
+                try:
+                    await context.bot.send_message(
+                        ADMIN_ID,
+                        f"❓ *Вопрос:* {user.first_name} (@{user.username or '—'})\n_{text}_",
+                        parse_mode='Markdown'
+                    )
+                except Exception:
+                    pass
+                await update.message.reply_text(
+                    INFO[key], parse_mode='Markdown', reply_markup=main_kb()
+                )
+                return
+        # Вопрос не распознан — передать Ольге
+        try:
+            await context.bot.send_message(
+                ADMIN_ID,
+                f"❓ *Вопрос без ответа*\n{user.first_name} (@{user.username or '—'}):\n_{text}_",
+                parse_mode='Markdown'
+            )
+        except Exception:
+            pass
+        await update.message.reply_text(
+            "Спасибо за вопрос — я передала его Ольге, она ответит лично.\n\n"
+            "Пока можете изучить другие темы:",
+            reply_markup=main_kb()
+        )
+        return
+
     # ── FAQ по ключевым словам ──
     tl = text.lower()
     for kw, key in FAQ_MAP.items():
@@ -464,6 +499,17 @@ async def on_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         key = data[2:]
         if key in INFO:
             await q.message.reply_text(INFO[key], parse_mode='Markdown', reply_markup=main_kb())
+        return
+
+    # ── Задать вопрос ──
+    if data == 'ask_question':
+        context.user_data['state'] = 'wait_question'
+        await q.message.reply_text(
+            "✍️ Напишите ваш вопрос — я отвечу сразу.\n\n"
+            "_Спрашивайте про программу, диагнозы, противопоказания, формат, "
+            "стоимость, визу, питание — всё что важно для вашего решения._",
+            parse_mode='Markdown'
+        )
         return
 
     # ── Начало квалификации ──
