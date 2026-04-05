@@ -138,6 +138,15 @@
       background: linear-gradient(to bottom, rgba(5,3,14,0.52) 0%, rgba(5,3,14,0.55) 50%, var(--dark) 95%);
     }
     #hero .container { position: relative; z-index: 1; }
+    #hero .container::before {
+      content: '';
+      position: absolute;
+      inset: -60px -80px;
+      background: radial-gradient(ellipse 75% 85% at 50% 48%, rgba(4,2,12,0.82) 0%, rgba(4,2,12,0.55) 40%, transparent 72%);
+      pointer-events: none;
+      z-index: -1;
+      border-radius: 50%;
+    }
 
     .badge {
       display: inline-block; border: 1px solid rgba(201,168,76,.45); border-radius: 40px;
