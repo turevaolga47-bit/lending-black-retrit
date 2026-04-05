@@ -67,9 +67,8 @@
         linear-gradient(180deg, #0a0a0f 0%, #10101a 40%, #0d0d14 100%);
     }
     #global-stars {
-      position: fixed; inset: 0; z-index: 9998;
+      position: fixed; inset: 0; z-index: -1;
       pointer-events: none; width: 100%; height: 100%;
-      mix-blend-mode: screen;
     }
 
     /* ── NAVIGATION ── */
@@ -103,7 +102,7 @@
     @media(max-width:768px) { .nav-links { display: none; } }
 
     /* ── LAYOUT ── */
-    main { position: relative; z-index: 1; }
+    main { position: relative; }
     section { padding: 80px 20px; }
     .container { max-width: 960px; margin: 0 auto; }
 
@@ -312,7 +311,7 @@
     .whom-card.open .btn-more .arrow, .card.open .btn-more .arrow, .info-card.open .btn-more .arrow, .bonus-card.open .btn-more .arrow, .retreat-block.open .btn-more .arrow { transform: rotate(180deg); }
 
     /* ── GALLERY (MASONRY) ── */
-    #gallery { background: var(--dark); padding: 0 20px 70px; }
+    #gallery { background: transparent; padding: 0 20px 70px; }
     .gallery-heading { text-align: center; margin-bottom: 32px; }
     .gallery-masonry {
       columns: 3 280px; column-gap: 14px;
@@ -341,7 +340,7 @@
     @media(max-width:400px) { .gallery-masonry { columns: 1; } }
 
     /* ── BENEFITS ── */
-    #benefits { background: var(--dark); padding-top: 0; }
+    #benefits { background: transparent; padding-top: 0; }
     .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px,1fr)); gap: 24px; }
     .card {
       position: relative;
@@ -422,7 +421,7 @@
     @media(max-width:600px) { .dual-divider { grid-template-columns: 1fr; } .dual-divider-item { height: 280px; } }
 
     /* ── DETAILS / FORMAT ── */
-    #details { background: var(--dark); text-align: center; padding: 56px 20px; }
+    #details { background: transparent; text-align: center; padding: 56px 20px; }
     .details-box { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 8px; }
     .detail-pill {
       background: rgba(255,255,255,.04); border: 1px solid rgba(201,168,76,.22);
@@ -476,7 +475,7 @@
     @media(max-width:900px) { .bento-grid { grid-template-columns: 1fr 1fr; } }
 
     /* ── BONUSES ── */
-    #bonuses { background: var(--dark); }
+    #bonuses { background: transparent; }
     .bonus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
     .bonus-card {
       background: rgba(255,255,255,.04); border: 1px solid rgba(201,168,76,.2);
@@ -509,7 +508,7 @@
     @media(max-width:800px) { .bonus-grid { grid-template-columns: 1fr; } .referral-block { flex-direction: column; text-align: center; } }
 
     /* ── FAQ ── */
-    #faq { background: var(--dark); padding: 80px 20px; }
+    #faq { background: transparent; padding: 80px 20px; }
     .faq-list { max-width: 780px; margin: 48px auto 0; }
     .faq-item { border-bottom: 1px solid rgba(201,168,76,.18); overflow: hidden; }
     .faq-item:first-child { border-top: 1px solid rgba(201,168,76,.18); }
@@ -549,7 +548,7 @@
     @media(max-width:800px) { .info-cards-grid { grid-template-columns: 1fr; } }
 
     /* ── CTA ── */
-    #cta { background: var(--dark); text-align: center; padding: 90px 20px 100px; }
+    #cta { background: transparent; text-align: center; padding: 90px 20px 100px; }
     .cta-wrap { max-width: 680px; margin: 0 auto; }
     .cta-tag { display: inline-block; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--rose); margin-bottom: 20px; animation: ctaTagBlink 4s ease-in-out infinite; }
     #cta h2 { margin-bottom: 16px; }
@@ -2506,17 +2505,17 @@
     window.addEventListener('resize', resize);
 
     const COLORS = ['rgba(255,255,255,VAL)','rgba(201,168,76,VAL)','rgba(212,130,154,VAL)','rgba(180,210,255,VAL)','rgba(240,208,128,VAL)'];
-    const stars = Array.from({length: 280}, () => ({
+    const stars = Array.from({length: 360}, () => ({
       x: Math.random(), y: Math.random(),
-      r: Math.random() * 1.5 + 0.3,
+      r: Math.random() * 2.2 + 0.8,
       col: COLORS[Math.floor(Math.random() * COLORS.length)],
-      vy: Math.random() * 0.2 + 0.04,
+      vy: Math.random() * 0.18 + 0.03,
       phase: Math.random() * Math.PI * 2,
       ts: Math.random() * 0.022 + 0.005
     }));
-    const sparkles = Array.from({length: 28}, () => ({
+    const sparkles = Array.from({length: 45}, () => ({
       x: Math.random(), y: Math.random(),
-      r: Math.random() * 2.2 + 1.0,
+      r: Math.random() * 3.5 + 2.0,
       phase: Math.random() * Math.PI * 2,
       sp: Math.random() * 0.016 + 0.005
     }));
@@ -2539,7 +2538,7 @@
       stars.forEach(s => {
         s.y += s.vy / H;
         if (s.y > 1) { s.y = 0; s.x = Math.random(); }
-        const op = 0.28 + 0.65 * Math.abs(Math.sin(s.phase + t * s.ts));
+        const op = 0.5 + 0.5 * Math.abs(Math.sin(s.phase + t * s.ts));
         ctx.beginPath();
         ctx.arc(s.x * W, s.y * H, s.r, 0, Math.PI * 2);
         ctx.fillStyle = s.col.replace('VAL', op.toFixed(2));
