@@ -80,6 +80,21 @@ def send(phone, text):
 def notify_admin(text):
     send(ADMIN_PHONE, text)
 
+def enable_incoming():
+    url = f"{BASE_URL}/setSettings/{INSTANCE_TOKEN}"
+    payload = {
+        "incomingWebhook": "yes",
+        "outgoingWebhook": "yes",
+        "outgoingMessageWebhook": "yes",
+        "outgoingAPIMessageWebhook": "yes",
+        "markIncomingMessagesReaded": "no"
+    }
+    try:
+        r = requests.post(url, json=payload, timeout=15)
+        print(f"[settings] {r.status_code} {r.text}")
+    except Exception as e:
+        print(f"[settings error] {e}")
+
 def receive_notification():
     url = f"{BASE_URL}/receiveNotification/{INSTANCE_TOKEN}"
     try:
@@ -353,6 +368,7 @@ def process(phone, name, text):
 def main():
     init_db()
     print(f"WhatsApp-бот запущен. Instance: {INSTANCE_ID}")
+    enable_incoming()
 
     while True:
         try:
