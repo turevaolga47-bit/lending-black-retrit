@@ -26,7 +26,7 @@
 
     body {
       font-family: 'Georgia', serif;
-      background: transparent;
+      background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%);
       color: var(--text);
       min-height: 100vh;
       overflow-x: hidden;
@@ -67,8 +67,9 @@
         linear-gradient(180deg, #0a0a0f 0%, #10101a 40%, #0d0d14 100%);
     }
     #global-stars {
-      position: fixed; inset: 0; z-index: -1;
+      position: fixed; inset: 0; z-index: 9998;
       pointer-events: none; width: 100%; height: 100%;
+      mix-blend-mode: screen;
     }
 
     /* ── NAVIGATION ── */
@@ -103,7 +104,7 @@
 
     /* ── LAYOUT ── */
     main { position: relative; }
-    section { padding: 80px 20px; }
+    section { padding: 80px 20px; background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); }
     .container { max-width: 960px; margin: 0 auto; }
 
     .section-label {
@@ -187,7 +188,7 @@
     #hero .btn-cta { animation: fadeInUp .9s .6s ease both, pulse 2.6s 1.5s ease-in-out infinite; }
 
     /* ── PAIN ── */
-    #pain { background: transparent; padding: 80px 20px; }
+    #pain { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); padding: 80px 20px; }
     .pain-lead {
       text-align: center; font-size: clamp(1.1rem, 2.5vw, 1.5rem);
       color: var(--cream); font-style: italic; margin-bottom: 48px; line-height: 1.6;
@@ -232,7 +233,7 @@
     .marquee-dot { width: 4px; height: 4px; background: var(--rose); border-radius: 50%; flex-shrink: 0; }
 
     /* ── ABOUT ── */
-    #about { background: transparent; }
+    #about { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); }
     .about-wrap { display: flex; gap: 52px; align-items: flex-start; margin-top: 40px; }
     .about-photo-col { flex: 0 0 240px; }
     .about-photo {
@@ -271,7 +272,7 @@
     }
 
     /* ── FOR WHOM ── */
-    #for-whom { background: transparent; }
+    #for-whom { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); }
     .whom-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 20px; }
     .whom-card {
       background: linear-gradient(135deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.01) 100%);
@@ -311,7 +312,7 @@
     .whom-card.open .btn-more .arrow, .card.open .btn-more .arrow, .info-card.open .btn-more .arrow, .bonus-card.open .btn-more .arrow, .retreat-block.open .btn-more .arrow { transform: rotate(180deg); }
 
     /* ── GALLERY (MASONRY) ── */
-    #gallery { background: transparent; padding: 0 20px 70px; }
+    #gallery { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); padding: 0 20px 70px; }
     .gallery-heading { text-align: center; margin-bottom: 32px; }
     .gallery-masonry {
       columns: 3 280px; column-gap: 14px;
@@ -340,7 +341,7 @@
     @media(max-width:400px) { .gallery-masonry { columns: 1; } }
 
     /* ── BENEFITS ── */
-    #benefits { background: transparent; padding-top: 0; }
+    #benefits { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); padding-top: 0; }
     .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px,1fr)); gap: 24px; }
     .card {
       position: relative;
@@ -421,7 +422,7 @@
     @media(max-width:600px) { .dual-divider { grid-template-columns: 1fr; } .dual-divider-item { height: 280px; } }
 
     /* ── DETAILS / FORMAT ── */
-    #details { background: transparent; text-align: center; padding: 56px 20px; }
+    #details { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); text-align: center; padding: 56px 20px; }
     .details-box { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 8px; }
     .detail-pill {
       background: rgba(255,255,255,.04); border: 1px solid rgba(201,168,76,.22);
@@ -475,7 +476,7 @@
     @media(max-width:900px) { .bento-grid { grid-template-columns: 1fr 1fr; } }
 
     /* ── BONUSES ── */
-    #bonuses { background: transparent; }
+    #bonuses { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); }
     .bonus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
     .bonus-card {
       background: rgba(255,255,255,.04); border: 1px solid rgba(201,168,76,.2);
@@ -508,15 +509,15 @@
     @media(max-width:800px) { .bonus-grid { grid-template-columns: 1fr; } .referral-block { flex-direction: column; text-align: center; } }
 
     /* ── FAQ ── */
-    #faq { background: transparent; padding: 80px 20px; }
-    .faq-list { max-width: 780px; margin: 48px auto 0; }
+    #faq { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); padding: 56px 20px; }
+    .faq-list { max-width: 780px; margin: 36px auto 0; }
     .faq-item { border-bottom: 1px solid rgba(201,168,76,.18); overflow: hidden; }
     .faq-item:first-child { border-top: 1px solid rgba(201,168,76,.18); }
     .faq-q {
-      width: 100%; background: none; border: none; padding: 22px 0;
+      width: 100%; background: none; border: none; padding: 16px 0;
       display: flex; align-items: center; justify-content: space-between; gap: 16px;
       cursor: none; text-align: left; font-family: inherit;
-      font-size: .98rem; font-weight: 600; color: var(--text); transition: color .25s;
+      font-size: .95rem; font-weight: 600; color: var(--text); transition: color .25s;
     }
     .faq-q:hover { color: var(--gold-light); }
     .faq-q span { flex: 1; line-height: 1.4; }
@@ -528,7 +529,7 @@
     .faq-a p { font-size: .9rem; color: #a8a0ac; line-height: 1.75; padding-bottom: 22px; }
 
     /* ── INFO CARDS ── */
-    #info-cards { background: transparent; }
+    #info-cards { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); }
     .info-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 20px; }
     .info-card {
       background: rgba(255,255,255,.07); border: 1px solid rgba(201,168,76,.35);
@@ -548,7 +549,7 @@
     @media(max-width:800px) { .info-cards-grid { grid-template-columns: 1fr; } }
 
     /* ── CTA ── */
-    #cta { background: transparent; text-align: center; padding: 90px 20px 100px; }
+    #cta { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); text-align: center; padding: 90px 20px 100px; }
     .cta-wrap { max-width: 680px; margin: 0 auto; }
     .cta-tag { display: inline-block; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--rose); margin-bottom: 20px; animation: ctaTagBlink 4s ease-in-out infinite; }
     #cta h2 { margin-bottom: 16px; }
@@ -611,7 +612,7 @@
       position: relative;
     }
     .modal-box::-webkit-scrollbar { width: 5px; }
-    .modal-box::-webkit-scrollbar-track { background: transparent; }
+    .modal-box::-webkit-scrollbar-track { background: #16141f; }
     .modal-box::-webkit-scrollbar-thumb { background: rgba(201,168,76,.3); border-radius: 4px; }
     .modal-close {
       position: absolute; top: 18px; right: 20px;
@@ -627,7 +628,7 @@
     @media(max-width:480px) { .modal-box { padding: 28px 20px; } }
 
     /* ── TESTIMONIAL ── */
-    #testimonial { background: transparent; }
+    #testimonial { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); }
     .testimonial-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: start; }
     .testimonial-video { position: relative; border-radius: 18px; overflow: hidden; border: 1px solid rgba(201,168,76,.25); box-shadow: 0 0 40px rgba(201,168,76,.08); }
     .testimonial-video iframe { display: block; width: 100%; aspect-ratio: 16/9; border: none; }
@@ -652,7 +653,7 @@
     @media(max-width: 860px) { .testimonial-wrap { grid-template-columns: 1fr; gap: 32px; } .testimonial-compare { grid-template-columns: 1fr; } }
 
     /* ── REVIEWS ── */
-    #reviews { background: transparent; padding-top: 0; position: relative; overflow: hidden; }
+    #reviews { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); padding-top: 0; position: relative; overflow: hidden; }
     #reviews .container { position: relative; z-index: 2; }
     .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
     .review-card {
@@ -681,7 +682,7 @@
     @media(max-width: 560px) { .reviews-grid { grid-template-columns: 1fr; } }
 
     /* ── VIDEO REVIEWS ── */
-    #video-reviews { background: transparent; padding-top: 0; }
+    #video-reviews { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); padding-top: 0; }
     .vr-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 44px; }
     .vr-card { border-radius: 18px; overflow: hidden; border: 1px solid rgba(201,168,76,.2); background: rgba(255,255,255,.03); transition: border-color .3s, transform .3s; }
     .vr-card:hover { border-color: rgba(201,168,76,.5); transform: translateY(-4px); }
@@ -695,7 +696,7 @@
     @media(max-width: 480px) { .vr-grid { grid-template-columns: 1fr 1fr; gap: 12px; } }
 
     /* ── ABOUT RETREAT ── */
-    #about-retreat { background: transparent; position: relative; overflow: hidden; padding: 60px 20px; }
+    #about-retreat { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); position: relative; overflow: hidden; padding: 60px 20px; }
     #about-retreat .container { position: relative; z-index: 2; }
     .retreat-lead { max-width: 680px; margin: 0 auto 40px; text-align: center; }
     .retreat-lead p { color: var(--text-dim); line-height: 1.75; font-size: .95rem; margin-bottom: 10px; }
@@ -719,7 +720,7 @@
     @media(max-width:800px) { .retreat-grid { grid-template-columns: 1fr; } }
 
     /* ── ACCOMMODATION ── */
-    #accommodation { background: transparent; }
+    #accommodation { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); }
     .apt-intro { max-width: 680px; margin: 0 auto 44px; text-align: center; }
     .apt-intro p { color: var(--text-dim); line-height: 1.8; font-size: .95rem; }
     .apt-features { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; margin-top: 18px; }
@@ -1170,7 +1171,7 @@
   </section>
 
   <!-- ══ MID CTA ══ -->
-  <section style="background:transparent; padding: 52px 20px;">
+  <section style="padding: 52px 20px;">
     <div class="container" style="text-align:center; max-width:620px;">
       <p style="font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:14px;">Осталось мест: 8 · Лето 2026</p>
       <h2 style="font-size:clamp(1.3rem,3vw,1.8rem); margin-bottom:16px;">Узнайте, подходит ли вам этот ретрит</h2>
