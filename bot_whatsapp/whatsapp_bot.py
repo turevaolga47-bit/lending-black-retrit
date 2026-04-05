@@ -360,15 +360,20 @@ def main():
             if notification:
                 receipt_id = notification.get('receiptId')
                 body = notification.get('body', {})
+                webhook_type = body.get('typeWebhook', 'unknown')
+                print(f"[notification] type={webhook_type} receiptId={receipt_id}")
 
-                if body.get('typeWebhook') == 'incomingMessageReceived':
+                if webhook_type == 'incomingMessageReceived':
                     sender = body.get('senderData', {})
                     phone  = sender.get('sender', '').replace('@c.us', '')
                     name   = sender.get('senderName', phone)
                     msg    = body.get('messageData', {})
+                    msg_type = msg.get('typeMessage', '')
+                    print(f"[message] from={phone} name={name} type={msg_type}")
 
-                    if msg.get('typeMessage') == 'textMessage':
+                    if msg_type == 'textMessage':
                         text = msg.get('textMessageData', {}).get('textMessage', '').strip()
+                        print(f"[text] {text}")
                         if text and phone and phone != ADMIN_PHONE:
                             process(phone, name, text)
 
