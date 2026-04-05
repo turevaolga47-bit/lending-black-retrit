@@ -22,11 +22,11 @@
       --text-dim: #9a9298;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; background: var(--dark); }
 
     body {
       font-family: 'Georgia', serif;
-      background: var(--dark);
+      background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%);
       color: var(--text);
       min-height: 100vh;
       overflow-x: hidden;
@@ -59,41 +59,17 @@
 
     /* ── BACKGROUND ── */
     .bg-wrap {
-      position: fixed; inset: 0; z-index: 0;
+      position: fixed; inset: 0; z-index: -2;
       background:
         radial-gradient(ellipse 80% 60% at 50% -10%, #1e0a2e 0%, transparent 70%),
         radial-gradient(ellipse 60% 50% at 10% 80%, #0d1a2e 0%, transparent 65%),
         radial-gradient(ellipse 50% 40% at 90% 70%, #1a0d1e 0%, transparent 60%),
         linear-gradient(180deg, #0a0a0f 0%, #10101a 40%, #0d0d14 100%);
     }
-    .stars {
-      position: fixed; inset: 0; z-index: 0;
-      background-image:
-        radial-gradient(1px 1px at 20% 15%, rgba(255,255,255,.55) 0%, transparent 100%),
-        radial-gradient(1px 1px at 75% 8%,  rgba(255,255,255,.40) 0%, transparent 100%),
-        radial-gradient(1px 1px at 45% 35%, rgba(255,255,255,.30) 0%, transparent 100%),
-        radial-gradient(1px 1px at 85% 55%, rgba(255,255,255,.45) 0%, transparent 100%),
-        radial-gradient(1px 1px at 10% 65%, rgba(255,255,255,.35) 0%, transparent 100%),
-        radial-gradient(1px 1px at 60% 80%, rgba(255,255,255,.25) 0%, transparent 100%),
-        radial-gradient(1px 1px at 30% 90%, rgba(255,255,255,.40) 0%, transparent 100%),
-        radial-gradient(1px 1px at 95% 25%, rgba(255,255,255,.30) 0%, transparent 100%);
-    }
-    .stars::before {
-      content: ''; position: absolute; inset: 0;
-      background-image:
-        radial-gradient(1.5px 1.5px at 18% 22%, rgba(255,255,255,.7) 0%, transparent 100%),
-        radial-gradient(1px 1px at 52% 18%, rgba(255,215,100,.6) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 78% 44%, rgba(255,255,255,.5) 0%, transparent 100%),
-        radial-gradient(1px 1px at 35% 72%, rgba(212,130,154,.6) 0%, transparent 100%);
-      animation: twinkle 3.2s ease-in-out infinite;
-    }
-    .stars::after {
-      content: ''; position: absolute; inset: 0;
-      background-image:
-        radial-gradient(1.5px 1.5px at 63% 55%, rgba(201,168,76,.65) 0%, transparent 100%),
-        radial-gradient(1px 1px at 8% 48%,  rgba(255,255,255,.45) 0%, transparent 100%),
-        radial-gradient(2px 2px at 44% 88%,  rgba(212,130,154,.5) 0%, transparent 100%);
-      animation: twinkle2 4.7s 1.5s ease-in-out infinite;
+    #global-stars {
+      position: fixed; inset: 0; z-index: 9998;
+      pointer-events: none; width: 100%; height: 100%;
+      mix-blend-mode: screen;
     }
 
     /* ── NAVIGATION ── */
@@ -127,8 +103,8 @@
     @media(max-width:768px) { .nav-links { display: none; } }
 
     /* ── LAYOUT ── */
-    main { position: relative; z-index: 1; }
-    section { padding: 80px 20px; }
+    main { position: relative; }
+    section { padding: 80px 20px; background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); }
     .container { max-width: 960px; margin: 0 auto; }
 
     .section-label {
@@ -155,11 +131,11 @@
     .hero-bg { position: absolute; inset: 0; z-index: 0; }
     .hero-bg img {
       width: 100%; height: 100%; object-fit: cover; object-position: center 30%;
-      filter: brightness(.28) saturate(.7);
+      filter: brightness(1) saturate(1);
     }
     .hero-bg::after {
       content: ''; position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(10,10,15,.3) 0%, rgba(10,10,15,.5) 55%, var(--dark) 100%);
+      background: linear-gradient(to bottom, rgba(10,10,15,0) 0%, rgba(10,10,15,0) 55%, var(--dark) 100%);
     }
     #hero .container { position: relative; z-index: 1; }
 
@@ -212,7 +188,7 @@
     #hero .btn-cta { animation: fadeInUp .9s .6s ease both, pulse 2.6s 1.5s ease-in-out infinite; }
 
     /* ── PAIN ── */
-    #pain { background: rgba(10,8,20,.7); padding: 80px 20px; }
+    #pain { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); padding: 80px 20px; }
     .pain-lead {
       text-align: center; font-size: clamp(1.1rem, 2.5vw, 1.5rem);
       color: var(--cream); font-style: italic; margin-bottom: 48px; line-height: 1.6;
@@ -257,7 +233,7 @@
     .marquee-dot { width: 4px; height: 4px; background: var(--rose); border-radius: 50%; flex-shrink: 0; }
 
     /* ── ABOUT ── */
-    #about { background: rgba(0,0,0,.2); }
+    #about { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); }
     .about-wrap { display: flex; gap: 52px; align-items: flex-start; margin-top: 40px; }
     .about-photo-col { flex: 0 0 240px; }
     .about-photo {
@@ -296,7 +272,7 @@
     }
 
     /* ── FOR WHOM ── */
-    #for-whom { background: transparent; }
+    #for-whom { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); }
     .whom-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 20px; }
     .whom-card {
       background: linear-gradient(135deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.01) 100%);
@@ -336,7 +312,7 @@
     .whom-card.open .btn-more .arrow, .card.open .btn-more .arrow, .info-card.open .btn-more .arrow, .bonus-card.open .btn-more .arrow, .retreat-block.open .btn-more .arrow { transform: rotate(180deg); }
 
     /* ── GALLERY (MASONRY) ── */
-    #gallery { padding: 0 20px 70px; }
+    #gallery { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); padding: 0 20px 70px; }
     .gallery-heading { text-align: center; margin-bottom: 32px; }
     .gallery-masonry {
       columns: 3 280px; column-gap: 14px;
@@ -365,7 +341,7 @@
     @media(max-width:400px) { .gallery-masonry { columns: 1; } }
 
     /* ── BENEFITS ── */
-    #benefits { padding-top: 0; }
+    #benefits { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); padding-top: 0; }
     .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px,1fr)); gap: 24px; }
     .card {
       position: relative;
@@ -446,11 +422,11 @@
     @media(max-width:600px) { .dual-divider { grid-template-columns: 1fr; } .dual-divider-item { height: 280px; } }
 
     /* ── DETAILS / FORMAT ── */
-    #details { text-align: center; }
-    .details-box { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 10px; }
+    #details { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); text-align: center; padding: 56px 20px; }
+    .details-box { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 8px; }
     .detail-pill {
       background: rgba(255,255,255,.04); border: 1px solid rgba(201,168,76,.22);
-      border-radius: 50px; padding: 10px 26px; font-size: .88rem; color: #c8bdb0;
+      border-radius: 50px; padding: 8px 20px; font-size: .85rem; color: #c8bdb0;
       display: flex; align-items: center; gap: 10px;
       transition: border-color .3s, box-shadow .3s, color .3s;
     }
@@ -463,12 +439,12 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: auto;
-      gap: 18px; margin-top: 48px;
+      gap: 14px; margin-top: 30px;
     }
     .bento-card {
       background: linear-gradient(135deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.01) 100%);
       border: 1px solid rgba(201,168,76,.2); border-radius: 20px;
-      padding: 30px 26px; position: relative; overflow: hidden;
+      padding: 22px 20px; position: relative; overflow: hidden;
       transition: border-color .3s, transform .3s, box-shadow .3s;
     }
     .bento-card:hover { border-color: rgba(201,168,76,.5); transform: translateY(-4px); box-shadow: 0 16px 50px rgba(0,0,0,.4), 0 0 24px rgba(201,168,76,.08); }
@@ -482,14 +458,14 @@
     .bento-card--accent { border-color: rgba(212,130,154,.3); background: linear-gradient(135deg, rgba(212,130,154,.06) 0%, rgba(255,255,255,.01) 100%); }
     .bento-card--accent:hover { border-color: rgba(212,130,154,.6); }
     .bento-icon {
-      width: 56px; height: 56px; border-radius: 16px;
-      display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
+      width: 48px; height: 48px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 12px;
     }
     .bento-icon--gold { background: linear-gradient(135deg, rgba(201,168,76,.25), rgba(201,168,76,.08)); }
     .bento-icon--rose { background: linear-gradient(135deg, rgba(212,130,154,.25), rgba(212,130,154,.08)); }
     .bento-title { font-size: 1.05rem; font-weight: 600; color: var(--gold-light); margin-bottom: 10px; line-height: 1.3; }
     .bento-desc { font-size: .88rem; color: var(--text-dim); line-height: 1.7; }
-    .bento-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(201,168,76,.25), transparent); margin: 16px 0; }
+    .bento-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(201,168,76,.25), transparent); margin: 10px 0; }
     .bento-more { max-height: 0; overflow: hidden; opacity: 0; transition: max-height .45s ease, opacity .35s ease; }
     .bento-card.open .bento-more { max-height: 600px; opacity: 1; }
     .bento-more-text { font-size: .84rem; color: #b0a8ac; line-height: 1.75; }
@@ -500,7 +476,7 @@
     @media(max-width:900px) { .bento-grid { grid-template-columns: 1fr 1fr; } }
 
     /* ── BONUSES ── */
-    #bonuses { background: rgba(201,168,76,.04); }
+    #bonuses { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); }
     .bonus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
     .bonus-card {
       background: rgba(255,255,255,.04); border: 1px solid rgba(201,168,76,.2);
@@ -533,15 +509,15 @@
     @media(max-width:800px) { .bonus-grid { grid-template-columns: 1fr; } .referral-block { flex-direction: column; text-align: center; } }
 
     /* ── FAQ ── */
-    #faq { padding: 80px 20px; }
-    .faq-list { max-width: 780px; margin: 48px auto 0; }
+    #faq { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); padding: 56px 20px; }
+    .faq-list { max-width: 780px; margin: 36px auto 0; }
     .faq-item { border-bottom: 1px solid rgba(201,168,76,.18); overflow: hidden; }
     .faq-item:first-child { border-top: 1px solid rgba(201,168,76,.18); }
     .faq-q {
-      width: 100%; background: none; border: none; padding: 22px 0;
+      width: 100%; background: none; border: none; padding: 16px 0;
       display: flex; align-items: center; justify-content: space-between; gap: 16px;
       cursor: none; text-align: left; font-family: inherit;
-      font-size: .98rem; font-weight: 600; color: var(--text); transition: color .25s;
+      font-size: .95rem; font-weight: 600; color: var(--text); transition: color .25s;
     }
     .faq-q:hover { color: var(--gold-light); }
     .faq-q span { flex: 1; line-height: 1.4; }
@@ -553,7 +529,7 @@
     .faq-a p { font-size: .9rem; color: #a8a0ac; line-height: 1.75; padding-bottom: 22px; }
 
     /* ── INFO CARDS ── */
-    #info-cards { background: rgba(201,168,76,.04); }
+    #info-cards { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); }
     .info-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 20px; }
     .info-card {
       background: rgba(255,255,255,.07); border: 1px solid rgba(201,168,76,.35);
@@ -573,7 +549,7 @@
     @media(max-width:800px) { .info-cards-grid { grid-template-columns: 1fr; } }
 
     /* ── CTA ── */
-    #cta { text-align: center; padding: 90px 20px 100px; }
+    #cta { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); text-align: center; padding: 90px 20px 100px; }
     .cta-wrap { max-width: 680px; margin: 0 auto; }
     .cta-tag { display: inline-block; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--rose); margin-bottom: 20px; animation: ctaTagBlink 4s ease-in-out infinite; }
     #cta h2 { margin-bottom: 16px; }
@@ -636,7 +612,7 @@
       position: relative;
     }
     .modal-box::-webkit-scrollbar { width: 5px; }
-    .modal-box::-webkit-scrollbar-track { background: transparent; }
+    .modal-box::-webkit-scrollbar-track { background: #16141f; }
     .modal-box::-webkit-scrollbar-thumb { background: rgba(201,168,76,.3); border-radius: 4px; }
     .modal-close {
       position: absolute; top: 18px; right: 20px;
@@ -652,7 +628,7 @@
     @media(max-width:480px) { .modal-box { padding: 28px 20px; } }
 
     /* ── TESTIMONIAL ── */
-    #testimonial { background: var(--dark); }
+    #testimonial { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); }
     .testimonial-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: start; }
     .testimonial-video { position: relative; border-radius: 18px; overflow: hidden; border: 1px solid rgba(201,168,76,.25); box-shadow: 0 0 40px rgba(201,168,76,.08); }
     .testimonial-video iframe { display: block; width: 100%; aspect-ratio: 16/9; border: none; }
@@ -677,9 +653,8 @@
     @media(max-width: 860px) { .testimonial-wrap { grid-template-columns: 1fr; gap: 32px; } .testimonial-compare { grid-template-columns: 1fr; } }
 
     /* ── REVIEWS ── */
-    #reviews { background: var(--dark2); padding-top: 0; position: relative; overflow: hidden; }
+    #reviews { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); padding-top: 0; position: relative; overflow: hidden; }
     #reviews .container { position: relative; z-index: 2; }
-    #reviews-stars { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
     .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
     .review-card {
       background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
@@ -707,7 +682,7 @@
     @media(max-width: 560px) { .reviews-grid { grid-template-columns: 1fr; } }
 
     /* ── VIDEO REVIEWS ── */
-    #video-reviews { background: var(--dark); padding-top: 0; }
+    #video-reviews { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); padding-top: 0; }
     .vr-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 44px; }
     .vr-card { border-radius: 18px; overflow: hidden; border: 1px solid rgba(201,168,76,.2); background: rgba(255,255,255,.03); transition: border-color .3s, transform .3s; }
     .vr-card:hover { border-color: rgba(201,168,76,.5); transform: translateY(-4px); }
@@ -721,9 +696,8 @@
     @media(max-width: 480px) { .vr-grid { grid-template-columns: 1fr 1fr; gap: 12px; } }
 
     /* ── ABOUT RETREAT ── */
-    #about-retreat { background: var(--dark2); position: relative; overflow: hidden; padding: 60px 20px; }
+    #about-retreat { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); position: relative; overflow: hidden; padding: 60px 20px; }
     #about-retreat .container { position: relative; z-index: 2; }
-    #retreat-stars { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
     .retreat-lead { max-width: 680px; margin: 0 auto 40px; text-align: center; }
     .retreat-lead p { color: var(--text-dim); line-height: 1.75; font-size: .95rem; margin-bottom: 10px; }
     .retreat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 44px; }
@@ -746,7 +720,7 @@
     @media(max-width:800px) { .retreat-grid { grid-template-columns: 1fr; } }
 
     /* ── ACCOMMODATION ── */
-    #accommodation { background: var(--dark); }
+    #accommodation { background: linear-gradient(180deg, #0d0820 0%, #0a0a14 100%); }
     .apt-intro { max-width: 680px; margin: 0 auto 44px; text-align: center; }
     .apt-intro p { color: var(--text-dim); line-height: 1.8; font-size: .95rem; }
     .apt-features { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; margin-top: 18px; }
@@ -849,7 +823,7 @@
 <div class="cursor"></div>
 <div class="cursor-dot"></div>
 <div class="bg-wrap"></div>
-<div class="stars"></div>
+<canvas id="global-stars"></canvas>
 
 <!-- ══ NAVIGATION ══ -->
 <nav id="nav">
@@ -1120,7 +1094,6 @@
 
   <!-- ══ ABOUT RETREAT ══ -->
   <section id="about-retreat">
-    <canvas id="retreat-stars"></canvas>
     <div class="container">
       <p class="section-label">О ретрите</p>
       <h2>Что такое Чёрный ретрит</h2>
@@ -1198,7 +1171,7 @@
   </section>
 
   <!-- ══ MID CTA ══ -->
-  <section style="background:var(--dark2); padding: 52px 20px;">
+  <section style="padding: 52px 20px;">
     <div class="container" style="text-align:center; max-width:620px;">
       <p style="font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:14px;">Осталось мест: 8 · Лето 2026</p>
       <h2 style="font-size:clamp(1.3rem,3vw,1.8rem); margin-bottom:16px;">Узнайте, подходит ли вам этот ретрит</h2>
@@ -1280,7 +1253,6 @@
 
   <!-- ══ REVIEWS ══ -->
   <section id="reviews">
-    <canvas id="reviews-stars"></canvas>
     <div class="container">
       <p class="section-label">Что говорят клиентки</p>
       <h2>Отзывы о работе с Ольгой</h2>
@@ -2346,7 +2318,7 @@
           </a>
 
           <!-- WhatsApp -->
-          <a class="contact-link" href="https://wa.me/420737350155" target="_blank">
+          <a class="contact-link" href="https://wa.me/4917675765576" target="_blank">
             <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.6 1.38 5.1L2 22l4.99-1.35A9.96 9.96 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.93 13.68c-.2.56-1.18 1.1-1.62 1.16-.44.06-.85.21-2.87-.6-2.43-.97-3.98-3.46-4.1-3.62-.12-.16-.97-1.29-.97-2.46 0-1.17.61-1.74.83-1.98.22-.24.48-.3.64-.3h.46c.15 0 .35-.05.55.42.2.47.67 1.62.73 1.74.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.31-.36.42-.12.12-.24.25-.1.49.14.24.61 1.01 1.31 1.63.9.8 1.66 1.05 1.9 1.17.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.58-.14 1.14z" fill="#25D366" opacity=".9"/></svg>
             WhatsApp
           </a>
@@ -2413,7 +2385,7 @@
     <p>Оставляя заявку или обращаясь через мессенджеры, вы даёте согласие на обработку персональных данных в объёме, описанном в настоящей политике.</p>
 
     <h3>7. Контакт</h3>
-    <p>По всем вопросам: <a href="mailto:newkafa8@gmail.com">newkafa8@gmail.com</a> &nbsp;·&nbsp; <a href="tel:+420737350155">+420 737 350 155</a></p>
+    <p>По всем вопросам: <a href="mailto:newkafa8@gmail.com">newkafa8@gmail.com</a> &nbsp;·&nbsp; <a href="tel:+4917675765576">+49 176 7576 5576</a></p>
   </div>
 </div>
 
@@ -2520,49 +2492,45 @@
     btn.innerHTML = isOpen ? 'Скрыть <i class="arrow">↓</i>' : 'Подробнее <i class="arrow">↓</i>';
   }
 
-  // ── Starfield (about-retreat) ──
+  // ── Global Starfield ──
   window.addEventListener('load', function() {
-    const canvas = document.getElementById('retreat-stars');
+    const canvas = document.getElementById('global-stars');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    const section = document.getElementById('about-retreat');
 
     function resize() {
-      const w = section.getBoundingClientRect().width  || section.scrollWidth  || 800;
-      const h = section.getBoundingClientRect().height || section.scrollHeight || 600;
-      canvas.width  = Math.round(w);
-      canvas.height = Math.round(h);
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
     }
     resize();
-    window.addEventListener('resize', () => { resize(); });
-    if (window.ResizeObserver) {
-      new ResizeObserver(resize).observe(section);
-    }
+    window.addEventListener('resize', resize);
 
     const COLORS = ['rgba(255,255,255,VAL)','rgba(201,168,76,VAL)','rgba(212,130,154,VAL)','rgba(180,210,255,VAL)','rgba(240,208,128,VAL)'];
-    const stars = Array.from({length: 200}, () => ({
+    const stars = Array.from({length: 360}, () => ({
       x: Math.random(), y: Math.random(),
-      r: Math.random() * 1.5 + 0.4,
+      r: Math.random() * 2.2 + 0.8,
       col: COLORS[Math.floor(Math.random() * COLORS.length)],
-      vy: Math.random() * 0.25 + 0.05,
+      vy: Math.random() * 0.18 + 0.03,
       phase: Math.random() * Math.PI * 2,
-      ts: Math.random() * 0.025 + 0.006
+      ts: Math.random() * 0.022 + 0.005
     }));
-    const sparkles = Array.from({length: 22}, () => ({
+    const sparkles = Array.from({length: 45}, () => ({
       x: Math.random(), y: Math.random(),
-      r: Math.random() * 2.2 + 1.0,
+      r: Math.random() * 3.5 + 2.0,
       phase: Math.random() * Math.PI * 2,
-      sp: Math.random() * 0.018 + 0.006
+      sp: Math.random() * 0.016 + 0.005
     }));
     function newShoot() {
-      return { x: Math.random() * 0.7, y: Math.random() * 0.4, len: Math.random() * 0.15 + 0.07,
-               vx: Math.random() * 4 + 2.5, vy: Math.random() * 2 + 1, alpha: 0, fade: 0, delay: Math.random() * 300 + 60 };
+      return { x: Math.random() * 0.8, y: Math.random() * 0.5,
+               len: Math.random() * 0.14 + 0.06,
+               vx: Math.random() * 4 + 2.5, vy: Math.random() * 2 + 1,
+               alpha: 0, fade: 0, delay: Math.random() * 280 + 40 };
     }
-    const shoots = Array.from({length: 4}, newShoot);
+    const shoots = Array.from({length: 6}, newShoot);
 
-    let t = 0, rafId;
-    function draw() {
-      rafId = requestAnimationFrame(draw);
+    let t = 0;
+    (function draw() {
+      requestAnimationFrame(draw);
       const W = canvas.width, H = canvas.height;
       if (!W || !H) return;
       ctx.clearRect(0, 0, W, H);
@@ -2571,7 +2539,7 @@
       stars.forEach(s => {
         s.y += s.vy / H;
         if (s.y > 1) { s.y = 0; s.x = Math.random(); }
-        const op = 0.3 + 0.65 * Math.abs(Math.sin(s.phase + t * s.ts));
+        const op = 0.5 + 0.5 * Math.abs(Math.sin(s.phase + t * s.ts));
         ctx.beginPath();
         ctx.arc(s.x * W, s.y * H, s.r, 0, Math.PI * 2);
         ctx.fillStyle = s.col.replace('VAL', op.toFixed(2));
@@ -2579,14 +2547,14 @@
       });
 
       sparkles.forEach(sp => {
-        const op = 0.5 + 0.5 * Math.abs(Math.sin(sp.phase + t * sp.sp));
+        const op = 0.45 + 0.5 * Math.abs(Math.sin(sp.phase + t * sp.sp));
         const grd = ctx.createRadialGradient(sp.x*W, sp.y*H, 0, sp.x*W, sp.y*H, sp.r*5);
         grd.addColorStop(0,   `rgba(255,240,160,${(op*0.95).toFixed(2)})`);
-        grd.addColorStop(0.35,`rgba(201,168,76,${(op*0.45).toFixed(2)})`);
+        grd.addColorStop(0.35,`rgba(201,168,76,${(op*0.4).toFixed(2)})`);
         grd.addColorStop(1,   'rgba(201,168,76,0)');
         ctx.beginPath(); ctx.arc(sp.x*W, sp.y*H, sp.r*5, 0, Math.PI*2);
         ctx.fillStyle = grd; ctx.fill();
-        ctx.beginPath(); ctx.arc(sp.x*W, sp.y*H, sp.r*0.7, 0, Math.PI*2);
+        ctx.beginPath(); ctx.arc(sp.x*W, sp.y*H, sp.r*0.65, 0, Math.PI*2);
         ctx.fillStyle = `rgba(255,248,200,${op.toFixed(2)})`; ctx.fill();
       });
 
@@ -2608,69 +2576,6 @@
         ctx.fillStyle = `rgba(255,240,160,${s.alpha.toFixed(2)})`; ctx.fill();
         if (s.x > 1.1 || s.y > 1.1) shoots[i] = newShoot();
       });
-    }
-    draw();
-  });
-
-  // ── Starfield (reviews) ──
-  window.addEventListener('load', function() {
-    const canvas2 = document.getElementById('reviews-stars');
-    if (!canvas2) return;
-    const ctx2 = canvas2.getContext('2d');
-    const sec2 = document.getElementById('reviews');
-    function resize2() {
-      canvas2.width  = Math.round(sec2.getBoundingClientRect().width  || sec2.scrollWidth  || 800);
-      canvas2.height = Math.round(sec2.getBoundingClientRect().height || sec2.scrollHeight || 800);
-    }
-    resize2();
-    window.addEventListener('resize', resize2);
-    if (window.ResizeObserver) new ResizeObserver(resize2).observe(sec2);
-
-    const COLS = ['rgba(255,255,255,V)','rgba(201,168,76,V)','rgba(212,130,154,V)','rgba(180,210,255,V)'];
-    const st2 = Array.from({length: 160}, () => ({
-      x: Math.random(), y: Math.random(),
-      r: Math.random() * 1.3 + 0.3,
-      col: COLS[Math.floor(Math.random()*COLS.length)],
-      vy: Math.random() * 0.2 + 0.04,
-      ph: Math.random()*Math.PI*2, ts: Math.random()*0.022+0.005
-    }));
-    const sp2 = Array.from({length: 16}, () => ({
-      x: Math.random(), y: Math.random(),
-      r: Math.random()*2+1, ph: Math.random()*Math.PI*2, sp: Math.random()*0.015+0.005
-    }));
-    function mk2() { return {x:Math.random()*0.7,y:Math.random()*0.4,vx:Math.random()*4+2,vy:Math.random()*2+1,alpha:0,fade:0,delay:Math.random()*350+60}; }
-    const sh2 = Array.from({length:3},mk2);
-    let t2=0;
-    (function draw2(){
-      requestAnimationFrame(draw2);
-      const W=canvas2.width,H=canvas2.height;
-      if(!W||!H) return;
-      ctx2.clearRect(0,0,W,H); t2++;
-      st2.forEach(s=>{ s.y+=s.vy/H; if(s.y>1){s.y=0;s.x=Math.random();}
-        const op=0.28+0.6*Math.abs(Math.sin(s.ph+t2*s.ts));
-        ctx2.beginPath(); ctx2.arc(s.x*W,s.y*H,s.r,0,Math.PI*2);
-        ctx2.fillStyle=s.col.replace('V',op.toFixed(2)); ctx2.fill(); });
-      sp2.forEach(s=>{ const op=0.45+0.5*Math.abs(Math.sin(s.ph+t2*s.sp));
-        const g=ctx2.createRadialGradient(s.x*W,s.y*H,0,s.x*W,s.y*H,s.r*5);
-        g.addColorStop(0,`rgba(255,235,150,${(op*.9).toFixed(2)})`);
-        g.addColorStop(0.4,`rgba(201,168,76,${(op*.4).toFixed(2)})`);
-        g.addColorStop(1,'rgba(201,168,76,0)');
-        ctx2.beginPath(); ctx2.arc(s.x*W,s.y*H,s.r*5,0,Math.PI*2);
-        ctx2.fillStyle=g; ctx2.fill();
-        ctx2.beginPath(); ctx2.arc(s.x*W,s.y*H,s.r*.6,0,Math.PI*2);
-        ctx2.fillStyle=`rgba(255,248,200,${op.toFixed(2)})`; ctx2.fill(); });
-      sh2.forEach((s,i)=>{ if(s.delay>0){s.delay--;return;}
-        if(s.fade===0){s.alpha=Math.min(1,s.alpha+0.06);if(s.alpha>=1)s.fade=1;}
-        else s.alpha=Math.max(0,s.alpha-0.04);
-        if(s.alpha<=0){sh2[i]=mk2();return;}
-        s.x+=s.vx/W; s.y+=s.vy/H;
-        const x1=s.x*W,y1=s.y*H,x0=x1-0.12*W,y0=y1-0.06*H;
-        const g=ctx2.createLinearGradient(x0,y0,x1,y1);
-        g.addColorStop(0,'rgba(255,255,255,0)');
-        g.addColorStop(1,`rgba(201,168,76,${(s.alpha*.85).toFixed(2)})`);
-        ctx2.beginPath(); ctx2.moveTo(x0,y0); ctx2.lineTo(x1,y1);
-        ctx2.strokeStyle=g; ctx2.lineWidth=1.5; ctx2.stroke();
-        if(s.x>1.1||s.y>1.1) sh2[i]=mk2(); });
     })();
   });
 
@@ -2763,7 +2668,7 @@
     <p>Ph.Dr. Ольга Турьева<br>
     Email: <a href="mailto:newkafa8@gmail.com">newkafa8@gmail.com</a><br>
     Telegram: <a href="https://t.me/OlgaTurreva" target="_blank">@OlgaTurreva</a><br>
-    Телефон: <a href="tel:+420737350155">+420 737 350 155</a></p>
+    Телефон: <a href="tel:+4917675765576">+49 176 7576 5576</a></p>
 
     <p style="margin-top:20px; font-size:.8rem; color:#6a6070;">Дата публикации оферты: апрель 2026. Организатор вправе вносить изменения в настоящую оферту. Актуальная версия всегда размещена на сайте.</p>
   </div>
