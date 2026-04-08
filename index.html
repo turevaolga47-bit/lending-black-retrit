@@ -311,7 +311,7 @@
 
     /* ── EXPANDABLE ── */
     .whom-more { max-height: 0; overflow: hidden; transition: max-height .45s ease, opacity .35s ease; opacity: 0; }
-    .whom-card.open .whom-more, .card.open .whom-more, .info-card.open .whom-more, .bonus-card.open .whom-more, .retreat-block.open .whom-more { max-height: 700px; opacity: 1; }
+    .whom-card.open .whom-more, .card.open .whom-more, .info-card.open .whom-more, .bonus-card.open .whom-more, .retreat-block.open .whom-more, .referral-block.open .whom-more { max-height: 700px; opacity: 1; }
     .whom-more-text { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(201,168,76,.18); font-size: .84rem; color: #b0a8ac; line-height: 1.7; }
     .whom-more-text ul { list-style: none; padding: 0; margin: 10px 0 0; }
     .whom-more-text ul li { padding: 4px 0 4px 18px; position: relative; color: #b0a8ac; }
@@ -324,7 +324,7 @@
     }
     .btn-more:hover { background: rgba(201,168,76,.12); border-color: rgba(201,168,76,.7); }
     .btn-more .arrow { display: inline-block; transition: transform .3s; font-style: normal; }
-    .whom-card.open .btn-more .arrow, .card.open .btn-more .arrow, .info-card.open .btn-more .arrow, .bonus-card.open .btn-more .arrow, .retreat-block.open .btn-more .arrow { transform: rotate(180deg); }
+    .whom-card.open .btn-more .arrow, .card.open .btn-more .arrow, .info-card.open .btn-more .arrow, .bonus-card.open .btn-more .arrow, .retreat-block.open .btn-more .arrow, .referral-block.open .btn-more .arrow { transform: rotate(180deg); }
 
     /* ── GALLERY (MASONRY) ── */
     #gallery { background: transparent; padding: 0 20px 70px; }
@@ -511,9 +511,9 @@
     .bonus-tag { display: inline-block; margin-top: 14px; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,.35); border-radius: 20px; padding: 4px 12px; }
     .referral-block {
       margin-top: 40px;
-      background: linear-gradient(135deg, rgba(201,168,76,.1), rgba(212,130,154,.08));
-      border: 1px solid rgba(201,168,76,.3); border-radius: 16px;
-      padding: 32px 36px; display: flex; align-items: center; gap: 24px;
+      background: linear-gradient(135deg, rgba(201,168,76,.08), rgba(212,130,154,.06));
+      border: 1px solid rgba(201,168,76,.3); border-radius: 12px;
+      padding: 20px 28px; display: flex; align-items: flex-start; gap: 20px;
     }
     .referral-icon { flex: 0 0 auto; }
     .referral-text { flex: 1; }
@@ -698,17 +698,18 @@
 
     /* ── VIDEO REVIEWS ── */
     #video-reviews { background: transparent; padding-top: 0; }
-    .vr-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 44px; }
+    .vr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
     .vr-card { border-radius: 18px; overflow: hidden; border: 1px solid rgba(201,168,76,.2); background: rgba(255,255,255,.03); transition: border-color .3s, transform .3s; }
     .vr-card:hover { border-color: rgba(201,168,76,.5); transform: translateY(-4px); }
-    .vr-video { position: relative; width: 100%; aspect-ratio: 9/16; }
+    .vr-video { position: relative; width: 100%; aspect-ratio: 16/9; }
     .vr-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .vr-placeholder { background: rgba(201,168,76,.04); display: flex; align-items: center; justify-content: center; }
+    .vr-placeholder-inner { color: rgba(201,168,76,.25); font-size: 2.5rem; }
     .vr-caption { padding: 14px 16px; }
     .vr-name { font-size: .88rem; color: var(--gold-light); margin-bottom: 3px; }
     .vr-tag { font-size: .72rem; color: rgba(154,146,152,.6); letter-spacing: .05em; }
-    @media(max-width: 1100px) { .vr-grid { grid-template-columns: repeat(3, 1fr); } }
-    @media(max-width: 700px) { .vr-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media(max-width: 480px) { .vr-grid { grid-template-columns: 1fr 1fr; gap: 12px; } }
+    @media(max-width: 900px) { .vr-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media(max-width: 560px) { .vr-grid { grid-template-columns: 1fr; gap: 14px; } }
 
     /* ── ABOUT RETREAT ── */
     #about-retreat { background: transparent; position: relative; overflow: hidden; padding: 60px 20px; }
@@ -973,53 +974,81 @@
     </div>
   </div>
 
-  <!-- ══ ABOUT ══ -->
-  <section id="about">
+  <!-- ══ ABOUT RETREAT ══ -->
+  <section id="about-retreat">
     <div class="container">
-      <p class="section-label">Ваш проводник</p>
-      <h2>Ph.Dr. Olga Tureva</h2>
+      <p class="section-label">О ретрите</p>
+      <h2>Что такое Чёрный ретрит</h2>
 
-      <div class="about-wrap">
-        <div class="about-photo-col">
-          <img src="olga-photo.jpg" alt="Ph.Dr. Olga Tureva — кризисный психолог" class="about-photo">
-          <p class="about-photo-caption">Ph.Dr. Olga Tureva</p>
-        </div>
-        <div class="about-text-col">
-          <p class="about-name">Ольга Турьева</p>
-          <p class="about-title">Кризисный психолог · Соматолог · Физиотерапевт</p>
-          <p style="font-size:.78rem; color:rgba(154,146,152,.55); margin-bottom:16px; letter-spacing:.04em;">Ph.Dr. — Доктор философии, Данибузский университет (Словакия). Официальная учёная степень, присвоенная после защиты научной работы. 15 лет вела физиотерапевтическую практику в Праге с официальными профессиональными документами.</p>
-
-          <p><strong>34 года практики.</strong> Работала в Праге 15 лет. Сейчас — онлайн из Германии и очно на ретритах. Ко мне приходят тогда, когда больше никто не помог: перед операциями, в разводах, после потерь.</p>
-
-          <p>Работаю через тело: тазовые кости, позвоночник, меридианы, авторские телесные практики. Кризисная психология — не теория, а ежедневная практика с реальными людьми в реальных кризисах.</p>
-
-          <div class="about-facts">
-            <div class="about-fact">
-              <span class="about-fact-num">34</span>
-              <span class="about-fact-label">года практики</span>
-            </div>
-            <div class="about-fact">
-              <span class="about-fact-num">2011</span>
-              <span class="about-fact-label">первый ретрит</span>
-            </div>
-            <div class="about-fact">
-              <span class="about-fact-num">48</span>
-              <span class="about-fact-label">участниц клуба</span>
-            </div>
-          </div>
-
-          <div class="story-block">
-            <p>Свой метод начала разрабатывать, когда врачи сказали, что моя дочь с гидроцефалией проживёт 7–10 лет. Продала машину, нашла китайского учителя, 9 месяцев училась. Дочери сняли инвалидность — сейчас ей за 30, знает 8 языков. Тело оказалось умнее врачей.</p>
-          </div>
-        </div>
+      <div class="retreat-lead">
+        <p>Это не отдых и не медитация. Чёрный ретрит — это 10 дней глубокой трансформационной работы с телом и психикой. В отличие от обычных велнес-программ, здесь нет красивых ритуалов ради ритуалов. Есть настоящая работа: с тем, что болит, мешает и держит вас в одном и том же месте годами.</p>
+        <p>Участницы большую часть дня проводят в условиях сенсорного ограничения — с закрытыми глазами. Когда исчезает зрение, включается то, что обычно заглушает шум жизни: тело, чувства, интуиция. Именно здесь начинается настоящий контакт с собой.</p>
       </div>
 
-      <div class="diplomas-wrap">
-        <h3>Образование и дипломы</h3>
-        <div class="diplomas-grid">
-          <img src="diplomas2.jpg" alt="Дипломы и сертификаты Ph.Dr. Olga Tureva" class="diplomas-img">
+      <div class="retreat-grid">
+
+        <div class="retreat-block reveal">
+          <div class="retreat-block-icon">◈</div>
+          <h3>Для кого этот ретрит</h3>
+          <p>Для женщин, которые устали быть в роли и хотят вернуться к себе.</p>
+          <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
+          <div class="whom-more">
+            <div class="whom-more-text">
+              <ul>
+                <li>Вы живёте на износ: работа, семья, обязательства — и ни минуты на себя</li>
+                <li>Вы в точке выгорания: отпуск не помогает, тело сигналит болью и усталостью</li>
+                <li>Вы переживаете серьёзные изменения: развод, потеря, болезнь, смена жизненного курса</li>
+                <li>У вас повторяются одни и те же сценарии — в отношениях, деньгах, карьере — и вы понимаете, что дело внутри</li>
+                <li>Вы чувствуете: что-то должно измениться. Но не знаете, с чего начать</li>
+              </ul>
+              <p style="margin-top:12px;"><em>Важно: ретрит требует психологической готовности к интенсивной работе. Обсуждаем на предварительном созвоне.</em></p>
+            </div>
+          </div>
         </div>
+
+        <div class="retreat-block reveal">
+          <div class="retreat-block-icon">◈</div>
+          <h3>Какие запросы здесь прорабатываются</h3>
+          <p>Ретрит работает с тем, что не решается «ещё одним курсом» или разговорами с подругой.</p>
+          <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
+          <div class="whom-more">
+            <div class="whom-more-text">
+              <ul>
+                <li><strong style="color:var(--gold-light);">Хроническая усталость и выгорание</strong> — когда отдых не восстанавливает, а тело болит без причин</li>
+                <li><strong style="color:var(--gold-light);">Ощущение «я живу не свою жизнь»</strong> — потеря себя в ролях матери, жены, руководителя</li>
+                <li><strong style="color:var(--gold-light);">Тревога и страх</strong> — фоновое напряжение, которое не выключается</li>
+                <li><strong style="color:var(--gold-light);">Повторяющиеся паттерны</strong> — одни и те же проблемы в отношениях, деньгах, саботаж собственных успехов</li>
+                <li><strong style="color:var(--gold-light);">Эмоциональные травмы</strong> — то, что осело в теле и влияет на жизнь через психосоматику</li>
+                <li><strong style="color:var(--gold-light);">Экзистенциальный кризис</strong> — потеря смысла, апатия, пустота при внешнем благополучии</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="retreat-block reveal">
+          <div class="retreat-block-icon">◈</div>
+          <h3>Что меняется после</h3>
+          <p>Ретрит запускает процесс, который продолжается после отъезда. Это не разовая встряска — это сдвиг.</p>
+          <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
+          <div class="whom-more">
+            <div class="whom-more-text">
+              <ul>
+                <li><strong style="color:var(--gold-light);">Уходит хроническое напряжение</strong> — тревога, подавленность, апатия перестают быть фоном жизни</li>
+                <li><strong style="color:var(--gold-light);">Возвращается контакт с собой</strong> — вы снова слышите, чего хотите, что чувствуете, где ваша граница</li>
+                <li><strong style="color:var(--gold-light);">Рвутся старые сценарии</strong> — там, где раньше срабатывал автопилот, появляется выбор</li>
+                <li><strong style="color:var(--gold-light);">Возвращается энергия</strong> — не из силы воли, а из восстановленного ресурса тела и психики</li>
+                <li><strong style="color:var(--gold-light);">Меняется качество отношений</strong> — вы начинаете строить их из себя, а не из страха или привычки</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
+
+      <div class="retreat-note">
+        Чёрный ретрит — это не волшебная таблетка. Это встреча с собой настоящей — без масок, ролей и привычных защит. Это требует мужества. И именно поэтому меняет всё.
+      </div>
+
     </div>
   </section>
 
@@ -1107,81 +1136,53 @@
     </div>
   </section>
 
-  <!-- ══ ABOUT RETREAT ══ -->
-  <section id="about-retreat">
+  <!-- ══ ABOUT ══ -->
+  <section id="about">
     <div class="container">
-      <p class="section-label">О ретрите</p>
-      <h2>Что такое Чёрный ретрит</h2>
+      <p class="section-label">Ваш проводник</p>
+      <h2>Ph.Dr. Olga Tureva</h2>
 
-      <div class="retreat-lead">
-        <p>Это не отдых и не медитация. Чёрный ретрит — это 10 дней глубокой трансформационной работы с телом и психикой. В отличие от обычных велнес-программ, здесь нет красивых ритуалов ради ритуалов. Есть настоящая работа: с тем, что болит, мешает и держит вас в одном и том же месте годами.</p>
-        <p>Участницы большую часть дня проводят в условиях сенсорного ограничения — с закрытыми глазами. Когда исчезает зрение, включается то, что обычно заглушает шум жизни: тело, чувства, интуиция. Именно здесь начинается настоящий контакт с собой.</p>
-      </div>
+      <div class="about-wrap">
+        <div class="about-photo-col">
+          <img src="olga-photo.jpg" alt="Ph.Dr. Olga Tureva — кризисный психолог" class="about-photo">
+          <p class="about-photo-caption">Ph.Dr. Olga Tureva</p>
+        </div>
+        <div class="about-text-col">
+          <p class="about-name">Ольга Турьева</p>
+          <p class="about-title">Кризисный психолог · Соматолог · Физиотерапевт</p>
+          <p style="font-size:.78rem; color:rgba(154,146,152,.55); margin-bottom:16px; letter-spacing:.04em;">Ph.Dr. — Доктор философии, Данибузский университет (Словакия). Официальная учёная степень, присвоенная после защиты научной работы. 15 лет вела физиотерапевтическую практику в Праге с официальными профессиональными документами.</p>
 
-      <div class="retreat-grid">
+          <p><strong>34 года практики.</strong> Работала в Праге 15 лет. Сейчас — онлайн из Германии и очно на ретритах. Ко мне приходят тогда, когда больше никто не помог: перед операциями, в разводах, после потерь.</p>
 
-        <div class="retreat-block reveal">
-          <div class="retreat-block-icon">◈</div>
-          <h3>Для кого этот ретрит</h3>
-          <p>Для женщин, которые устали быть в роли и хотят вернуться к себе.</p>
-          <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
-          <div class="whom-more">
-            <div class="whom-more-text">
-              <ul>
-                <li>Вы живёте на износ: работа, семья, обязательства — и ни минуты на себя</li>
-                <li>Вы в точке выгорания: отпуск не помогает, тело сигналит болью и усталостью</li>
-                <li>Вы переживаете серьёзные изменения: развод, потеря, болезнь, смена жизненного курса</li>
-                <li>У вас повторяются одни и те же сценарии — в отношениях, деньгах, карьере — и вы понимаете, что дело внутри</li>
-                <li>Вы чувствуете: что-то должно измениться. Но не знаете, с чего начать</li>
-              </ul>
-              <p style="margin-top:12px;"><em>Важно: ретрит требует психологической готовности к интенсивной работе. Обсуждаем на предварительном созвоне.</em></p>
+          <p>Работаю через тело: тазовые кости, позвоночник, меридианы, авторские телесные практики. Кризисная психология — не теория, а ежедневная практика с реальными людьми в реальных кризисах.</p>
+
+          <div class="about-facts">
+            <div class="about-fact">
+              <span class="about-fact-num">34</span>
+              <span class="about-fact-label">года практики</span>
+            </div>
+            <div class="about-fact">
+              <span class="about-fact-num">2011</span>
+              <span class="about-fact-label">первый ретрит</span>
+            </div>
+            <div class="about-fact">
+              <span class="about-fact-num">48</span>
+              <span class="about-fact-label">участниц клуба</span>
             </div>
           </div>
-        </div>
 
-        <div class="retreat-block reveal">
-          <div class="retreat-block-icon">◈</div>
-          <h3>Какие запросы здесь прорабатываются</h3>
-          <p>Ретрит работает с тем, что не решается «ещё одним курсом» или разговорами с подругой.</p>
-          <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
-          <div class="whom-more">
-            <div class="whom-more-text">
-              <ul>
-                <li><strong style="color:var(--gold-light);">Хроническая усталость и выгорание</strong> — когда отдых не восстанавливает, а тело болит без причин</li>
-                <li><strong style="color:var(--gold-light);">Ощущение «я живу не свою жизнь»</strong> — потеря себя в ролях матери, жены, руководителя</li>
-                <li><strong style="color:var(--gold-light);">Тревога и страх</strong> — фоновое напряжение, которое не выключается</li>
-                <li><strong style="color:var(--gold-light);">Повторяющиеся паттерны</strong> — одни и те же проблемы в отношениях, деньгах, саботаж собственных успехов</li>
-                <li><strong style="color:var(--gold-light);">Эмоциональные травмы</strong> — то, что осело в теле и влияет на жизнь через психосоматику</li>
-                <li><strong style="color:var(--gold-light);">Экзистенциальный кризис</strong> — потеря смысла, апатия, пустота при внешнем благополучии</li>
-              </ul>
-            </div>
+          <div class="story-block">
+            <p>Свой метод начала разрабатывать, когда врачи сказали, что моя дочь с гидроцефалией проживёт 7–10 лет. Продала машину, нашла китайского учителя, 9 месяцев училась. Дочери сняли инвалидность — сейчас ей за 30, знает 8 языков. Тело оказалось умнее врачей.</p>
           </div>
         </div>
+      </div>
 
-        <div class="retreat-block reveal">
-          <div class="retreat-block-icon">◈</div>
-          <h3>Что меняется после</h3>
-          <p>Ретрит запускает процесс, который продолжается после отъезда. Это не разовая встряска — это сдвиг.</p>
-          <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
-          <div class="whom-more">
-            <div class="whom-more-text">
-              <ul>
-                <li><strong style="color:var(--gold-light);">Уходит хроническое напряжение</strong> — тревога, подавленность, апатия перестают быть фоном жизни</li>
-                <li><strong style="color:var(--gold-light);">Возвращается контакт с собой</strong> — вы снова слышите, чего хотите, что чувствуете, где ваша граница</li>
-                <li><strong style="color:var(--gold-light);">Рвутся старые сценарии</strong> — там, где раньше срабатывал автопилот, появляется выбор</li>
-                <li><strong style="color:var(--gold-light);">Возвращается энергия</strong> — не из силы воли, а из восстановленного ресурса тела и психики</li>
-                <li><strong style="color:var(--gold-light);">Меняется качество отношений</strong> — вы начинаете строить их из себя, а не из страха или привычки</li>
-              </ul>
-            </div>
-          </div>
+      <div class="diplomas-wrap">
+        <h3>Образование и дипломы</h3>
+        <div class="diplomas-grid">
+          <img src="diplomas2.jpg" alt="Дипломы и сертификаты Ph.Dr. Olga Tureva" class="diplomas-img">
         </div>
-
       </div>
-
-      <div class="retreat-note">
-        Чёрный ретрит — это не волшебная таблетка. Это встреча с собой настоящей — без масок, ролей и привычных защит. Это требует мужества. И именно поэтому меняет всё.
-      </div>
-
     </div>
   </section>
 
@@ -1307,43 +1308,44 @@
           <p class="review-text">Попал случайно — случайностей не бывает. <strong>Проработал ключевые детские травмы и убеждения, которые блокировали мои возможности.</strong> Обращался к разным методикам — там временный результат. Здесь: 20% усилий = 80% качественного результата. Прошло больше двух недель — результат не только устойчив, но идёт прогресс. Ольга обладает знаниями, приближёнными к истине. Мастер своего дела и от Бога, и по призванию.</p>
         </div>
 
-        <div class="review-card reveal">
-          <div class="review-author">
-            <div class="review-avatar">А</div>
-            <div>
-              <p class="review-name">Альбина Дмитриева</p>
-              <p class="review-tag">1 год 8 месяцев в клубе</p>
-            </div>
-          </div>
-          <p class="review-text">Была в глубоком внутреннем кризисе, усталости, боли в теле, проблемах в отношениях. <strong>Сегодня здоровье улучшилось, исчезла боль, появилась энергия.</strong> Научилась слышать себя и свои желания. Отношения с мужем стали теплее. Финансы улучшились. Главное — вижу куда идти дальше, есть внутренний компас. Это не просто обучение — это путь домой, к себе настоящей.</p>
-        </div>
-
-        <div class="review-card reveal">
-          <div class="review-author">
-            <div class="review-avatar">Н</div>
-            <div>
-              <p class="review-name">Наталья, методолог</p>
-              <p class="review-tag">2 глубокие сессии</p>
-            </div>
-          </div>
-          <p class="review-text">Несколько лет ухудшалось самочувствие и здоровье — это влияло на всё: финансы, работу, отношения. <strong>За две сессии получила большое количество рекомендаций и практик.</strong> Главное открытие — я живу не свою жизнь, взяла на себя чужой сценарий. Внутренне чувствовала, но не понимала что происходит. Вы аккуратно провели меня в регресс, и всё встало на свои места. Поняла в каком направлении продолжать работу по возвращению себя себе.</p>
-        </div>
-
-        <div class="review-card reveal">
-          <div class="review-author">
-            <div class="review-avatar">Л</div>
-            <div>
-              <p class="review-name">Лея</p>
-              <p class="review-tag">Клуб · техника простукивания</p>
-            </div>
-          </div>
-          <p class="review-text">Привыкла к боли, которая пронизывает всё тело — и не замечала её. Несла чужую боль, так как долго работала с людьми с сильной эмпатией. <strong>Техника простукивания сняла острую боль не только с груди, но и с суставов.</strong> Настолько расслабилась — доверилась своему телу. Чувствую себя стройной, молодой и здоровой — всё тело начало втягиваться в этот образ. Буду делать эту технику каждый день.</p>
-        </div>
-
       </div>
 
       <div id="reviews-more" style="display:none;">
         <div class="reviews-grid" style="margin-top:14px;">
+
+          <div class="review-card reveal">
+            <div class="review-author">
+              <div class="review-avatar">А</div>
+              <div>
+                <p class="review-name">Альбина Дмитриева</p>
+                <p class="review-tag">1 год 8 месяцев в клубе</p>
+              </div>
+            </div>
+            <p class="review-text">Была в глубоком внутреннем кризисе, усталости, боли в теле, проблемах в отношениях. <strong>Сегодня здоровье улучшилось, исчезла боль, появилась энергия.</strong> Научилась слышать себя и свои желания. Отношения с мужем стали теплее. Финансы улучшились. Главное — вижу куда идти дальше, есть внутренний компас. Это не просто обучение — это путь домой, к себе настоящей.</p>
+          </div>
+
+          <div class="review-card reveal">
+            <div class="review-author">
+              <div class="review-avatar">Н</div>
+              <div>
+                <p class="review-name">Наталья, методолог</p>
+                <p class="review-tag">2 глубокие сессии</p>
+              </div>
+            </div>
+            <p class="review-text">Несколько лет ухудшалось самочувствие и здоровье — это влияло на всё: финансы, работу, отношения. <strong>За две сессии получила большое количество рекомендаций и практик.</strong> Главное открытие — я живу не свою жизнь, взяла на себя чужой сценарий. Внутренне чувствовала, но не понимала что происходит. Вы аккуратно провели меня в регресс, и всё встало на свои места. Поняла в каком направлении продолжать работу по возвращению себя себе.</p>
+          </div>
+
+          <div class="review-card reveal">
+            <div class="review-author">
+              <div class="review-avatar">Л</div>
+              <div>
+                <p class="review-name">Лея</p>
+                <p class="review-tag">Клуб · техника простукивания</p>
+              </div>
+            </div>
+            <p class="review-text">Привыкла к боли, которая пронизывает всё тело — и не замечала её. Несла чужую боль, так как долго работала с людьми с сильной эмпатией. <strong>Техника простукивания сняла острую боль не только с груди, но и с суставов.</strong> Настолько расслабилась — доверилась своему телу. Чувствую себя стройной, молодой и здоровой — всё тело начало втягиваться в этот образ. Буду делать эту технику каждый день.</p>
+          </div>
+
 
           <div class="review-card reveal">
             <div class="review-author">
@@ -1415,7 +1417,7 @@
       </div>
 
       <div style="text-align:center; margin-top:28px;">
-        <button class="btn-more" id="reviews-toggle" onclick="toggleReviews()" style="font-size:.85rem; padding:9px 28px;">Показать ещё 6 отзывов <i class="arrow" style="display:inline-block;transition:transform .3s;">↓</i></button>
+        <button class="btn-more" id="reviews-toggle" onclick="toggleReviews()" style="font-size:.85rem; padding:9px 28px;">Показать ещё 9 отзывов <i class="arrow" style="display:inline-block;transition:transform .3s;">↓</i></button>
       </div>
 
       <div class="first-retreat-block reveal">
@@ -1437,56 +1439,7 @@
       <p class="section-label">Видео отзывы</p>
       <h2>Живые голоса клиенток</h2>
 
-      <div class="vr-grid">
-
-        <div class="vr-card reveal">
-          <div class="vr-video">
-            <iframe src="https://www.youtube.com/embed/9PiZYc4ltwQ"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen loading="lazy"></iframe>
-          </div>
-          <div class="vr-caption">
-            <p class="vr-name">Оксана</p>
-            <p class="vr-tag">Отзыв о клубе</p>
-          </div>
-        </div>
-
-        <div class="vr-card reveal">
-          <div class="vr-video">
-            <iframe src="https://www.youtube.com/embed/8dRmG8pS434"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen loading="lazy"></iframe>
-          </div>
-          <div class="vr-caption">
-            <p class="vr-name">Ольга</p>
-            <p class="vr-tag">Отзыв о клубе</p>
-          </div>
-        </div>
-
-        <div class="vr-card reveal">
-          <div class="vr-video">
-            <iframe src="https://www.youtube.com/embed/wEBJoAslVaA"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen loading="lazy"></iframe>
-          </div>
-          <div class="vr-caption">
-            <p class="vr-name">Ирина</p>
-            <p class="vr-tag">Отзыв о клубе</p>
-          </div>
-        </div>
-
-        <div class="vr-card reveal">
-          <div class="vr-video">
-            <iframe src="https://www.youtube.com/embed/u6VTLdSYoa4"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen loading="lazy"></iframe>
-          </div>
-          <div class="vr-caption">
-            <p class="vr-name">Юлия</p>
-            <p class="vr-tag">Отзыв о клубе</p>
-          </div>
-        </div>
-
+      <div style="max-width:520px; margin:44px auto 0;">
         <div class="vr-card reveal">
           <div class="vr-video">
             <iframe src="https://www.youtube.com/embed/UoAzZ61vQu0"
@@ -1498,7 +1451,104 @@
             <p class="vr-tag">Новая реальность · 3 млн ₽</p>
           </div>
         </div>
+      </div>
 
+      <div style="text-align:center; margin-top:28px;">
+        <button class="btn-more" id="videos-toggle" onclick="toggleVideos()" style="font-size:.85rem; padding:9px 28px;">Показать ещё 8 видео <i class="arrow" style="display:inline-block;transition:transform .3s;">↓</i></button>
+      </div>
+
+      <div id="videos-more" style="display:none;">
+        <div class="vr-grid" style="margin-top:22px;">
+
+          <div class="vr-card reveal">
+            <div class="vr-video">
+              <iframe src="https://www.youtube.com/embed/9PiZYc4ltwQ"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="vr-caption">
+              <p class="vr-name">Оксана</p>
+              <p class="vr-tag">Отзыв о клубе</p>
+            </div>
+          </div>
+
+          <div class="vr-card reveal">
+            <div class="vr-video">
+              <iframe src="https://www.youtube.com/embed/8dRmG8pS434"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="vr-caption">
+              <p class="vr-name">Ольга</p>
+              <p class="vr-tag">Отзыв о клубе</p>
+            </div>
+          </div>
+
+          <div class="vr-card reveal">
+            <div class="vr-video">
+              <iframe src="https://www.youtube.com/embed/wEBJoAslVaA"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="vr-caption">
+              <p class="vr-name">Ирина</p>
+              <p class="vr-tag">Отзыв о клубе</p>
+            </div>
+          </div>
+
+          <div class="vr-card reveal">
+            <div class="vr-video">
+              <iframe src="https://www.youtube.com/embed/u6VTLdSYoa4"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="vr-caption">
+              <p class="vr-name">Юлия</p>
+              <p class="vr-tag">Отзыв о клубе</p>
+            </div>
+          </div>
+
+          <div class="vr-card reveal">
+            <div class="vr-video vr-placeholder">
+              <div class="vr-placeholder-inner">▶</div>
+            </div>
+            <div class="vr-caption">
+              <p class="vr-name">Видеоотзыв 6</p>
+              <p class="vr-tag">Скоро · добавьте ссылку</p>
+            </div>
+          </div>
+
+          <div class="vr-card reveal">
+            <div class="vr-video vr-placeholder">
+              <div class="vr-placeholder-inner">▶</div>
+            </div>
+            <div class="vr-caption">
+              <p class="vr-name">Видеоотзыв 7</p>
+              <p class="vr-tag">Скоро · добавьте ссылку</p>
+            </div>
+          </div>
+
+          <div class="vr-card reveal">
+            <div class="vr-video vr-placeholder">
+              <div class="vr-placeholder-inner">▶</div>
+            </div>
+            <div class="vr-caption">
+              <p class="vr-name">Видеоотзыв 8</p>
+              <p class="vr-tag">Скоро · добавьте ссылку</p>
+            </div>
+          </div>
+
+          <div class="vr-card reveal">
+            <div class="vr-video vr-placeholder">
+              <div class="vr-placeholder-inner">▶</div>
+            </div>
+            <div class="vr-caption">
+              <p class="vr-name">Видеоотзыв 9</p>
+              <p class="vr-tag">Скоро · добавьте ссылку</p>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
@@ -1554,7 +1604,7 @@
 
       <div class="gallery-item reveal">
         <img src="photo_2026-04-02_18-19-57.jpg" alt="Марина с видом на холмы — Святой Влас">
-        <div class="gallery-caption">Болгария: Шенген с 2025 года, перелёт через Стамбул</div>
+        <div class="gallery-caption">Болгария: перелёт через Стамбул, нужен загранпаспорт и шенгенская виза</div>
       </div>
 
     </div>
@@ -1870,18 +1920,21 @@
               <path d="M16 8 L19 13.5 L25 13.5 L20.5 17 L22.5 23 L16 19.5 L9.5 23 L11.5 17 L7 13.5 L13 13.5 Z" stroke="#c9a84c" stroke-width="1.3" fill="rgba(201,168,76,.12)" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h3>Трансфер из Бургаса</h3>
-          <p>Встречаю лично в аэропорту и везу до дома ретрита — 35 км без такси и поиска дороги.</p>
-          <span class="bonus-tag">При раннем бронировании</span>
+          <h3>Групповой трансфер из Стамбула</h3>
+          <p>Индивидуальный микроавтобус из Стамбула прямо до дома ретрита — всего €60 с человека. Без пересадок, без поиска такси на чужом языке.</p>
+          <span class="bonus-tag">Через закрытую группу ВКонтакте</span>
           <button class="btn-more" onclick="toggleMore(this)">Подробнее <i class="arrow">↓</i></button>
           <div class="whom-more">
             <div class="whom-more-text">
-              Трансфер бесплатный — для тех, кто принимает решение быстро. Условие простое: прошли собеседование, в течение 20–24 часов приняли решение и внесли предоплату на российскую карту. Сумма предоплаты обсуждается индивидуально прямо на собеседовании.
+              Прямые рейсы из России в Болгарию сейчас недоступны, а лететь через Турцию индивидуально — дорого. Поэтому мы организуем групповой трансфер через Стамбул.
               <ul>
-                <li>Встречаю лично в аэропорту Бургас — не нужно искать такси и разбираться с дорогой</li>
-                <li>35 км до дома ретрита — везу прямо до двери</li>
-                <li>Трансфер из Варны тоже возможен — со скидкой 50%</li>
+                <li><strong style="color:var(--gold-light);">Как это работает:</strong> участницы в закрытой группе ВКонтакте «Чёрный ретрит» договариваются лететь в один день на одном рейсе — Москва или Санкт-Петербург → Стамбул</li>
+                <li><strong style="color:var(--gold-light);">Трансфер:</strong> из Стамбула вас забирает индивидуальный микроавтобус и везёт 320 км прямо до квартиры ретрита</li>
+                <li><strong style="color:var(--gold-light);">Стоимость:</strong> €60 с человека — при условии, что группа летит одним рейсом</li>
+                <li><strong style="color:var(--gold-light);">Обратно:</strong> по той же схеме — из дома ретрита в Стамбул, согласовываете дату выезда в группе</li>
+                <li><strong style="color:var(--gold-light);">Где договориться:</strong> всё обсуждается в закрытой группе ВКонтакте «Чёрный ретрит» — туда вы попадёте после записи на ретрит</li>
               </ul>
+              <p style="margin-top:10px;">Это не просто экономия — это сразу знакомство с другими участницами ещё в самолёте.</p>
             </div>
           </div>
         </div>
@@ -1944,7 +1997,7 @@
 
       <div class="referral-block">
         <div class="referral-icon">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
             <circle cx="12" cy="12" r="5" stroke="#c9a84c" stroke-width="1.6" fill="none"/>
             <circle cx="26" cy="10" r="4" stroke="#c9a84c" stroke-width="1.4" fill="none"/>
             <circle cx="26" cy="26" r="4" stroke="#c9a84c" stroke-width="1.4" fill="none"/>
@@ -1953,10 +2006,17 @@
           </svg>
         </div>
         <div class="referral-text">
-          <h3>Реферальная программа</h3>
-          <p>Пригласите подругу на ретрит — и получите <strong>10% от стоимости её участия</strong> на продукты Ольги Турьевой после полной оплаты с её стороны.</p>
-          <p style="margin-top:10px;">Если едете вместе в один заезд — сумма бонуса вычитается из вашего остатка наличными в евро при заезде. Без ограничений по количеству приглашений.</p>
-          <p style="margin-top:10px; font-size:.82rem; color:rgba(154,146,152,.7);">Как это работает: подруга при записи указывает ваше имя в поле «Кто порекомендовал». После подтверждения её оплаты бонус фиксируется и применяется автоматически.</p>
+          <h3>Пригласи подругу на Чёрный ретрит</h3>
+          <button class="btn-more" onclick="toggleMore(this)" style="margin-top:12px; font-size:.82rem; padding:7px 20px;">Узнай как <i class="arrow">↓</i></button>
+          <div class="whom-more">
+            <div class="whom-more-text">
+              <ul>
+                <li><strong style="color:var(--gold-light);">Ваш бонус:</strong> 10% от стоимости участия подруги — на продукты Ольги Турьевой. Если едете вместе в один заезд — сумма вычитается из вашего остатка наличными в евро при заезде</li>
+                <li><strong style="color:var(--gold-light);">Как работает:</strong> подруга при записи указывает ваше имя в поле «Кто порекомендовал». После того как она оплатит — бонус фиксируется автоматически</li>
+                <li><strong style="color:var(--gold-light);">Без ограничений:</strong> можно пригласить несколько подруг — бонус начисляется за каждую</li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div class="referral-badge">−10%</div>
       </div>
@@ -2018,8 +2078,8 @@
           <div class="why-item">
             <div class="why-icon">✈️</div>
             <div>
-              <strong>Перелёт 4 часа, без визы</strong>
-              <p>Болгария — Шенген с 2025 года. Рейс через Стамбул из Москвы или Петербурга. Бали — 14–16 часов, пересадки, тропическая акклиматизация, другой часовой пояс. Все силы — на работу, а не на дорогу.</p>
+              <strong>Перелёт ~4 часа через Стамбул</strong>
+              <p>Москва или Петербург → Стамбул, затем микроавтобус прямо до дома ретрита. Нужен загранпаспорт и шенгенская виза на период ретрита, а также обратный билет из Стамбула. Бали — 14–16 часов, пересадки, другой часовой пояс. Все силы — на работу, а не на дорогу.</p>
             </div>
           </div>
           <div class="why-item">
@@ -2133,10 +2193,15 @@
 
         <div class="faq-item">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span>Нужна ли виза? Как добраться?</span><i class="faq-arrow">↓</i>
+            <span>Нужна ли виза? Как добраться до места ретрита?</span><i class="faq-arrow">↓</i>
           </button>
           <div class="faq-a">
-            <p>Болгария вступила в Шенген с января 2025 года. Удобный маршрут: Москва или Петербург → Стамбул → Бургас (прямые рейсы с мая). Из Бургаса до Святого Власа 35 км. Трансфер из Бургаса — бонус для тех, кто бронирует заранее.</p>
+            <p>Болгария — Шенгенская зона. Для въезда нужны: загранпаспорт, шенгенская виза на период ретрита и обратный билет из Стамбула.</p>
+            <p style="margin-top:10px;"><strong style="color:var(--gold-light);">Маршрут:</strong> Москва или Санкт-Петербург → Стамбул. Из Стамбула — индивидуальный микроавтобус прямо до дома ретрита (320 км, €60 с человека).</p>
+            <p style="margin-top:10px;"><strong style="color:var(--gold-light);">Как организовать поездку:</strong></p>
+            <p style="margin-top:6px;">1. Вступите в закрытый чат ВКонтакте «Чёрный ретрит» — ссылка придёт после записи.</p>
+            <p style="margin-top:6px;">2. В чате — полная инструкция по покупке билетов. Группа летит одним рейсом в один день: так микроавтобус забирает всех вместе и трансфер обходится дешевле.</p>
+            <p style="margin-top:6px;">3. Обратно — по той же схеме: дата выезда согласовывается в чате заранее.</p>
           </div>
         </div>
 
@@ -2146,6 +2211,23 @@
           </button>
           <div class="faq-a">
             <p>Нет. Формат выстроен как единый цикл — каждый день опирается на предыдущий. Уйти в середине значит прервать процесс в самом уязвимом месте. Пожалуйста, планируйте заранее и закрывайте все дела до приезда.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>Что взять с собой на ретрит?</span><i class="faq-arrow">↓</i>
+          </button>
+          <div class="faq-a">
+            <ul style="list-style:none; padding:0; margin:0; line-height:2;">
+              <li>◈ <strong style="color:var(--gold-light);">Повязка на глаза</strong> — главный предмет для Чёрного ретрита. Маска для сна, тонкая и удобная</li>
+              <li>◈ <strong style="color:var(--gold-light);">Мягкий платок</strong> — запасной вариант, если повязка окажется неудобной</li>
+              <li>◈ Удобные спортивные вещи для занятий</li>
+              <li>◈ Купальники</li>
+              <li>◈ Удобная обувь</li>
+              <li>◈ Тёплая одежда для вечерних прогулок у моря</li>
+              <li>◈ Индивидуальная подстилка для пляжа — для загорания на море</li>
+            </ul>
           </div>
         </div>
 
@@ -2478,15 +2560,26 @@
     const isOpen = more.style.display === 'block';
     more.style.display = isOpen ? 'none' : 'block';
     arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
-    btn.childNodes[0].textContent = isOpen ? 'Показать ещё 6 отзывов ' : 'Скрыть ';
+    btn.childNodes[0].textContent = isOpen ? 'Показать ещё 9 отзывов ' : 'Скрыть ';
     if (!isOpen) { document.querySelectorAll('#reviews-more .review-card').forEach(el => { if (!el.classList.contains('reveal')) el.classList.add('reveal'); io.observe(el); }); }
+  }
+
+  function toggleVideos() {
+    const more = document.getElementById('videos-more');
+    const btn = document.getElementById('videos-toggle');
+    const arrow = btn.querySelector('.arrow');
+    const isOpen = more.style.display === 'block';
+    more.style.display = isOpen ? 'none' : 'block';
+    arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
+    btn.childNodes[0].textContent = isOpen ? 'Показать ещё 8 видео ' : 'Скрыть ';
+    if (!isOpen) { document.querySelectorAll('#videos-more .vr-card').forEach(el => { if (!el.classList.contains('reveal')) el.classList.add('reveal'); io.observe(el); }); }
   }
 
   function toggleFaq(btn) { btn.closest('.faq-item').classList.toggle('open'); }
 
   // ── Toggle more (cards) ──
   function toggleMore(btn) {
-    const card = btn.closest('.whom-card, .card, .info-card, .bonus-card, .retreat-block, .review-card');
+    const card = btn.closest('.whom-card, .card, .info-card, .bonus-card, .retreat-block, .review-card, .referral-block');
     const isOpen = card.classList.toggle('open');
     btn.innerHTML = isOpen ? 'Скрыть <i class="arrow">↓</i>' : 'Подробнее <i class="arrow">↓</i>';
   }
