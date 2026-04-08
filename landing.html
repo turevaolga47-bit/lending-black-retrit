@@ -1440,55 +1440,6 @@
       <h2>Живые голоса клиенток</h2>
 
       <div class="vr-grid">
-
-        <div class="vr-card reveal">
-          <div class="vr-video">
-            <iframe src="https://www.youtube.com/embed/9PiZYc4ltwQ"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen loading="lazy"></iframe>
-          </div>
-          <div class="vr-caption">
-            <p class="vr-name">Оксана</p>
-            <p class="vr-tag">Отзыв о клубе</p>
-          </div>
-        </div>
-
-        <div class="vr-card reveal">
-          <div class="vr-video">
-            <iframe src="https://www.youtube.com/embed/8dRmG8pS434"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen loading="lazy"></iframe>
-          </div>
-          <div class="vr-caption">
-            <p class="vr-name">Ольга</p>
-            <p class="vr-tag">Отзыв о клубе</p>
-          </div>
-        </div>
-
-        <div class="vr-card reveal">
-          <div class="vr-video">
-            <iframe src="https://www.youtube.com/embed/wEBJoAslVaA"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen loading="lazy"></iframe>
-          </div>
-          <div class="vr-caption">
-            <p class="vr-name">Ирина</p>
-            <p class="vr-tag">Отзыв о клубе</p>
-          </div>
-        </div>
-
-        <div class="vr-card reveal">
-          <div class="vr-video">
-            <iframe src="https://www.youtube.com/embed/u6VTLdSYoa4"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen loading="lazy"></iframe>
-          </div>
-          <div class="vr-caption">
-            <p class="vr-name">Юлия</p>
-            <p class="vr-tag">Отзыв о клубе</p>
-          </div>
-        </div>
-
         <div class="vr-card reveal">
           <div class="vr-video">
             <iframe src="https://www.youtube.com/embed/UoAzZ61vQu0"
@@ -1500,47 +1451,104 @@
             <p class="vr-tag">Новая реальность · 3 млн ₽</p>
           </div>
         </div>
+      </div>
 
-        <div class="vr-card reveal">
-          <div class="vr-video vr-placeholder">
-            <div class="vr-placeholder-inner">▶</div>
+      <div style="text-align:center; margin-top:28px;">
+        <button class="btn-more" id="videos-toggle" onclick="toggleVideos()" style="font-size:.85rem; padding:9px 28px;">Показать ещё 8 видео <i class="arrow" style="display:inline-block;transition:transform .3s;">↓</i></button>
+      </div>
+
+      <div id="videos-more" style="display:none;">
+        <div class="vr-grid" style="margin-top:22px;">
+
+          <div class="vr-card reveal">
+            <div class="vr-video">
+              <iframe src="https://www.youtube.com/embed/9PiZYc4ltwQ"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="vr-caption">
+              <p class="vr-name">Оксана</p>
+              <p class="vr-tag">Отзыв о клубе</p>
+            </div>
           </div>
-          <div class="vr-caption">
-            <p class="vr-name">Видеоотзыв 6</p>
-            <p class="vr-tag">Скоро · добавьте ссылку</p>
+
+          <div class="vr-card reveal">
+            <div class="vr-video">
+              <iframe src="https://www.youtube.com/embed/8dRmG8pS434"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="vr-caption">
+              <p class="vr-name">Ольга</p>
+              <p class="vr-tag">Отзыв о клубе</p>
+            </div>
           </div>
+
+          <div class="vr-card reveal">
+            <div class="vr-video">
+              <iframe src="https://www.youtube.com/embed/wEBJoAslVaA"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="vr-caption">
+              <p class="vr-name">Ирина</p>
+              <p class="vr-tag">Отзыв о клубе</p>
+            </div>
+          </div>
+
+          <div class="vr-card reveal">
+            <div class="vr-video">
+              <iframe src="https://www.youtube.com/embed/u6VTLdSYoa4"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="vr-caption">
+              <p class="vr-name">Юлия</p>
+              <p class="vr-tag">Отзыв о клубе</p>
+            </div>
+          </div>
+
+          <div class="vr-card reveal">
+            <div class="vr-video vr-placeholder">
+              <div class="vr-placeholder-inner">▶</div>
+            </div>
+            <div class="vr-caption">
+              <p class="vr-name">Видеоотзыв 6</p>
+              <p class="vr-tag">Скоро · добавьте ссылку</p>
+            </div>
+          </div>
+
+          <div class="vr-card reveal">
+            <div class="vr-video vr-placeholder">
+              <div class="vr-placeholder-inner">▶</div>
+            </div>
+            <div class="vr-caption">
+              <p class="vr-name">Видеоотзыв 7</p>
+              <p class="vr-tag">Скоро · добавьте ссылку</p>
+            </div>
+          </div>
+
+          <div class="vr-card reveal">
+            <div class="vr-video vr-placeholder">
+              <div class="vr-placeholder-inner">▶</div>
+            </div>
+            <div class="vr-caption">
+              <p class="vr-name">Видеоотзыв 8</p>
+              <p class="vr-tag">Скоро · добавьте ссылку</p>
+            </div>
+          </div>
+
+          <div class="vr-card reveal">
+            <div class="vr-video vr-placeholder">
+              <div class="vr-placeholder-inner">▶</div>
+            </div>
+            <div class="vr-caption">
+              <p class="vr-name">Видеоотзыв 9</p>
+              <p class="vr-tag">Скоро · добавьте ссылку</p>
+            </div>
+          </div>
+
         </div>
-
-        <div class="vr-card reveal">
-          <div class="vr-video vr-placeholder">
-            <div class="vr-placeholder-inner">▶</div>
-          </div>
-          <div class="vr-caption">
-            <p class="vr-name">Видеоотзыв 7</p>
-            <p class="vr-tag">Скоро · добавьте ссылку</p>
-          </div>
-        </div>
-
-        <div class="vr-card reveal">
-          <div class="vr-video vr-placeholder">
-            <div class="vr-placeholder-inner">▶</div>
-          </div>
-          <div class="vr-caption">
-            <p class="vr-name">Видеоотзыв 8</p>
-            <p class="vr-tag">Скоро · добавьте ссылку</p>
-          </div>
-        </div>
-
-        <div class="vr-card reveal">
-          <div class="vr-video vr-placeholder">
-            <div class="vr-placeholder-inner">▶</div>
-          </div>
-          <div class="vr-caption">
-            <p class="vr-name">Видеоотзыв 9</p>
-            <p class="vr-tag">Скоро · добавьте ссылку</p>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -2522,6 +2530,17 @@
     arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
     btn.childNodes[0].textContent = isOpen ? 'Показать ещё 9 отзывов ' : 'Скрыть ';
     if (!isOpen) { document.querySelectorAll('#reviews-more .review-card').forEach(el => { if (!el.classList.contains('reveal')) el.classList.add('reveal'); io.observe(el); }); }
+  }
+
+  function toggleVideos() {
+    const more = document.getElementById('videos-more');
+    const btn = document.getElementById('videos-toggle');
+    const arrow = btn.querySelector('.arrow');
+    const isOpen = more.style.display === 'block';
+    more.style.display = isOpen ? 'none' : 'block';
+    arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
+    btn.childNodes[0].textContent = isOpen ? 'Показать ещё 8 видео ' : 'Скрыть ';
+    if (!isOpen) { document.querySelectorAll('#videos-more .vr-card').forEach(el => { if (!el.classList.contains('reveal')) el.classList.add('reveal'); io.observe(el); }); }
   }
 
   function toggleFaq(btn) { btn.closest('.faq-item').classList.toggle('open'); }
