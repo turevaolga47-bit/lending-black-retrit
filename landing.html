@@ -2520,7 +2520,7 @@
     const isOpen = more.style.display === 'block';
     more.style.display = isOpen ? 'none' : 'block';
     arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
-    btn.childNodes[0].textContent = isOpen ? 'Показать ещё 6 отзывов ' : 'Скрыть ';
+    btn.childNodes[0].textContent = isOpen ? 'Показать ещё 9 отзывов ' : 'Скрыть ';
     if (!isOpen) { document.querySelectorAll('#reviews-more .review-card').forEach(el => { if (!el.classList.contains('reveal')) el.classList.add('reveal'); io.observe(el); }); }
   }
 
