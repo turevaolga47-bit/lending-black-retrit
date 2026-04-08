@@ -311,7 +311,7 @@
 
     /* ── EXPANDABLE ── */
     .whom-more { max-height: 0; overflow: hidden; transition: max-height .45s ease, opacity .35s ease; opacity: 0; }
-    .whom-card.open .whom-more, .card.open .whom-more, .info-card.open .whom-more, .bonus-card.open .whom-more, .retreat-block.open .whom-more { max-height: 700px; opacity: 1; }
+    .whom-card.open .whom-more, .card.open .whom-more, .info-card.open .whom-more, .bonus-card.open .whom-more, .retreat-block.open .whom-more, .referral-block.open .whom-more { max-height: 700px; opacity: 1; }
     .whom-more-text { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(201,168,76,.18); font-size: .84rem; color: #b0a8ac; line-height: 1.7; }
     .whom-more-text ul { list-style: none; padding: 0; margin: 10px 0 0; }
     .whom-more-text ul li { padding: 4px 0 4px 18px; position: relative; color: #b0a8ac; }
@@ -324,7 +324,7 @@
     }
     .btn-more:hover { background: rgba(201,168,76,.12); border-color: rgba(201,168,76,.7); }
     .btn-more .arrow { display: inline-block; transition: transform .3s; font-style: normal; }
-    .whom-card.open .btn-more .arrow, .card.open .btn-more .arrow, .info-card.open .btn-more .arrow, .bonus-card.open .btn-more .arrow, .retreat-block.open .btn-more .arrow { transform: rotate(180deg); }
+    .whom-card.open .btn-more .arrow, .card.open .btn-more .arrow, .info-card.open .btn-more .arrow, .bonus-card.open .btn-more .arrow, .retreat-block.open .btn-more .arrow, .referral-block.open .btn-more .arrow { transform: rotate(180deg); }
 
     /* ── GALLERY (MASONRY) ── */
     #gallery { background: transparent; padding: 0 20px 70px; }
@@ -511,9 +511,9 @@
     .bonus-tag { display: inline-block; margin-top: 14px; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,.35); border-radius: 20px; padding: 4px 12px; }
     .referral-block {
       margin-top: 40px;
-      background: linear-gradient(135deg, rgba(201,168,76,.1), rgba(212,130,154,.08));
-      border: 1px solid rgba(201,168,76,.3); border-radius: 16px;
-      padding: 32px 36px; display: flex; align-items: center; gap: 24px;
+      background: linear-gradient(135deg, rgba(201,168,76,.08), rgba(212,130,154,.06));
+      border: 1px solid rgba(201,168,76,.3); border-radius: 12px;
+      padding: 20px 28px; display: flex; align-items: flex-start; gap: 20px;
     }
     .referral-icon { flex: 0 0 auto; }
     .referral-text { flex: 1; }
@@ -1997,7 +1997,7 @@
 
       <div class="referral-block">
         <div class="referral-icon">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
             <circle cx="12" cy="12" r="5" stroke="#c9a84c" stroke-width="1.6" fill="none"/>
             <circle cx="26" cy="10" r="4" stroke="#c9a84c" stroke-width="1.4" fill="none"/>
             <circle cx="26" cy="26" r="4" stroke="#c9a84c" stroke-width="1.4" fill="none"/>
@@ -2006,10 +2006,18 @@
           </svg>
         </div>
         <div class="referral-text">
-          <h3>Реферальная программа</h3>
-          <p>Пригласите подругу на ретрит — и получите <strong>10% от стоимости её участия</strong> на продукты Ольги Турьевой после полной оплаты с её стороны.</p>
-          <p style="margin-top:10px;">Если едете вместе в один заезд — сумма бонуса вычитается из вашего остатка наличными в евро при заезде. Без ограничений по количеству приглашений.</p>
-          <p style="margin-top:10px; font-size:.82rem; color:rgba(154,146,152,.7);">Как это работает: подруга при записи указывает ваше имя в поле «Кто порекомендовал». После подтверждения её оплаты бонус фиксируется и применяется автоматически.</p>
+          <h3>Пригласи подругу на Чёрный ретрит</h3>
+          <p>Получи <strong>−10%</strong> от стоимости её участия — как только она оплатит.</p>
+          <button class="btn-more" onclick="toggleMore(this)" style="margin-top:12px; font-size:.82rem; padding:7px 20px;">Подробнее <i class="arrow">↓</i></button>
+          <div class="whom-more">
+            <div class="whom-more-text">
+              <ul>
+                <li><strong style="color:var(--gold-light);">Ваш бонус:</strong> 10% от стоимости участия подруги — на продукты Ольги Турьевой. Если едете вместе в один заезд — сумма вычитается из вашего остатка наличными в евро при заезде</li>
+                <li><strong style="color:var(--gold-light);">Как работает:</strong> подруга при записи указывает ваше имя в поле «Кто порекомендовал». После того как она оплатит — бонус фиксируется автоматически</li>
+                <li><strong style="color:var(--gold-light);">Без ограничений:</strong> можно пригласить несколько подруг — бонус начисляется за каждую</li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div class="referral-badge">−10%</div>
       </div>
@@ -2550,7 +2558,7 @@
 
   // ── Toggle more (cards) ──
   function toggleMore(btn) {
-    const card = btn.closest('.whom-card, .card, .info-card, .bonus-card, .retreat-block, .review-card');
+    const card = btn.closest('.whom-card, .card, .info-card, .bonus-card, .retreat-block, .review-card, .referral-block');
     const isOpen = card.classList.toggle('open');
     btn.innerHTML = isOpen ? 'Скрыть <i class="arrow">↓</i>' : 'Подробнее <i class="arrow">↓</i>';
   }
